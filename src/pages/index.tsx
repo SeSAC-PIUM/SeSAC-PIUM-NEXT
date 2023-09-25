@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/main.module.css";
 import SwiperComponents from "../components/molecule/SwiperComponents.jsx";
+import ProfileButton from "@/components/atoms/button/ProfileButton.jsx";
+import MainRadomMatchingButton from "@/components/atoms/button/MainRandomMatchingButton.jsx";
+import MainMakingProjectButton from "@/components/atoms/button/MainMakingProjectButton.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,7 +76,7 @@ export default function Home() {
   ];
   return (
     <main>
-      <h1>메인 작업 페이지 입니다.</h1>
+      {/* <h1>메인 작업 페이지 입니다.</h1> */}
       {/* <!-- Slides --> */}
 
       <SwiperComponents
@@ -82,6 +85,8 @@ export default function Home() {
         slideClassName={`${styles["swiper-slide"]}`}
         lists={mainBannerList}
       />
+      <MainRadomMatchingButton />
+      <MainMakingProjectButton />
     </main>
   );
 }
