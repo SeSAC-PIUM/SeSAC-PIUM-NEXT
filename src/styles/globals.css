@@ -1,27 +1,545 @@
+/* 폰트 */
+/* @font-face {
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+} */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import url(./root.css);
+/* 폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css");
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 600;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Pretendard-Regular;
+  word-break: keep-all;
 }
 
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  padding: 0px 8px;
+}
+
+label {
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: 8px;
+}
+
+input[type="radio"] {
+  /* display: none; */
+  /* width: auto; */
+  accent-color: green;
+  margin-right: 8px;
+}
+
+/* 버튼 */
+/* signUp 버튼 */
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-200);
+  font-size: 14px;
+  margin: 4px;
+  color: var(--color-grayscale-600);
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.btn_save {
+  width: 100%;
+  padding: 16px 0px;
+  border: none;
+  border-radius: 4px;
+  background: var(--color-main-green);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn_delete {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-200);
+  font-size: 12px;
+  margin: 8px;
+  color: var(--color-grayscale-600);
+  background: var(--color-grayscale-100);
+  align-items: center;
+  cursor: pointer;
+}
+
+.button_default {
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ffff;
+  color: var(--color-grayscale-500);
+  border: 1px solid var(--color-grayscale-200);
+}
+
+.button_selected_all {
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--color-main-green);
+  color: var(--color-grayscale-100);
+  border: 1px solid var(--color-main-green);
+}
+
+.button_selected {
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-main-green);
+  background-color: #ffff;
+  border: 1px solid var(--color-main-green);
+}
+
+.button_chatting {
+  width: fit-content;
+  font-size: 14px;
+  color: var(--color-main-green);
+  font-weight: 600;
+  padding: 8px 15px;
+  white-space: nowrap;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 999px;
+  border: 1px solid var(--color-main-green);
+  background: #fff;
+  line-height: 100%;
+}
+
+.input {
+  display: flex;
+  max-width: 300px;
+  width: 100%;
+  padding: 16px 32px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-200);
+  color: var(--color-grayscale-500);
+}
+
+/* width, position top bottom 등은 각자 조절해서 사용할 것 */
+.profile_modal {
+  display: none;
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 264px;
+  padding: 16px 32px;
+  z-index: 1;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-200);
+  background: #fff;
+  box-shadow: 2px 2px 4px 0px rgba(211, 211, 211, 0.25);
+  line-height: 160%;
+  word-spacing: -0.14px;
+  word-break: keep-all;
+}
+
+.box {
+  display: flex;
+  width: fit-content;
+  padding: 16px;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-200);
+}
+
+/* 카드 */
+.card {
+  position: relative;
+  width: 282px;
+  /* height: 328px; */
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-100);
+  /* overflow: hidden; */
+}
+
+.thumb {
+  height: 150px;
+  position: relative;
+}
+/* .thumb a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+} */
+
+.thumb img {
+  /* width: 100%; */
+  /* width: 275px; */
+  height: 100%;
+  object-fit: cover;
+}
+
+.like_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 99;
+}
+
+.like_button::before {
+  content: "❤";
+
+  /* 빈 하트 유니코드 */
+  /* content: '\2661'; */
+}
+
+.like_button.clicked::before {
+  content: "❤";
+
+  /* 빨간 하트 유니코드 */
+  /* content: '\2665'; */
+  color: #ff5454;
+}
+.card_body {
+  height: 130px;
+  padding: 16px;
+  /* border-top: 1px solid #ccc; */
+}
+
+.card_footer {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e9e9ee;
+  position: relative;
+  color: var(--color-grayscale-500);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* 텍스트 */
+/* 1. 로고 28px 500 그레이6 */
+/* .logo_text {
+  color: var(--color-grayscale-600);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 2.272px;
+} */
+
+.nav_text {
+  color: var(--color-grayscale-600);
+  font-size: 16px;
+  font-weight: 600;
+}
+.nav_text2 {
+  color: var(--color-grayscale-600);
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+}
+
+/* 이용가이드, 설명 텍스트  */
+/* ** 12.(3중복) 섹션 타이틀 설명. 14px 600 그레이 스페이싱 -0.56  */
+.desc_text,
+.section_title_desc {
+  color: var(--color-grayscale-600);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.desc_point_text {
+  color: var(--color-main-green);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 5. 슬라이드  안 타이틀 40px 600 그레이6 */
+.slide_title {
+  color: var(--color-grayscale-600);
+  font-size: 40px;
+  font-weight: 600;
+}
+.slide_title2 {
+  color: var(--color-grayscale-600);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 140%;
+}
+.slide_title3 {
+  color: var(--color-text-orange);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 140%;
+}
+.slide_title4 {
+  color: var(--color-text-yellow-600);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 140%;
+}
+/* 6. 슬라이드 타이틀 설명  */
+/* 21. (6 중복)signUp 질문 14px 500 그레이6
+22. (6 중복) signUp 내용 동일 */
+.slide_title_desc,
+.ques_text,
+.card_text {
+  color: var(--color-grayscale-600);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.slide_num {
+  color: var(--color-grayscale-600);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 8. 우 배너 타이틀 24px 600 흰fff 이지만 grayscale로 함 */
+.banner_title {
+  color: var(--color-grayscale-100);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.banner_point {
+  color: var(--color-text-yellow);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* 메인페이지 가장 큰 헤더 텍스트 */
+/* 10. 페이지 타이틀 32px 600 그레이6 -1.28 */
+.page_title {
+  color: var(--color-text-black);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.4;
+  /* word-spacing: -4px; */
+}
+
+.page_title_point {
+  color: var(--color-main-green);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-spacing: -4px;
+}
+
+.section_title {
+  color: var(--color-grayscale-600);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section_title_point {
+  color: var(--color-main-green);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section_subtitle {
+  color: var(--color-grayscale-600);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+  padding-bottom: 16px;
+}
+
+/* ** 12.(3중복) 섹션 타이틀 설명 */
+.desc_text {
+  /* 위에 작성함. 필요없는 코드지만 헷갈릴까봐 일단 공간 차지 해두었어요. 확인 후 삭제 예정*/
+}
+
+/* 끝  곧 마감 프로젝트*/
+/* 13. 프로젝트 타이틀 24px 600 블랙  */
+.project_title {
+  color: var(--color-text-black);
+  font-size: 24px;
+  font-weight: 600;
+  padding: 16px 0px 12px 0;
+}
+
+/* 당신만 오면 바로 시작.. */
+.project_subtitle {
+  color: var(--color-grayscale-500);
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+
+/* 15. 카드 타이틀 16px 500블랙 */
+/* 캠퍼스명 */
+.card_title {
+  color: var(--color-text-black);
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 16px;
+}
+
+/* 16.태그 14px 400 그레이 */
+.tag_title {
+  color: var(--color-grayscale-600);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* 프로젝트 설명란 */
+.card_desc {
+  color: var(--color-grayscale-500);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card_footer_text,
+.modal_text_L,
+.more_text {
+  color: var(--color-grayscale-500);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.modal_text_S {
+  color: var(--color-grayscale-500);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* 20. 푸터 */
+.footer_text {
+  color: var(--color-grayscale-500);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.96px;
+}
+.footer_text2 {
+  color: var(--color-grayscale-500);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.96px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* green  */
+.main_font_GN_1 {
+  color: #57dd79;
+  font-size: 16px;
+  font-weight: 400;
+}
+.main_font_GN_2 {
+  color: #b3e56a;
+  font-size: 16px;
+  font-weight: 400;
+}
+.main_font_GN_3 {
+  color: #54be6f;
+  font-size: 16px;
+  font-weight: 400;
+}
+.main_font_GN_4 {
+  color: #c1eac2;
+  font-size: 16px;
+  font-weight: 400;
+}
+.main_font_GN_5 {
+  color: #2da96e;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.modal {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  bottom: calc(100% - 32px);
+  bottom: 10px;
+  left: 110px;
+  width: 234px;
+  height: auto;
+  padding: 24px;
+  z-index: 100;
+  border-radius: 4px;
+  border: 1px solid var(--color-grayscale-200);
+  background: #fff;
+  /* 1 */
+  box-shadow: 2px 2px 4px 0px rgba(211, 211, 211, 0.25);
+}
+
+.project_list_wrap li .project_list_row_4 li:nth-child(even) .modal {
+  left: -80px;
+  bottom: 30px;
+}
+
+/* flex */
+.flex_box_row {
+  display: flex;
+}
+.flex_box_column {
+  display: flex;
+  flex-direction: column;
+}
+.flex_item {
+  flex: 1;
+}
+
+/* header */
+header {
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 999;
+  box-shadow: 0px 2px 2px 0px rgba(211, 211, 211, 0.25);
+}
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+  z-index: 999;
 }
