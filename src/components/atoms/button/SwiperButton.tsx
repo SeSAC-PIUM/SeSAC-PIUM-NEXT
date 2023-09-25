@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import AdLeft from "../../img/ad_left.png";
-import AdRight from "../../img/ad_right.png";
+import AdLeft from "../../../img/ad_left.png";
+import AdRight from "../../../img/ad_right.png";
 import { MutableRefObject } from "react";
 
 interface SwiperButtonProps {
