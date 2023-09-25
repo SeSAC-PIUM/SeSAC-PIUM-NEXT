@@ -15,7 +15,7 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 
-export function MainSwiper({ className, slideClassName, lists }) {
+export default function SwiperComponents({ className, slideClassName, lists }) {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
