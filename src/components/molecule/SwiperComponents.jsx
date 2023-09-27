@@ -38,7 +38,7 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
   };
 
   return (
-    <div className="relative group">
+    <div className="relative group w-[906px]  h-[260px] m-0 rounded-[8px]">
       <SwiperButton position="left" buttonRef={prevRef} />
       <Swiper {...setting}>
         {lists.map((v, i) => (

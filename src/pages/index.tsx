@@ -1,29 +1,25 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/main.module.css";
 import SwiperComponents from "../components/molecule/SwiperComponents.jsx";
-import ProfileButton from "@/components/atoms/button/ProfileButton.jsx";
 import MainRadomMatchingButton from "@/components/atoms/button/MainRandomMatchingButton.jsx";
 import MainMakingProjectButton from "@/components/atoms/button/MainMakingProjectButton.jsx";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
+  const testFont = {
+    fontWeight: "900",
+    color: "red",
+    fontFamily: "Pretendard Variable",
+  };
   const mainBannerList = [
-    <div
-      className={`${styles["swiper-slide"]}`}
-      style={{ backgroundColor: "#fffbf3" }}
-      key={1}
-    >
-      <div className={`${styles["slide-tit"]}`}>
-        <div className={`${styles.slide_title2}`}>
+    <div className="bg-[#fffbf3] h-[16.25rem]" key={1}>
+      <div className="relative top-[50%] left-[80px] w-[80%] translate-y-[-50%] ">
+        <div className=" tracking-[-1.28px] mb-[16px] relative text-[32px]  leading-[140%] text-[#464656] font-semibold">
           처음이신가요?
           <br />
-          <span className={`${styles.slide_title3}`}>이용가이드</span>
+          <span className="text-[#e87300]">이용가이드</span>
+          <div style={testFont}>안녕하세요</div>
         </div>
-        <div className={`${styles.slide_title_desc}`}>
-          PIUM을 처음 이용하시는 당신을 위한 가이드!
-        </div>
+        <div className="">PIUM을 처음 이용하시는 당신을 위한 가이드!</div>
       </div>
       <Image
         width={100}
@@ -33,7 +29,7 @@ export default function Home() {
       />
     </div>,
     <div
-      className={`${styles["swiper-slide"]}`}
+      className="bg-[#112647] h-[16.25rem]"
       style={{ backgroundColor: "#112647" }}
       key={2}
     >
@@ -52,7 +48,7 @@ export default function Home() {
       <Image width={100} height={100} src="/img/banner_icon04.png" alt="star" />
     </div>,
     <div
-      className={`${styles["swiper-slide"]}`}
+      className="bg-[#e0eeff] h-[16.25rem]"
       style={{ backgroundColor: "#e0eeff" }}
       key={3}
     >
