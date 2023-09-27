@@ -1,5 +1,5 @@
 interface SignUpLabelProps {
-  title: any;
+  title: string;
 }
 
 export default function SignUpLabel({ title }: SignUpLabelProps) {
