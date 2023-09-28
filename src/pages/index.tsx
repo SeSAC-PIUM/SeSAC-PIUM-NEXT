@@ -74,7 +74,6 @@ export default function Home() {
     <main>
       {/* <h1>메인 작업 페이지 입니다.</h1> */}
       {/* <!-- Slides --> */}
-
       <SwiperComponents
         // className={`${styles["swiper-wrapper"]}`}
         className={`${styles.swiper}`}
