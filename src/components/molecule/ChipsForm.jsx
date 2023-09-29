@@ -1,12 +1,13 @@
 import DefaultButton from "../atoms/button/DefaultButton";
 
-export default function ChipsForm() {
-  const text = "안녕!!";
+export default function ChipsForm(props) {
+  console.log(props.text)
+  const items = props.text
   return (
-    <>
-      <DefaultButton text="요일 미정" />
-      <DefaultButton text="요일 미정" />
-      <DefaultButton text="요일 미정" />
-    </>
+    <ul className="flex flex-wrap gap-4 p-4 border-[1px] border-[#e9e9ee] rounded bg-white w-fit">
+      {items.map((data, index) => {
+        return (<DefaultButton item={data.item} key={index}></DefaultButton>);
+      })}
+    </ul>
   );
 }
