@@ -10,5 +10,6 @@ export default function ChipsForm(props) {
         return (<DefaultButton item={data.item} key={index}></DefaultButton>);
       })}
     </ul>
+
   );
 }
