@@ -1,10 +1,10 @@
-export default function DefaultButton({ text }) {
-  console.log({ text });
+export default function DefaultButton(props) {
+  const {item} = props
   return (
-    <div
-      className={`border-[1px] border-[rgb(233,233,238)] rounded w-fit py-2 px-4`}
+    <li
+      className={'default_button'}
     >
-      {text}
-    </div>
+      {item}
+    </li>
   );
 }

@@ -7,6 +7,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.default_button {
+  @apply border-[1px] border-[#e9e9ee] bg-white rounded w-fit py-2 px-4 cursor-pointer;
+}
+.selected_button {
+  @apply border-[1px] border-[#e9e9ee] bg-[#2da96e] text-[#fff] rounded w-fit py-2 px-4 cursor-pointer;
+}
+
+
 * {
   margin: 0;
   padding: 0;
