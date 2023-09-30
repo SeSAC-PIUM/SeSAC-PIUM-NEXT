@@ -1,6 +1,7 @@
 import DefaultButton from "../atoms/button/DefaultButton";
 
 export default function ChipsForm(props) {
+  console.log(props)
   console.log(props.text)
   const items = props.text
   return (
