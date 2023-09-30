@@ -34,12 +34,7 @@ export default function CreateProject() {
 
   return (
     <>
-      {/* <SubmitButton></SubmitButton>
-      <MainMakingProjectButton></MainMakingProjectButton>
-      <ProfileButton></ProfileButton> */}
-      {/* <DefaultButton text1 = '뿡1'></DefaultButton> */}
       <ChipsForm text={days}></ChipsForm>
-      <h1>메롱</h1>
     </>
   );
 }
