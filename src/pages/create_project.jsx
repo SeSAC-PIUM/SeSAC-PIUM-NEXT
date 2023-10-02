@@ -3,6 +3,8 @@
 // import ProfileButton from "../components/atoms/button/ProfileButton";
 // import DefaultButton from "../components/atoms/button/DefaultButton";
 import ChipsForm from "../components/molecule/ChipsForm";
+import CardTitle from "../components/atoms/text/CardTitle";
+import SignUpInput from "../components/atoms/input/SignUpInput"
 
 export default function CreateProject() {
   const days = [
@@ -31,10 +33,69 @@ export default function CreateProject() {
       item: "일요일",
     },
   ];
+  const skiils = [
+    {
+      item: "Javascript",
+    },
+    {
+      item: "Typescript",
+    },
+    {
+      item: "Nextjs",
+    },
+    {
+      item: "Java",
+    },
+    {
+      item: "Spring",
+    },
+    {
+      item: "Nodejs",
+    },
+    {
+      item: "Mongodb",
+    },
+    {
+      item: "Python",
+    },
+    {
+      item: "Figma",
+    },
+    {
+      item: "Zeplin",
+    }
+  ];
 
   return (
-    <>
-      <ChipsForm text={days}></ChipsForm>
-    </>
+    <div className="container">
+      <main>
+        <p className="page_title"><span className="page_title_point">프로젝트</span> 생성</p>
+        <section>
+          <p>프로젝트 기본 정보를 입력해주세요.</p>
+          <p></p>
+          <div className="flex flex-col gap-12">
+            <div className="flex flex-row gap-6">
+              <div className="flex-1">
+                <CardTitle>캠퍼스</CardTitle>
+                <SignUpInput placeholder="캠퍼스를 선택해주세요"></SignUpInput>
+              </div>
+              <div className="flex-1">
+                <CardTitle>진행 기간</CardTitle>
+                <SignUpInput placeholder="시작 날짜"></SignUpInput>
+                <SignUpInput placeholder="마감 날짜"></SignUpInput>
+              </div>
+            </div>
+            <div>
+              <CardTitle>작업 요일</CardTitle>
+              <ChipsForm text={days}></ChipsForm>
+            </div>
+            <div>
+              <CardTitle>모집 기술</CardTitle>
+              <ChipsForm text={skiils}></ChipsForm>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }
