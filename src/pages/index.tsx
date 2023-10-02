@@ -2,8 +2,10 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/main.module.css";
 import SwiperComponents from "../components/molecule/SwiperComponents.jsx";
+import { useEffect } from "react";
+import auth from "@/firebase/auth";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const mainBannerList = [
@@ -82,6 +84,16 @@ export default function Home() {
         slideClassName={`${styles["swiper-slide"]}`}
         lists={mainBannerList}
       />
+      <h1>
+        <button
+          onClick={() => {
+            auth.signOut();
+          }}
+        >
+          {" "}
+          Log Out
+        </button>
+      </h1>
     </main>
   );
 }
