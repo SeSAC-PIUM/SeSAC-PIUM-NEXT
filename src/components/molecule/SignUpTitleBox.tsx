@@ -19,11 +19,11 @@ export default function SignUpTitleBox({
 
   return (
     <>
-      <div className="flex items-center w-48">
+      <div className="flex items-center w-48 ">
         <SignUpLabel title={title} />
         {modal && (
           <>
-            <Image src={Modal} alt="modal" className="object-contain" />
+            <Image src={Modal} alt="modal" className="object-contain " />
             <SignUpModal />
           </>
         )}

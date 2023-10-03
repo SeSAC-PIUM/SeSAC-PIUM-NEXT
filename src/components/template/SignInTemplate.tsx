@@ -7,26 +7,36 @@ import SignUpContentGender from "../organism/SignUpContentGender";
 import SignUpContentJob from "../organism/SignUpContentJob";
 import SignUpContentMentoring from "../organism/SignUpContentMentoring";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
-import GrayButton from "../atoms/button/GrayButton";
+import GreenButton from "../atoms/button/GreenButton";
 import YellowButton from "../atoms/button/YellowButton";
 import SignUpInput from "../atoms/input/SignUpInput";
 // import Image from "next/image";
 
 export default function SignUpTemplate({}) {
-  const className = "flex flex-wrap  items-start pb-4 w-full";
+  const className = "flex flex-wrap bg-slate-100 items-start  pb- w-full";
   return (
     <>
       <section className="border-2 w-[360px] m-auto">
         {/* <Image src={logo_name} alt="logo_name" className="object-contain " /> */}
-        <div className="mb-[48px] text-center font-semibold">
+        <div className="pb-[48px] text-center font-semibold ">
           <span className="text-[--color-grayscale-600] mr-2">
-            이미 회원이신가요?
+            회원이 아니신가요?
           </span>
-          <button className="text-[--color-main-green] "> 로그인</button>
+          <button className="text-[--color-main-green] "> 회원가입</button>
+        </div>
+        <div className="flex flex-col">
+          <SignUpInput placeholder="이메일" />
+          <SignUpInput placeholder="비밀번호" />
+        </div>
+        <div className="flex justify-between ">
+          <CheckBoxButton label="로그인유지" name="signIn" value="signIn" />
+          <button className="text-[--color-grayscale-500]">
+            비밀번호 찾기
+          </button>
         </div>
 
-        <GrayButton className={className} text="이메일로 가입하기" />
-        <YellowButton className={className} text="카카오로 가입하기" />
+        <GreenButton className={className} text="로그인" />
+        <YellowButton className={className} text="카카오계정으로 로그인" />
       </section>
     </>
   );
