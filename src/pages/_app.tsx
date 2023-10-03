@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function App({ Component, pageProps }: AppProps) {
   const [isLoading, setLoading] = useState(true);
   const init = async () => {
-    auth.authStateReady();
+    await auth.authStateReady();
     setLoading(false);
   };
 
