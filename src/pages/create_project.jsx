@@ -5,6 +5,7 @@
 import ChipsForm from "../components/molecule/ChipsForm";
 import CardTitle from "../components/atoms/text/CardTitle";
 import SignUpInput from "../components/atoms/input/SignUpInput"
+import { skiils } from "../data/skill";
 
 export default function CreateProject() {
   const days = [
@@ -33,38 +34,7 @@ export default function CreateProject() {
       item: "일요일",
     },
   ];
-  const skiils = [
-    {
-      item: "Javascript",
-    },
-    {
-      item: "Typescript",
-    },
-    {
-      item: "Nextjs",
-    },
-    {
-      item: "Java",
-    },
-    {
-      item: "Spring",
-    },
-    {
-      item: "Nodejs",
-    },
-    {
-      item: "Mongodb",
-    },
-    {
-      item: "Python",
-    },
-    {
-      item: "Figma",
-    },
-    {
-      item: "Zeplin",
-    }
-  ];
+
 
   return (
     <div className="container">
@@ -75,14 +45,16 @@ export default function CreateProject() {
           <p></p>
           <div className="flex flex-col gap-12">
             <div className="flex flex-row gap-6">
-              <div className="flex-1">
+              <div className="flex-1 flex flex-col">
                 <CardTitle>캠퍼스</CardTitle>
                 <SignUpInput placeholder="캠퍼스를 선택해주세요"></SignUpInput>
               </div>
               <div className="flex-1">
                 <CardTitle>진행 기간</CardTitle>
-                <SignUpInput placeholder="시작 날짜"></SignUpInput>
-                <SignUpInput placeholder="마감 날짜"></SignUpInput>
+                <div className="flex gap-[10px]">
+                  <SignUpInput placeholder="시작 날짜"></SignUpInput>
+                  <SignUpInput placeholder="마감 날짜"></SignUpInput>
+                </div>
               </div>
             </div>
             <div>
