@@ -17,6 +17,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/atoms/button/MainRandomMatchingButton.jsx",
+    "src/components/atoms/button/MainMakingProjectButton.jsx"
+  ],
   "exclude": ["node_modules"]
 }
