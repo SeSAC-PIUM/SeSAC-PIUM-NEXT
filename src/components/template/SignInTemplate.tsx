@@ -50,8 +50,8 @@ export default function SignUpTemplate({}) {
               // image
               image={kakao}
               className={className}
-              bgColor="sky-200"
-              textColor="--color-grayscale-600"
+              bgColor="blue-400"
+              textColor="--color-grayscale-100"
               text="Google계정으로 로그인"
             />
 
