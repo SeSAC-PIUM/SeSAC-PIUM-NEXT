@@ -11,6 +11,7 @@ export default function SignUpContentName({
 }: SignUpContentNameProps) {
   return (
     <div className={className}>
+      {/* <div className="flex "> */}
       <SignUpTitleBox title="이름" modal="name" />
       <SignUpInput placeholder="이름" />
     </div>

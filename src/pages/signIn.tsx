@@ -1,10 +1,10 @@
-import SignUpTemplate from "@/components/template/SignUpTemplate";
+import SignInTemplate from "@/components/template/SignInTemplate";
 import React from "react";
 
 export default function signUp() {
   return (
     <>
-      <SignUpTemplate />
+      <SignInTemplate />
     </>
   );
 }
