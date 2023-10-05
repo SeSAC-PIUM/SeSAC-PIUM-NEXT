@@ -2,7 +2,8 @@ import React from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 import GreenButton from "../atoms/button/GreenButton";
 import SignUpInput from "../atoms/input/SignUpInput";
-import GrayButton from "../atoms/button/GrayButton";
+import WarningLabel from "../atoms/label/WarningLabel";
+
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
 
@@ -23,9 +24,18 @@ export default function SignUpTemplate({}) {
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
-            <SignUpInput placeholder="이메일" />
-            <SignUpInput placeholder="비밀번호" />
-            <SignUpInput placeholder="비밀번호 확인" />
+            <div>
+              <SignUpInput placeholder="이메일" />
+              <WarningLabel text="이메일 형식으로 입력해주세요" />
+            </div>
+            <div>
+              <SignUpInput placeholder="비밀번호" />
+              <WarningLabel text="비밀번호는 영문+숫자 조합 8자 이상 입력해주세요" />
+            </div>
+            <div>
+              <SignUpInput placeholder="비밀번호 확인" />
+              <WarningLabel text="비밀번호가 일치하지 않아요" />
+            </div>
           </div>
 
           <div className="flex justify-between bg-[--color-grayscale-100] py-4 px-8 rounded">
@@ -40,22 +50,29 @@ export default function SignUpTemplate({}) {
           <div className="flex flex-col gap-4 px-8">
             <CheckBoxButton
               label="(필수) 개인정보 수집 이용 동의"
-              name="signIn"
-              value="signIn"
+              name="signUp1"
+              value="(필수) 개인정보 수집 이용 동의"
             />
             <CheckBoxButton
               label="(필수) 개인정보 제3자 제공 동의"
-              name="signIn"
-              value="signIn"
+              name="signUp2"
+              value="(필수) 개인정보 제3자 제공 동의"
             />
             <CheckBoxButton
               label="(선택) 광고성 정보수진 동의"
-              name="signIn"
-              value="signIn"
+              name="signUp3"
+              value="(선택) 광고성 정보수진 동의"
             />
           </div>
         </div>
+
         <GreenButton className=" my-6" text="가입완료" />
+        <div>
+          <label className="form-checkbox inline-flex items-center">
+            <input type="checkbox" className="form-checkbox text-green-500" />
+            <span className="ml-2">Option 2</span>
+          </label>
+        </div>
       </section>
     </>
   );
