@@ -1,11 +1,11 @@
 import React from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
-import GreenButton from "../atoms/button/GreenButton";
-// import YellowButton from "../atoms/button/YellowButton";
+
 import SignUpInput from "../atoms/input/SignUpInput";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
-import kakao from "../../img/kakao.svg";
+import kakao from "../../img/logo_kakao.svg";
+import google from "../../img/logo_google.svg";
 import LoginButton from "../atoms/button/LoginButton";
 
 export default function SignUpTemplate({}) {
@@ -38,31 +38,28 @@ export default function SignUpTemplate({}) {
           </div>
 
           <div className="flex flex-col gap-4">
-            {/* <GreenButton className={className} text="로그인" /> */}
             <LoginButton
-              className={className}
-              bgColor="[--color-main-green]"
-              textColor="--color-grayscale-100"
+              bgColor="bg-[--color-main-green]"
+              textColor="text-white"
               text=" 로그인"
+              border="none"
             />
 
             <LoginButton
-              // image
-              image={kakao}
-              className={className}
-              bgColor="sky-200"
-              textColor="--color-grayscale-600"
+              image={google}
+              bgColor="bg-white"
+              textColor="text-[--color-grayscale-600]"
+              border="border-[1px]"
               text="Google계정으로 로그인"
             />
 
             <LoginButton
               image={kakao}
-              className={className}
-              bgColor="[#FFE600]"
-              textColor="--color-grayscale-600"
+              bgColor="bg-[#FFE600]"
+              textColor="text-[--color-grayscale-600]"
+              border="none"
               text="카카오계정으로 로그인"
             />
-            {/* <YellowButton className={className} text="카카오계정으로 로그인" /> */}
           </div>
         </div>
       </section>

@@ -12,7 +12,7 @@ export default function SignUpContentGender({
   return (
     <div className={className}>
       <SignUpTitleBox title="성별" />
-      <div className="flex h-full items-center ">
+      <div className="flex flex-wrap h-full items-center ">
         <RadioButton label="여성" name="gender" value="female" />
         <RadioButton label="남성" name="gender" value="male" />
         <RadioButton label="비공개" name="gender" value="void" />
