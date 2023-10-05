@@ -12,6 +12,7 @@ interface LoginButtonProps {
   bgColor: string;
   textColor: string;
   image?: StaticImageData;
+  form?: string | undefined;
 }
 
 export default function LoginButton({
@@ -20,12 +21,15 @@ export default function LoginButton({
   bgColor,
   textColor,
   image,
+  form = undefined,
 }: // image,
 LoginButtonProps) {
   return (
     <div className={className}>
       <button
         className={`bg-${bgColor}  text-[${textColor}] rounded  py-4  w-full flex justify-center items-center font-semibold`}
+        type={form === undefined ? undefined : "submit"}
+        form={form}
       >
         {image && (
           <Image
