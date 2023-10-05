@@ -1,5 +1,5 @@
 import React from "react";
-import DefaultButton from "../atoms/button/DefaultButton";
+import DefaultButton from "../atoms/button/ChipButton";
 
 export default function SignUpBox() {
   return (

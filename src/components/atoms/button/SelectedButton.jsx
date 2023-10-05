@@ -1,10 +1,7 @@
-export default function SelectedButton(props) {
-  const {item} = props
+export default function SelectedButton({ children }) {
   return (
-    <li
-      className={`selected_button`}
-    >
-      {item}
-    </li>
+    <button className="bg-[--color-main-green] border-[1px] border-[#e9e9ee] text-white rounded w-fit py-4 px-8 ">
+      {children}
+    </button>
   );
 }

@@ -23,6 +23,6 @@
     "**/*.tsx",
     "src/components/atoms/button/MainRandomMatchingButton.jsx",
     "src/components/atoms/button/MainMakingProjectButton.jsx"
-  ],
+, "src/components/atoms/label/SectionTitle.jsx"  ],
   "exclude": ["node_modules"]
 }
