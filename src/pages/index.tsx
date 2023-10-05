@@ -1,6 +1,9 @@
 import Image from "next/image";
 import styles from "@/styles/main.module.css";
 import SwiperComponents from "../components/molecule/SwiperComponents.jsx";
+import auth from "@/firebase/auth";
+
+// const inter = Inter({ subsets: ["latin"] });
 import MainRadomMatchingButton from "@/components/atoms/button/MainRandomMatchingButton.jsx";
 import MainMakingProjectButton from "@/components/atoms/button/MainMakingProjectButton.jsx";
 
