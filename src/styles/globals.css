@@ -7,27 +7,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.container {
-  @apply my-0 mx-auto max-w-[1200px] px-5;
-}
-
-.page_title {
-  @apply text-[32px] text-[#303030] font-semibold leading-[1.4] text-center py-16;
-}
-.page_title_point {
-  @apply text-[#2da96e];
-}
-.card_title {
-  @apply text-[16px] font-medium pb-4;
-}
-
-.default_button {
-  @apply border-[1px] border-[#e9e9ee] bg-white rounded w-fit py-2 px-4 cursor-pointer;
-}
-.selected_button {
-  @apply border-[1px] border-[#e9e9ee] bg-[#2da96e] text-[#fff] rounded w-fit py-2 px-4 cursor-pointer;
-}
-
 * {
   margin: 0;
   padding: 0;

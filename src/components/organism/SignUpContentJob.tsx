@@ -1,7 +1,6 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import SignUpInput from "../atoms/input/SignUpInput";
-import DefaultButton from "../atoms/button/DefaultButton";
 import DefaultCard from "../atoms/card/DefaultCard";
 
 // import SignUpBox from "../molecule/SignUpBox";
@@ -12,18 +11,24 @@ interface SignUpContentJobProps {
 const skiils = [
   {
     item: "기획",
+    value: "",
+    // value도 넣어주세요 - 미정
   },
   {
     item: "UX/UI 디자인",
+    value: "",
   },
   {
     item: "퍼블리싱",
+    value: "",
   },
   {
     item: "프론트엔드",
+    value: "",
   },
   {
     item: "백엔드",
+    value: "",
   },
 ];
 
