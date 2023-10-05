@@ -67,12 +67,6 @@ export default function SignUpTemplate({}) {
         </div>
 
         <GreenButton className=" my-6" text="가입완료" />
-        <div>
-          <label className="form-checkbox inline-flex items-center">
-            <input type="checkbox" className="form-checkbox text-green-500" />
-            <span className="ml-2">Option 2</span>
-          </label>
-        </div>
       </section>
     </>
   );
