@@ -9,7 +9,6 @@ interface SignUpModalProps {
 export default function SignUpModal({ modalText }: SignUpModalProps) {
   return (
     <div className="hidden group-hover:block absolute left-0 top-full z-10">
-      {/* <div className="hidden ">SignUpModal</div> */}
       <Modal modalText={modalText} />
     </div>
   );

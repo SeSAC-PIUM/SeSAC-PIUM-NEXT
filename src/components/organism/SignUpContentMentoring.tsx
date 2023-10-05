@@ -18,12 +18,9 @@ export default function SignUpContentMentoring({
                   짝꿍제도를 운영합니다. 수업을 따라가는데 문제가 없는
                   수준이라면 멘토를 지원해주세요🥰"
       />
-      <div className="flex ">
+      <div className="flex flex-wrap">
         <RadioButton label="멘토" name="mentoring" value="mentor" />
         <RadioButton label="멘티" name="mentoring" value="mentee" />
-
-        {/* <SignUpInput placeholder="캠퍼스 선택" />
-        <SignUpInput placeholder="클래스 선택" /> */}
       </div>
     </div>
   );
