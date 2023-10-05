@@ -17,7 +17,7 @@ export default function RadioButton({
           type="checkbox"
           name={name}
           value={value}
-          className="align-middle border-gray-200 border-[0.1em] rounded-[4px] w-[1.25em] h-[1.25em] text-green-600 mr-2"
+          className="rounded w-[1.25em] h-[1.25em] mr-2  accent-[--color-main-green] "
         />
         {label}
       </label>
