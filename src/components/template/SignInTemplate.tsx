@@ -1,7 +1,6 @@
 import React from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
-import GreenButton from "../atoms/button/GreenButton";
-// import YellowButton from "../atoms/button/YellowButton";
+
 import SignUpInput from "../atoms/input/SignUpInput";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
@@ -61,7 +60,6 @@ export default function SignUpTemplate({}) {
               border="none"
               text="카카오계정으로 로그인"
             />
-            {/* <YellowButton className={className} text="카카오계정으로 로그인" /> */}
           </div>
         </div>
       </section>

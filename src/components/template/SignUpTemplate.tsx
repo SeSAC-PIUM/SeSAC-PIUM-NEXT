@@ -3,7 +3,10 @@ import GrayButton from "../atoms/button/GrayButton";
 import YellowButton from "../atoms/button/YellowButton";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
-
+import kakao from "../../img/logo_kakao.svg";
+import google from "../../img/logo_google.svg";
+import mail from "../../img/logo_mail.svg";
+import LoginButton from "../atoms/button/LoginButton";
 export default function SignUpTemplate({}) {
   const className = "flex flex-wrap  items-start pb-4 w-full";
   return (
@@ -19,8 +22,31 @@ export default function SignUpTemplate({}) {
           </div>
         </div>
 
-        <GrayButton className={className} text="이메일로 가입하기" />
-        <YellowButton className={className} text="카카오로 가입하기" />
+        <div className="flex flex-col gap-4">
+          <LoginButton
+            image={mail}
+            bgColor="bg-[--color-grayscale-100]"
+            textColor="text-[--color-grayscale-600]"
+            text=" 이메일로 가입하기"
+            border="none"
+          />
+
+          <LoginButton
+            image={google}
+            bgColor="bg-white"
+            textColor="text-[--color-grayscale-600]"
+            border="border-[1px]"
+            text="구글계정으로 가입하기"
+          />
+
+          <LoginButton
+            image={kakao}
+            bgColor="bg-[#FFE600]"
+            textColor="text-[--color-grayscale-600]"
+            border="none"
+            text="카카오계정으로 가입하기"
+          />
+        </div>
       </section>
     </>
   );
