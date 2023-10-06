@@ -1,5 +1,5 @@
 import { useState } from "react";
-import DefaultCard from "../atoms/card/DefaultCard";
+import DefaultCardP32 from "../atoms/card/DefaultCardP32";
 import { FaMinus } from "../font-icon/MinusIcon";
 import { FaPlus } from "../font-icon/PlusIcon";
 
@@ -13,7 +13,7 @@ export default function VariationBox({ children }) {
 
   return (
     <>
-      <DefaultCard>
+      <DefaultCardP32>
         <div className="flex gap-3 justify-center items-center">
           {children}
           <button
@@ -34,7 +34,7 @@ export default function VariationBox({ children }) {
             <FaPlus></FaPlus>
           </button>
         </div>
-      </DefaultCard>
+      </DefaultCardP32>
     </>
   );
 }
