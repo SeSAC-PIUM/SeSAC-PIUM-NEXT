@@ -1,15 +1,59 @@
-import DefaultButton from "../atoms/button/DefaultButton";
+import ChipButton from "../atoms/button/ChipButton";
+import { useState, useCallback, useEffect } from "react";
 
 export default function ChipsForm(props) {
-  console.log(props)
-  console.log(props.text)
-  const items = props.text
-  return (
-    <ul className="flex flex-wrap gap-4 p-4 border-[1px] border-[#e9e9ee] rounded bg-white w-fit">
-      {items.map((data, index) => {
-        return (<DefaultButton item={data.item} key={index}></DefaultButton>);
-      })}
-    </ul>
+  const [check, setCheck] = useState([]);
 
+  const onClickEvent = (checked, item) => {
+    console.log(check);
+    console.log(checked);
+    console.log(item);
+
+    if (item === "undecided") {
+      setCheck([]);
+    }
+    if (item !== "undecided") {
+      setCheck(
+        check.filter((el) => {
+          return el !== "undecided";
+        })
+      );
+    }
+
+    if (checked) {
+      setCheck((prev) => [...prev, item]);
+    } else if (!checked) {
+      setCheck(
+        check.filter((el) => {
+          console.log("filter", el, item, el !== item);
+          return el !== item;
+        })
+      );
+    }
+  };
+
+  useEffect(() => {
+    console.log(check);
+  }, [check]);
+
+  const items = props.text;
+  return (
+    <div className="flex flex-wrap gap-[12px] p-4 border-[1px] border-[#e9e9ee] rounded bg-white w-fit">
+      {/* {items.map((data, index) => {
+        return (<DefaultButton item={data.item} key={index}></DefaultButton>);
+      })} */}
+
+      {items.map((ele, index) => {
+        return (
+          <ChipButton
+            val={ele.value}
+            item={ele.item}
+            key={index}
+            check={check}
+            onClick={onClickEvent}
+          ></ChipButton>
+        );
+      })}
+    </div>
   );
 }
