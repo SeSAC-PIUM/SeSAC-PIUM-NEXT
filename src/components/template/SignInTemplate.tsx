@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 
 import SignUpInput from "../atoms/input/SignUpInput";
@@ -8,6 +8,12 @@ import kakao from "../../img/logo_kakao.svg";
 import google from "../../img/logo_google.svg";
 import LoginButton from "../atoms/button/LoginButton";
 import { FieldErrors, useForm } from "react-hook-form";
+import { useRouter } from "next/router";
+import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import auth from "@/firebase/auth";
+import { FirebaseError } from "firebase/app";
+import Link from "next/link";
+import WarningLabel from "../atoms/label/WarningLabel";
 
 // Validation Check List
 // Error ( set, clear, display )
@@ -30,16 +36,39 @@ export default function SignUpTemplate({}) {
     watch,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginForm>({
-    mode: "onChange",
-  });
+    setError,
+  } = useForm<LoginForm>({ mode: "onSubmit" });
+
+  const autoLoginCheck = useRef(null);
+  const router = useRouter();
 
   // register 로 연결된 input을 보여주는 함수
-  console.log(watch());
+  // console.log(watch());
 
   // 유효성 검사를 통과하면 실행하는 함수
-  const onValid = (data: LoginForm) => {
-    console.log("dddd");
+  const onValid = async (data: LoginForm) => {
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+
+      //db autoLoginCheck 저장
+
+      router.push("/");
+    } catch (e) {
+      if (e instanceof FirebaseError) {
+        console.log("login error : ", e.message);
+        setError("email", {
+          type: "loginError",
+          message: "이메일을 확인해주세요.",
+        });
+        setError("password", {
+          type: "loginError",
+          message: "비밀번호를 확인해주세요.",
+        });
+      }
+      console.log(autoLoginCheck.current);
+    } finally {
+      // setLoading(false);
+    }
   };
 
   // 유효성 검사를 통과하지 못하면 실행하는 함수
@@ -47,7 +76,9 @@ export default function SignUpTemplate({}) {
     console.log(errors);
   };
 
-  console.log(errors.email?.message);
+  useEffect(() => {
+    autoLoginCheck;
+  }, [autoLoginCheck]);
 
   return (
     <>
@@ -59,7 +90,9 @@ export default function SignUpTemplate({}) {
               <span className="text-[--color-grayscale-600] mr-2">
                 회원이 아니신가요?
               </span>
-              <button className="text-[--color-main-green] "> 회원가입</button>
+              <Link href={"/signUp"} className="text-[--color-main-green] ">
+                회원가입
+              </Link>
             </div>
           </div>
         </div>
@@ -70,25 +103,41 @@ export default function SignUpTemplate({}) {
             onSubmit={handleSubmit(onValid, onInvalid)}
             id="loginForm"
           >
-            <SignUpInput
-              register={register("email", {
-                required: "Email is required",
-                validate: {
-                  email: (value) =>
-                    value.includes("@") || "이메일을 입력해주세요.",
-                },
-              })}
-              placeholder="이메일"
-            />
-            <SignUpInput
-              register={register("password", {
-                required: "Password is required",
-              })}
-              placeholder="비밀번호"
-              type="password"
-            />
+            <div>
+              <SignUpInput
+                register={register("email", {
+                  required: "이메일을 입력해주세요.",
+                  validate: {
+                    email: (value) =>
+                      value.includes("@") || "이메일을 입력해주세요.",
+                  },
+                })}
+                placeholder="이메일"
+              />
+
+              {errors.email && <WarningLabel text={errors.email?.message} />}
+            </div>
+            <div>
+              <SignUpInput
+                register={register("password", {
+                  required: "비밀번호를 입력해주세요.",
+                })}
+                placeholder="비밀번호"
+                type="password"
+              />
+
+              {errors.password && (
+                <WarningLabel text={errors.password?.message} />
+              )}
+            </div>
+
             <div className="flex justify-between ">
-              <CheckBoxButton label="로그인유지" name="signIn" value="signIn" />
+              <CheckBoxButton
+                label="로그인유지"
+                name="signIn"
+                value="signIn"
+                autoLoginRef={autoLoginCheck}
+              />
               <button className="text-[--color-grayscale-500] ">
                 비밀번호 찾기
               </button>
