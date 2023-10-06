@@ -22,7 +22,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/components/atoms/button/MainRandomMatchingButton.jsx",
-    "src/components/atoms/button/MainMakingProjectButton.jsx"
+    "src/components/atoms/button/MainMakingProjectButton.jsx",
+    "src/components/organism/Section01.jsx"
   ],
   "exclude": ["node_modules"]
 }
