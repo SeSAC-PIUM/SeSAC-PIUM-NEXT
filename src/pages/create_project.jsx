@@ -13,11 +13,12 @@ import DefaultButton from "../components/atoms/button/DefaultButton";
 import DefaultCard from "../components/atoms/card/DefaultCard";
 import SelectedButton from "../components/atoms/button/SelectedButton";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
+import EffectComponent from "../components/organism/RefTest"
+import BorderBottom from "../components/atoms/label/BorderBottom"
 
-
-function BorderBottom() {
-  return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
-}
+// function BorderBottom() {
+//   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
+// }
 
 export default function CreateProject() {
   const days = [
@@ -202,8 +203,14 @@ export default function CreateProject() {
             PointTitle2=""
           ></SectionTitle>
           <BorderBottom></BorderBottom>
-          <input type="text" placeholder="12글자 이내로 작성" maxlength="12" className="py-4 px-5 w-full max-w-[500px] rounded border-[1px] border-[--color-grayscale-200]" />
+          <input
+            type="text"
+            placeholder="12글자 이내로 작성"
+            maxlength="12"
+            className="py-4 px-5 w-full max-w-[500px] rounded border-[1px] border-[--color-grayscale-200] focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none placeholder-[#9090A0] text-[14px]"
+          />
         </section>
+        <EffectComponent></EffectComponent>
       </main>
     </div>
   );
