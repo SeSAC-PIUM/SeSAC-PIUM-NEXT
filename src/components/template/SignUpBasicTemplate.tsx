@@ -19,6 +19,7 @@ export default function SignUpTemplate({}) {
           PointTitle1="기본정보"
           title2="입력"
           PointTitle2=""
+          border="border-b-[1px] border-[--color-grayscale-600]"
         />
         <SignUpContentName className={className} />
         <SignUpContentCurriculum className={className} />

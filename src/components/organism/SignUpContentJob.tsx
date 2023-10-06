@@ -1,6 +1,6 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
-import SignUpInput from "../atoms/input/SignUpInput";
+import SignUpInput from "../atoms/input/DefaultInput";
 import DefaultButton from "../atoms/button/DefaultButton";
 import DefaultCard from "../atoms/card/DefaultCard";
 
