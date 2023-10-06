@@ -1,9 +1,12 @@
+// import Image from "next/image";
+import InitPreviewImg from "../../img/init_preview.png";
+
 export default function ThumbnailMaker() {
 
   
   return (
     <>
-      <div className="w-[282px] h-[150px] rounded border-[1px] border-[--color-grayscale-200] mb-3 flex justify-center items-center p-5" class="preview">
+      <div /* style={`backgroundImage: url('${InitPreviewImg}')`}  */className="w-[282px] h-[150px] rounded border-[1px] border-[--color-grayscale-200] mb-3 flex justify-center items-center p-5" /* class="preview" */>
         <p class="preview_tit">텍스트를 입력해주세요</p>
       </div>
       <input
