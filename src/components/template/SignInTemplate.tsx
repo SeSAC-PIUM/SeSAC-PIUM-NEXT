@@ -1,12 +1,13 @@
 import React from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 
-import SignUpInput from "../atoms/input/SignUpInput";
+import SignUpInput from "../atoms/input/DefaultInput";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
 import kakao from "../../img/logo_kakao.svg";
 import google from "../../img/logo_google.svg";
 import LoginButton from "../atoms/button/LoginButton";
+import Link from "next/link";
 
 export default function SignUpTemplate({}) {
   const className = "flex flex-wrap bg-slate-100 items-start  pb- w-full";
@@ -20,6 +21,7 @@ export default function SignUpTemplate({}) {
               <span className="text-[--color-grayscale-600] mr-2">
                 회원이 아니신가요?
               </span>
+
               <button className="text-[--color-main-green] "> 회원가입</button>
             </div>
           </div>
