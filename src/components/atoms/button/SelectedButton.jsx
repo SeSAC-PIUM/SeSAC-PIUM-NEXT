@@ -1,6 +1,6 @@
 export default function SelectedButton({ children }) {
   return (
-    <button className="bg-[--color-main-green] border-[1px] border-[#e9e9ee] text-white rounded w-fit py-4 px-8 ">
+    <button className="bg-[--color-main-green] border-[1px] border-[#e9e9ee] text-white rounded w-fit py-4 px-8">
       {children}
     </button>
   );
