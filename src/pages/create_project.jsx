@@ -13,8 +13,9 @@ import DefaultButton from "../components/atoms/button/DefaultButton";
 import DefaultCard from "../components/atoms/card/DefaultCard";
 import SelectedButton from "../components/atoms/button/SelectedButton";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
-import EffectComponent from "../components/organism/RefTest"
-import BorderBottom from "../components/atoms/label/BorderBottom"
+import EffectComponent from "../components/organism/RefTest";
+import BorderBottom from "../components/atoms/label/BorderBottom";
+import VariationBox from "../components/molecule/VariationBox";
 
 // function BorderBottom() {
 //   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
@@ -115,7 +116,10 @@ export default function CreateProject() {
             title2=""
             PointTitle2=""
           ></SectionTitle>
-          <BorderBottom></BorderBottom>
+          <BorderBottom
+            marginTop={"mt-4"}
+            marginBottom={"mb-12"}
+          ></BorderBottom>
           <div className="flex flex-col gap-12">
             <div className="flex flex-row gap-6">
               <div className="flex-1 flex flex-col">
@@ -178,8 +182,8 @@ export default function CreateProject() {
               ></CardTitle>
               <div className="flex">
                 <SignUpInput placeholder="포지션을 선택해주세요."></SignUpInput>
-                <DefaultCard>멘토 1명</DefaultCard>
-                <DefaultCard>멘티 1명</DefaultCard>
+                <VariationBox>멘토</VariationBox>
+                <VariationBox>멘티</VariationBox>
                 <SelectedButton>추가</SelectedButton>
               </div>
             </div>
@@ -192,7 +196,10 @@ export default function CreateProject() {
             title2=""
             PointTitle2=""
           ></SectionTitle>
-          <BorderBottom></BorderBottom>
+          <BorderBottom
+            marginTop={"mt-4"}
+            marginBottom={"mb-12"}
+          ></BorderBottom>
           <ThumbnailMaker></ThumbnailMaker>
         </section>
         <section className="mb-40">
@@ -202,7 +209,10 @@ export default function CreateProject() {
             title2=""
             PointTitle2=""
           ></SectionTitle>
-          <BorderBottom></BorderBottom>
+          <BorderBottom
+            marginTop={"mt-4"}
+            marginBottom={"mb-12"}
+          ></BorderBottom>
           <input
             type="text"
             placeholder="12글자 이내로 작성"
@@ -210,7 +220,6 @@ export default function CreateProject() {
             className="py-4 px-5 w-full max-w-[500px] rounded border-[1px] border-[--color-grayscale-200] focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none placeholder-[#9090A0] text-[14px]"
           />
         </section>
-        <EffectComponent></EffectComponent>
       </main>
     </div>
   );
