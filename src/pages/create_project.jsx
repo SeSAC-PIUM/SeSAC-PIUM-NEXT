@@ -14,6 +14,7 @@ import DefaultCard from "../components/atoms/card/DefaultCard";
 import SelectedButton from "../components/atoms/button/SelectedButton";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
 
+
 function BorderBottom() {
   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
 }
@@ -192,6 +193,16 @@ export default function CreateProject() {
           ></SectionTitle>
           <BorderBottom></BorderBottom>
           <ThumbnailMaker></ThumbnailMaker>
+        </section>
+        <section className="mb-40">
+          <SectionTitle
+            title1="프로젝트에 대해 소개해주세요"
+            PointTitle1=""
+            title2=""
+            PointTitle2=""
+          ></SectionTitle>
+          <BorderBottom></BorderBottom>
+          <input type="text" placeholder="12글자 이내로 작성" maxlength="12" className="py-4 px-5 w-full max-w-[500px] rounded border-[1px] border-[--color-grayscale-200]" />
         </section>
       </main>
     </div>
