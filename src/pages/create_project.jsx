@@ -4,13 +4,14 @@
 // // import DefaultButton from "../components/atoms/button/DefaultButton";
 import ChipsForm from "../components/molecule/ChipsForm";
 import CardTitle from "../components/atoms/label/CardTitle";
-import SignUpInput from "../components/atoms/input/SignUpInput";
+import SignUpInput from "../components/atoms/input/DefaultInput";
+import DefaultInput from "../components/atoms/input/DefaultInput";
 // import { skiils } from "../data/skill";
 import { useState, useCallback } from "react";
 import PageTitle from "../components/atoms/label/PageTitle";
 import SectionTitle from "../components/atoms/label/SectionTitle";
 import DefaultButton from "../components/atoms/button/DefaultButton";
-import DefaultCard from "../components/atoms/card/DefaultCard";
+import DefaultCardP32 from "../components/atoms/card/DefaultCardP32";
 import SelectedButton from "../components/atoms/button/SelectedButton";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
 import EffectComponent from "../components/organism/RefTest";
@@ -139,8 +140,8 @@ export default function CreateProject() {
                   PointTitle2=""
                 ></CardTitle>
                 <div className="flex gap-[10px]">
-                  <SignUpInput placeholder="시작 날짜"></SignUpInput>
-                  <SignUpInput placeholder="마감 날짜"></SignUpInput>
+                  <DefaultInput placeholder="시작 날짜"></DefaultInput>
+                  <DefaultInput placeholder="마감 날짜"></DefaultInput>
                 </div>
               </div>
             </div>
@@ -169,9 +170,9 @@ export default function CreateProject() {
                 title2=""
                 PointTitle2=""
               ></CardTitle>
-              <DefaultCard>
+              <DefaultCardP32>
                 {/* 데이터 받아와야 함 */}프론트엔드 / 멘토
-              </DefaultCard>
+              </DefaultCardP32>
             </div>
             <div>
               <CardTitle
@@ -180,7 +181,7 @@ export default function CreateProject() {
                 title2=""
                 PointTitle2=""
               ></CardTitle>
-              <div className="flex">
+              <div className="flex gap-3">
                 <SignUpInput placeholder="포지션을 선택해주세요."></SignUpInput>
                 <VariationBox>멘토</VariationBox>
                 <VariationBox>멘티</VariationBox>
