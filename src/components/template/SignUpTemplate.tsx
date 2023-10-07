@@ -26,13 +26,15 @@ export default function SignUpTemplate({}) {
         </div>
 
         <div className="flex flex-col gap-4">
-          <LoginButton
-            image={mail}
-            bgColor="bg-[--color-grayscale-100]"
-            textColor="text-[--color-grayscale-600]"
-            text=" 이메일로 가입하기"
-            border="none"
-          />
+          <Link href="signUp_Email">
+            <LoginButton
+              image={mail}
+              bgColor="bg-[--color-grayscale-100]"
+              textColor="text-[--color-grayscale-600]"
+              text=" 이메일로 가입하기"
+              border="none"
+            />
+          </Link>
 
           <LoginButton
             image={google}
