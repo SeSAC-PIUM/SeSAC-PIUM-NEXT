@@ -5,10 +5,8 @@ import { useEffect, useRef, useState } from "react";
 
 export default function ThumbnailMaker() {
   const [color, setColor] = useState([
-    // "from-[#2DA96E]",
-    // "to-[#2DA96E]",
-    "bg-[#2DA96E]",
-    "text-[#2DA96E]",
+    "from-[#2DA96E]",
+    "to-[#2DA96E]",
     "w-[282px]"
   ]);
   const [text, setText] = useState("텍스트를 입력해주세요");
@@ -44,8 +42,8 @@ export default function ThumbnailMaker() {
     setColor([
       // "from-[" + randomRGB() + "]",
       // "to-[" + randomRGB() + "]",
-      "bg-[" + randomRGB() + "]",
-      "text-[" + randomRGB() + "]",
+      "from-[" + randomRGB() + "]",
+      "to-[" + randomRGB() + "]",
       "w-[100px]"
     ]);
   };
@@ -60,7 +58,7 @@ export default function ThumbnailMaker() {
         // style={`backgroundImage: url('${InitPreviewImg}')`}
         // background: var(--3, linear-gradient(107deg, #CABEFF 0%, #C9EEFF 101.87%));
 
-        className={`${color[0]} ${color[1]} 
+        className={`bg-gradient-to-r ${color[0]} ${color[1]} 
         ${color[2]}  h-[150px] rounded border-[1px] border-[--color-grayscale-200] mb-3 flex justify-center items-center p-5`} /* class="preview" */
       >
         <p className="preview_tit text-black">{text}</p>

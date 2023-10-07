@@ -9,9 +9,11 @@ export default function DefaultCard({
 }: DefaultCardProps) {
   return (
     <>
+
       <div
         className={`${addClassName} border rounded border-[#E9E9EE] p-4 w-fit bg-white`}
       >
+
         {children && children}
       </div>
     </>
