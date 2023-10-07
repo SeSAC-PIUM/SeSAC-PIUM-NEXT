@@ -7,6 +7,7 @@ import kakao from "../../img/logo_kakao.svg";
 import google from "../../img/logo_google.svg";
 import mail from "../../img/logo_mail.svg";
 import LoginButton from "../atoms/button/LoginButton";
+import Link from "next/link";
 export default function SignUpTemplate({}) {
   const className = "flex flex-wrap  items-start pb-4 w-full";
   return (
@@ -18,18 +19,22 @@ export default function SignUpTemplate({}) {
             <span className="text-[--color-grayscale-600] mr-2">
               이미 회원이신가요?
             </span>
-            <button className="text-[--color-main-green] "> 로그인</button>
+            <Link href={"/signIn"} className="text-[--color-main-green] ">
+              로그인
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-4">
-          <LoginButton
-            image={mail}
-            bgColor="bg-[--color-grayscale-100]"
-            textColor="text-[--color-grayscale-600]"
-            text=" 이메일로 가입하기"
-            border="none"
-          />
+          <Link href="signUp_Email">
+            <LoginButton
+              image={mail}
+              bgColor="bg-[--color-grayscale-100]"
+              textColor="text-[--color-grayscale-600]"
+              text=" 이메일로 가입하기"
+              border="none"
+            />
+          </Link>
 
           <LoginButton
             image={google}
