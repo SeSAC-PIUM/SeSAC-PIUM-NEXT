@@ -136,7 +136,7 @@ export default function SignUpTemplate({}) {
                 label="로그인유지"
                 name="signIn"
                 value="signIn"
-                autoLoginRef={autoLoginCheck}
+                checkRef={autoLoginCheck}
               />
               <button className="text-[--color-grayscale-500] ">
                 비밀번호 찾기
@@ -145,13 +145,14 @@ export default function SignUpTemplate({}) {
           </form>
 
           <div className="flex flex-col gap-4">
-            <LoginButton
-              bgColor="bg-[--color-main-green]"
-              textColor="text-white"
-              text=" 로그인"
-              border="none"
-              form="loginForm"
-            />
+            <button type="submit" form="loginForm">
+              <LoginButton
+                bgColor="bg-[--color-main-green]"
+                textColor="text-white"
+                text=" 로그인"
+                border="none"
+              />
+            </button>
 
             <LoginButton
               image={google}
