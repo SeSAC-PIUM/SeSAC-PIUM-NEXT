@@ -15,10 +15,11 @@ export default function SignUpTemplate({}) {
     <>
       <section className=" max-w-[800px] w-full m-auto ">
         <PageTitle
-          title1=""
+          title1="프로젝트를 위한"
           PointTitle1="기본정보"
-          title2="생성"
+          title2="입력"
           PointTitle2=""
+          border="border-b-[1px] border-[--color-grayscale-600]"
         />
         <SignUpContentName className={className} />
         <SignUpContentCurriculum className={className} />

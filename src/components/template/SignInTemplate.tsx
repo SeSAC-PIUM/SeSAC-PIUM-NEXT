@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 
-import SignUpInput from "../atoms/input/SignUpInput";
+import DefaultInput from "../atoms/input/DefaultInput";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
 import kakao from "../../img/logo_kakao.svg";
@@ -104,7 +104,7 @@ export default function SignUpTemplate({}) {
             id="loginForm"
           >
             <div>
-              <SignUpInput
+              <DefaultInput
                 register={register("email", {
                   required: "이메일을 입력해주세요.",
                   validate: {
@@ -118,7 +118,7 @@ export default function SignUpTemplate({}) {
               {errors.email && <WarningLabel text={errors.email?.message} />}
             </div>
             <div>
-              <SignUpInput
+              <DefaultInput
                 register={register("password", {
                   required: "비밀번호를 입력해주세요.",
                 })}

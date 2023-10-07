@@ -1,4 +1,4 @@
-import DefaultButton from "../atoms/button/DefaultButton";
+import ChipButton from "../atoms/button/ChipButton";
 import { useState, useCallback, useEffect } from "react";
 
 export default function ChipsForm(props) {
@@ -6,9 +6,18 @@ export default function ChipsForm(props) {
 
   const onClickEvent = (checked, item) => {
     console.log(check);
+    console.log(checked);
+    console.log(item);
 
     if (item === "undecided") {
       setCheck([]);
+    }
+    if (item !== "undecided") {
+      setCheck(
+        check.filter((el) => {
+          return el !== "undecided";
+        })
+      );
     }
 
     if (checked) {
@@ -29,20 +38,20 @@ export default function ChipsForm(props) {
 
   const items = props.text;
   return (
-    <div className="flex flex-wrap gap-4 p-4 border-[1px] border-[#e9e9ee] rounded bg-white w-fit">
+    <div className="flex flex-wrap gap-[12px] p-4 border-[1px] border-[#e9e9ee] rounded bg-white w-fit">
       {/* {items.map((data, index) => {
         return (<DefaultButton item={data.item} key={index}></DefaultButton>);
       })} */}
 
       {items.map((ele, index) => {
         return (
-          <DefaultButton
+          <ChipButton
             val={ele.value}
             item={ele.item}
             key={index}
             check={check}
             onClick={onClickEvent}
-          ></DefaultButton>
+          ></ChipButton>
         );
       })}
     </div>

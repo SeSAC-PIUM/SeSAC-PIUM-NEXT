@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 import GreenButton from "../atoms/button/GreenButton";
-import SignUpInput from "../atoms/input/SignUpInput";
+import SignUpInput from "../atoms/input/DefaultInput";
 import WarningLabel from "../atoms/label/WarningLabel";
 
 import LogoName from "../../img/logo&name.svg";
