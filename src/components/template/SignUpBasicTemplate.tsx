@@ -1,16 +1,19 @@
 import React from "react";
 import SignUpContentName from "../organism/SignUpContentName";
-import SignUpContentModal from "../organism/SignUpContentModal";
-import RadioButton from "../atoms/button/RadioButton";
+// import SignUpContentModal from "../organism/SignUpContentModal";
+// import RadioButton from "../atoms/button/RadioButton";
 import SignUpContentCurriculum from "../organism/SignUpContentCurriculum";
 import SignUpContentGender from "../organism/SignUpContentGender";
 import SignUpContentJob from "../organism/SignUpContentJob";
 import SignUpContentMentoring from "../organism/SignUpContentMentoring";
 import GreenButton from "../atoms/button/GreenButton";
 import PageTitle from "../atoms/label/PageTitle";
+import BorderBottom from "../atoms/label/BorderBottom";
+import SignUpContentFirst from "../organism/SignUpContentFirst";
+import SignUpContentSecond from "../organism/SignUpContentSecond";
 
 export default function SignUpTemplate({}) {
-  const className = "flex flex-wrap bg-slate-100 items-start py-6 w-full";
+  // const className = "flex flex-wrap  bg-slate-100 items-start py-6 w-full";
   return (
     <>
       <section className=" max-w-[800px] w-full m-auto ">
@@ -21,11 +24,13 @@ export default function SignUpTemplate({}) {
           PointTitle2=""
           border="border-b-[1px] border-[--color-grayscale-600]"
         />
-        <SignUpContentName className={className} />
-        <SignUpContentCurriculum className={className} />
-        <SignUpContentGender className={className} />
-        <SignUpContentJob className={className} />
-        <SignUpContentMentoring className={className} />
+        <SignUpContentFirst />
+
+        <BorderBottom />
+
+        <SignUpContentSecond />
+        <BorderBottom />
+
         <GreenButton
           className="max-w-[400px] w-full m-auto mt-12"
           text="가입완료"

@@ -34,7 +34,7 @@ export default function reservationBox() {
 
         <article>
           <div className="hashTag flex flex-wrap gap-2">
-            <DefaultButton item="# 노트북대여" />
+            <DefaultButton children="# 노트북대여" />
             <DefaultButton item="# 빔 프로젝트 대여" />
             <DefaultButton item="# 주차 불가능" />
             <DefaultButton item="# 간식 제공" />
