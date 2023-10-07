@@ -1,12 +1,15 @@
-export default function ChipButton(props) {
-  // const [check, setCheck] = useState([]);
-
-  const { val, item, key, check, onClick } = props;
-
+export default function ChipButton({
+  val,
+  item,
+  key,
+  check,
+  onClick,
+  width = "w-fit",
+}) {
   return (
     <>
       <label
-        className={`border-[1px] border-[#e9e9ee] rounded w-fit py-2 px-4 cursor-pointer ${
+        className={`border-[1px] border-[#e9e9ee] rounded ${width} flex justify-center py-2 px-4 cursor-pointer ${
           check.indexOf(val) > -1 ? "bg-[#2da96e] text-[#fff]" : "bg-white"
         }`}
       >

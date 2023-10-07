@@ -13,13 +13,9 @@ export default function SignUpTitleBox({
   title,
   modal,
 }: SingnUpTitleBoxProps): React.ReactElement {
-  const cardObject = {
-    name: "SBA 가입 시 입력한 이름입니다. 만약 실명과 일치하지 않는다면 마이페이지 - 이름변경 신청을 통해 수정 가능합니다",
-  };
-
   return (
     <>
-      <div className="flex items-center w-48 relative">
+      <div className="flex items-center mb-2 relative">
         <SignUpLabel title={title} />
         {modal && (
           <div className="flex group ">
