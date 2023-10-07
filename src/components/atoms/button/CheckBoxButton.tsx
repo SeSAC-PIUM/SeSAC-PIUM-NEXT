@@ -3,20 +3,20 @@ interface CheckBoxButtonProps {
   label: string;
   name: string;
   value: string;
-  autoLoginRef: MutableRefObject<null>;
+  checkRef?: MutableRefObject<null>;
 }
 
 export default function RadioButton({
   label,
   name,
   value,
-  autoLoginRef,
+  checkRef,
 }: CheckBoxButtonProps): React.ReactElement {
   return (
     <>
       <label className="h-full p-0">
         <input
-          ref={autoLoginRef}
+          ref={checkRef}
           type="checkbox"
           name={name}
           value={value}
