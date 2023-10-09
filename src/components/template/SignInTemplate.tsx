@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 
 import DefaultInput from "../atoms/input/DefaultInput";
@@ -39,7 +39,7 @@ export default function SignUpTemplate({}) {
     setError,
   } = useForm<LoginForm>({ mode: "onSubmit" });
 
-  const autoLoginCheck = useRef(null);
+  const autoLoginCheck = useState(false);
   const router = useRouter();
 
   // register 로 연결된 input을 보여주는 함수
@@ -65,7 +65,6 @@ export default function SignUpTemplate({}) {
           message: "비밀번호를 확인해주세요.",
         });
       }
-      console.log(autoLoginCheck.current);
     } finally {
       // setLoading(false);
     }
@@ -132,12 +131,7 @@ export default function SignUpTemplate({}) {
             </div>
 
             <div className="flex justify-between ">
-              <CheckBoxButton
-                label="로그인유지"
-                name="signIn"
-                value="signIn"
-                checkRef={autoLoginCheck}
-              />
+              <CheckBoxButton label="로그인유지" name="signIn" value="signIn" />
               <button className="text-[--color-grayscale-500] ">
                 비밀번호 찾기
               </button>
