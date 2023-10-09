@@ -51,6 +51,7 @@ export default function ChipsForm(props) {
             key={index}
             check={check}
             onClick={onClickEvent}
+            width={props.width}
           ></ChipButton>
         );
       })}
