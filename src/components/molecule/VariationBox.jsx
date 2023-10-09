@@ -5,10 +5,10 @@ import { FaPlus } from "../font-icon/PlusIcon";
 
 export default function VariationBox({ children }) {
   const [count, setCount] = useState(1);
-  const onButtonClick = (bb) => {
-    bb
+  const onButtonClick = (IsClick) => {
+    IsClick
       ? setCount(count + 1 > 9 ? count : count + 1)
-      : setCount(count - 1 < 0 ? count : count - 1);
+      : setCount(count - 1 < 1 ? count : count - 1);
   };
 
   return (
