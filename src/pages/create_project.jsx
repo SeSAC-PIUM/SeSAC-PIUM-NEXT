@@ -17,6 +17,7 @@ import ThumbnailMaker from "../components/organism/ThumbnailMaker";
 import EffectComponent from "../components/organism/RefTest";
 import BorderBottom from "../components/atoms/label/BorderBottom";
 import VariationBox from "../components/molecule/VariationBox";
+import DatePickerComponent from "../components/organism/DatePicker";
 
 // function BorderBottom() {
 //   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
@@ -139,9 +140,10 @@ export default function CreateProject() {
                   title2=""
                   PointTitle2=""
                 ></CardTitle>
-                <div className="flex gap-[10px]">
-                  <DefaultInput placeholder="시작 날짜"></DefaultInput>
-                  <DefaultInput placeholder="마감 날짜"></DefaultInput>
+                <div>
+                  <DatePickerComponent></DatePickerComponent>
+                  {/* <DefaultInput placeholder="시작 날짜"></DefaultInput>
+                  <DefaultInput placeholder="마감 날짜"></DefaultInput> */}
                 </div>
               </div>
             </div>
