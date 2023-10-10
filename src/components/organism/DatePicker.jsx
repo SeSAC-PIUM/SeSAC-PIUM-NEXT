@@ -2,7 +2,6 @@ import { useState, forwardRef } from "react";
 // import ReactDatePicker from "react-datepicker";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import styles from "../Calender/calendar.module.scss";
 
 export default function DatePickerComponent() {
   const [startDate, setStartDate] = useState(null);
@@ -37,9 +36,9 @@ export default function DatePickerComponent() {
   ];
 
   return (
-    <div className={styles.datePickerWrapper}>
+    <div className="flex gap-[10px]">
       <DatePicker
-        WrapperClassName={styles.datePicker}
+        // WrapperClassName={styles.datePicker}
         className="flex-1 focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none leading-8 text-slate-700 text-[14px] placeholder-[#9090A0] rounded py-2 px-8 ring-1 ring-[#E9E9EE] shadow-sm w-full"
         selected={startDate}
         onChange={(date) => setStartDate(date)}
@@ -98,7 +97,7 @@ export default function DatePickerComponent() {
         // )}
       />
       <DatePicker
-        WrapperClassName={styles.datePicker}
+        // WrapperClassName={styles.datePicker}
         className="flex-1 focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none leading-8 text-slate-700 text-[14px] placeholder-[#9090A0] rounded py-2 px-8 ring-1 ring-[#E9E9EE] shadow-sm w-full"
         selected={endDate}
         onChange={(date) => setEndDate(date)}

@@ -5,15 +5,20 @@ export default function ChipButton({
   check,
   onClick,
   width = "w-fit",
+  fontSize,
+  all,
 }) {
   return (
     <>
       <label
-        className={`border-[1px] border-[#e9e9ee] rounded ${width} flex justify-center py-2 px-4 cursor-pointer ${
-          check.indexOf(val) > -1 ? "bg-[#2da96e] text-[#fff]" : "bg-white"
+        className={`border-[1px] ${all} rounded ${width} flex justify-center py-2 px-4 cursor-pointer ${fontSize} ${
+          check.indexOf(val) > -1
+            ? "border-[--color-main-green] text-[--color-main-green]"
+            : "border-[--color-grayscale-200]"
         }`}
       >
         <input
+          // className="hidden"
           key={key}
           type="checkbox"
           name="skill"
