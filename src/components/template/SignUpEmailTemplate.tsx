@@ -25,6 +25,8 @@ const passwordRegular = {
   spc: /[~!@#$%^&*()_+|<>?:{}]/,
 };
 
+var emailRegular = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
 export default function SignUpTemplate({}) {
   const className = "flex flex-wrap bg-slate-100 items-start  pb- w-full";
 
@@ -121,7 +123,7 @@ export default function SignUpTemplate({}) {
                 register={register("email", {
                   validate: {
                     email: (value) =>
-                      value.includes("@") || "이메일을 입력해주세요.",
+                      emailRegular.test(value) || "이메일을 입력해주세요.",
                   },
                 })}
                 type="email"
@@ -186,21 +188,21 @@ export default function SignUpTemplate({}) {
           <div className="flex flex-col gap-4 px-8">
             <CheckBoxButton
               label="(필수) 개인정보 수집 이용 동의"
-              name="signUp1"
+              name="signUp"
               value="(필수) 개인정보 수집 이용 동의"
               check={signUp1}
               setCheck={setSignUp1}
             />
             <CheckBoxButton
               label="(필수) 개인정보 제3자 제공 동의"
-              name="signUp2"
+              name="signUp"
               value="(필수) 개인정보 제3자 제공 동의"
               check={signUp2}
               setCheck={setSignUp2}
             />
             <CheckBoxButton
               label="(선택) 광고성 정보수진 동의"
-              name="signUp3"
+              name="signUp"
               value="(선택) 광고성 정보수진 동의"
               check={signUp3}
               setCheck={setSignUp3}
