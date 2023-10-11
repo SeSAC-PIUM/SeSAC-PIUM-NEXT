@@ -15,6 +15,7 @@ export default function SignUpContentIProfileProps({
       <div className={className}>
         <SignUpTitleBox title="프로필 사진" />
         <div className="flex gap-10">
+          {/* 이미지 등록 컴포넌트 만들 것. 지금은 그냥 div */}
           <div className="bg-[--color-grayscale-100] w-[150px] h-[150px] rounded-full"></div>
           <div className="flex flex-col m-auto gap-3 ">
             <DefaultButton>이미지 첨부</DefaultButton>
