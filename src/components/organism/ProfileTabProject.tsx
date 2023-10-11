@@ -1,17 +1,13 @@
 import React from "react";
-import ProfileTabContentIntroduce from "./ProfileTabContentIntroduce";
-import ProfileTabContentJob from "./ProfileTabContentJob";
-import ProfileTabContentMBTI from "./ProfileTabContentMBTI";
-import ProfileTabContentLike from "./ProfileTabContentLike";
+import ProfileTabContentApply from "./ProfileTabContentApply";
+import ProfileTabContentMyProject from "./ProfileTabContentMyProject";
 
 export default function ProfileTabProfile() {
   return (
     <>
-      <section className="">
-        <ProfileTabContentIntroduce />
-        <ProfileTabContentJob />
-        <ProfileTabContentMBTI />
-        <ProfileTabContentLike />
+      <section className="flex flex-col gap-6">
+        <ProfileTabContentApply />
+        <ProfileTabContentMyProject />
       </section>
     </>
   );

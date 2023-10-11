@@ -60,7 +60,6 @@ export default function ProfileTab() {
     <>
       <div>
         <TabMenu>
-          {/* <ul className="flex gap-[40px] text-sm font-medium  text-gray-500 border-b border-gray-200"> */}
           {menuArr.map((el, index) => (
             <React.Fragment key={menuArr.name}>
               <li
