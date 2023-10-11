@@ -7,7 +7,7 @@ import ProfileTabContentLike from "./ProfileTabContentLike";
 export default function ProfileTabProfile() {
   return (
     <>
-      <section className="grid">
+      <section className="">
         <ProfileTabContentIntroduce />
         <ProfileTabContentJob />
         <ProfileTabContentMBTI />
