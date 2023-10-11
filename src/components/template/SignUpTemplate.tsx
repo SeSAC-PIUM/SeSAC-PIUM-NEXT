@@ -1,6 +1,6 @@
 import React from "react";
-import GrayButton from "../atoms/button/GrayButton";
-import YellowButton from "../atoms/button/YellowButton";
+// import GrayButton from "../atoms/button/GrayButton";
+// import YellowButton from "../atoms/button/YellowButton";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
 import kakao from "../../img/logo_kakao.svg";

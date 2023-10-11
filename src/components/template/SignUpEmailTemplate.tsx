@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CheckBoxButton from "../atoms/button/CheckBoxButton";
 import GreenButton from "../atoms/button/GreenButton";
 import SignUpInput from "../atoms/input/DefaultInput";
@@ -7,6 +7,11 @@ import WarningLabel from "../atoms/label/WarningLabel";
 import LogoName from "../../img/logo&name.svg";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import auth from "@/firebase/auth";
+import { useRouter } from "next/router";
+import { addDoc, collection } from "firebase/firestore";
+import db from "@/firebase/db";
 
 interface signUpForm {
   email: string;
@@ -20,13 +25,16 @@ const passwordRegular = {
   spc: /[~!@#$%^&*()_+|<>?:{}]/,
 };
 
+var emailRegular = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
 export default function SignUpTemplate({}) {
   const className = "flex flex-wrap bg-slate-100 items-start  pb- w-full";
 
-  const signAll = useRef(null);
-  const signUp1 = useRef(null);
-  const signUp2 = useRef(null);
-  const signUp3 = useRef(null);
+  const router = useRouter();
+  const [signAll, setSignAll] = useState<Boolean>(false);
+  const [signUp1, setSignUp1] = useState<Boolean>(false);
+  const [signUp2, setSignUp2] = useState<Boolean>(false);
+  const [signUp3, setSignUp3] = useState<Boolean>(false);
 
   const {
     register,
@@ -36,16 +44,61 @@ export default function SignUpTemplate({}) {
     getValues,
   } = useForm<signUpForm>({ mode: "onChange" });
 
-  const onValid = () => {};
+  const onValid = async (data: signUpForm) => {
+    if (!(signUp1 && signUp2)) {
+      //문구 정해야함
+      alert("이용약관에 동의 해주세요.");
+      return;
+    }
+    try {
+      // 유저 계정 생성
+      const credentials = await createUserWithEmailAndPassword(
+        auth,
+        data.email,
+        data.password
+      );
+
+      const doc = await addDoc(collection(db, "user"), {
+        userEmail: data.email,
+        adReceive: signUp3,
+      });
+
+      router.push("/signUp_001_Basic");
+    } catch (e) {
+      console.log(e);
+      alert("이미 사용중인 이메일입니다.");
+    }
+    // 유저 정보 업데이트
+    // await updateProfile(credentials.user, {
+    //   displayName: name,
+    // });
+  };
 
   const onInvalid = () => {};
 
+  //약관동의 체크
+  //전체동의 이벤트
   useEffect(() => {
-    console.log("signAll");
-    console.log(signAll.current);
+    if (signAll) {
+      setSignUp1(true);
+      setSignUp2(true);
+      setSignUp3(true);
+    } else if (!signAll && signUp1 && signUp2 && signUp3) {
+      setSignUp1(false);
+      setSignUp2(false);
+      setSignUp3(false);
+    }
   }, [signAll]);
 
-  // console.log(errors);
+  // 개별 동의시 모두 체크하면 전체 동의 체크 아니면 해제
+  useEffect(() => {
+    if (signUp1 && signUp2 && signUp3) {
+      setSignAll(true);
+    } else {
+      setSignAll(false);
+    }
+  }, [signUp1, signUp2, signUp3]);
+
   return (
     <>
       <section className="w-[360px] m-auto pt-[60px]">
@@ -62,6 +115,7 @@ export default function SignUpTemplate({}) {
         <form
           className="flex flex-col gap-4"
           onSubmit={handleSubmit(onValid, onInvalid)}
+          id="signUpForm"
         >
           <div className="flex flex-col gap-4">
             <div>
@@ -69,7 +123,7 @@ export default function SignUpTemplate({}) {
                 register={register("email", {
                   validate: {
                     email: (value) =>
-                      value.includes("@") || "이메일을 입력해주세요.",
+                      emailRegular.test(value) || "이메일을 입력해주세요.",
                   },
                 })}
                 type="email"
@@ -125,7 +179,8 @@ export default function SignUpTemplate({}) {
               label="전체 이용약관 동의"
               name="signIn"
               value="signIn"
-              checkRef={signAll}
+              check={signAll}
+              setCheck={setSignAll}
             />
             <button className="text-[--color-grayscale-500] ">자세히</button>
           </div>
@@ -133,26 +188,31 @@ export default function SignUpTemplate({}) {
           <div className="flex flex-col gap-4 px-8">
             <CheckBoxButton
               label="(필수) 개인정보 수집 이용 동의"
-              name="signUp1"
+              name="signUp"
               value="(필수) 개인정보 수집 이용 동의"
-              checkRef={signUp1}
+              check={signUp1}
+              setCheck={setSignUp1}
             />
             <CheckBoxButton
               label="(필수) 개인정보 제3자 제공 동의"
-              name="signUp2"
+              name="signUp"
               value="(필수) 개인정보 제3자 제공 동의"
-              checkRef={signUp2}
+              check={signUp2}
+              setCheck={setSignUp2}
             />
             <CheckBoxButton
               label="(선택) 광고성 정보수진 동의"
-              name="signUp3"
+              name="signUp"
               value="(선택) 광고성 정보수진 동의"
-              checkRef={signUp3}
+              check={signUp3}
+              setCheck={setSignUp3}
             />
           </div>
         </form>
 
-        <GreenButton className=" my-6" text="가입완료" />
+        <button type="submit" form="signUpForm">
+          <GreenButton className=" my-6" text="가입완료" />
+        </button>
       </section>
     </>
   );

@@ -1,26 +1,31 @@
-import React, { MutableRefObject } from "react";
+import React, { Dispatch, MutableRefObject } from "react";
 interface CheckBoxButtonProps {
   label: string;
   name: string;
   value: string;
-  checkRef?: MutableRefObject<null>;
+  check?: Boolean;
+  setCheck?: Dispatch<Boolean>;
 }
 
 export default function RadioButton({
   label,
   name,
   value,
-  checkRef,
+  check,
+  setCheck,
 }: CheckBoxButtonProps): React.ReactElement {
   return (
     <>
       <label className="h-full p-0">
         <input
-          ref={checkRef}
           type="checkbox"
           name={name}
           value={value}
           className="rounded w-[1.25em] h-[1.25em] mr-2  accent-[--color-main-green] "
+          checked={check?.valueOf()}
+          onChange={() => {
+            setCheck && setCheck(!check);
+          }}
         />
         {label}
       </label>
