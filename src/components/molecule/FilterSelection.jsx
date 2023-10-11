@@ -40,7 +40,7 @@ export default function FilterSelection({ text, length }) {
       <ul className="flex items-center">
         {text.map((ele, index) => {
           return (
-            <li className="mr-4">
+            <li key={index} className="mr-4">
               <button>
                 {ele}
                 <XmarkIcon></XmarkIcon>

@@ -8,7 +8,7 @@ export default function reservationBox() {
   return (
     <>
       <section className="border rounded flex flex-col gap-y-8 p-8">
-        <SelectedButton item="예약하기" />
+        <SelectedButton>예약하기</SelectedButton>
 
         <article className="flex flex-col gap-3">
           <div className="campus">
@@ -34,12 +34,12 @@ export default function reservationBox() {
 
         <article>
           <div className="hashTag flex flex-wrap gap-2">
-            <DefaultButton children="# 노트북대여" />
-            <DefaultButton item="# 빔 프로젝트 대여" />
-            <DefaultButton item="# 주차 불가능" />
-            <DefaultButton item="# 간식 제공" />
-            <DefaultButton item="#  5호선 강일역" />
-            <DefaultButton item="#  8시~23시" />
+            <DefaultButton># 노트북대여</DefaultButton>
+            <DefaultButton># 빔 프로젝트 대여</DefaultButton>
+            <DefaultButton># 주차 불가능</DefaultButton>
+            <DefaultButton># 간식 제공</DefaultButton>
+            <DefaultButton># 5호선 강일역</DefaultButton>
+            <DefaultButton># 58시 ~ 23시</DefaultButton>
           </div>
         </article>
       </section>
