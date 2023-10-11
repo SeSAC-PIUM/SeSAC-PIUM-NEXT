@@ -3,7 +3,7 @@ import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import SignUpInput from "../atoms/input/DefaultInput";
 import WarningLabel from "../atoms/label/WarningLabel";
 import Modal from "../atoms/modal/Modal";
-import CardTitle from "../../components/atoms/label/CardTitle";
+
 interface SignUpContentNameProps {
   className: string;
 }

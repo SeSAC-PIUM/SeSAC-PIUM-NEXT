@@ -3,6 +3,7 @@ import SignUpContentMBTI from "./SignUpContentMBTI";
 import SignUpContentMBTI2 from "./SignUpContentMBTI2";
 import SignUpContentLike from "./SignUpContentLike";
 import SignUpContentIntroduce from "./SignUpContentIntroduce";
+import SignUpContentIProfile from "./SignUpContentIProfile";
 import SignUpContentHistory from "./SignUpContentHistory";
 
 export default function SignUpContentSecond() {
@@ -10,6 +11,7 @@ export default function SignUpContentSecond() {
 
   return (
     <>
+      <SignUpContentIProfile className={className} />
       <SignUpContentIntroduce className={className} />
       {/* <SignUpContentMBTI /> */}
       <SignUpContentMBTI2 className={className} />

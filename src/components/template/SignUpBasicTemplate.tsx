@@ -26,10 +26,10 @@ export default function SignUpTemplate({}) {
         />
         <SignUpContentFirst />
 
-        <BorderBottom />
+        <BorderBottom marginTop={"mt-2"} marginBottom={"mb-2"} />
 
         <SignUpContentSecond />
-        <BorderBottom />
+        <BorderBottom marginTop={"mt-2"} marginBottom={"mb-2"} />
 
         <GreenButton
           className="max-w-[400px] w-full m-auto mt-12"
