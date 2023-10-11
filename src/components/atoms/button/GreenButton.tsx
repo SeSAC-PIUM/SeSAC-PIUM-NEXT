@@ -12,7 +12,7 @@ interface GreenButtonProps {
 export default function GreenButton({ text, className }: GreenButtonProps) {
   return (
     <div className={className}>
-      <div className="bg-[--color-main-green] text-[--color-grayscale-100]  rounded-[4px] py-4 px-16 w-full font-bold">
+      <div className="bg-[--color-main-green] text-[--color-grayscale-100]  rounded-[4px] py-4 px-16 w-full font-bold text-center">
         {text}
       </div>
     </div>
