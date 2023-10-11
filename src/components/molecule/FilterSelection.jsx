@@ -29,7 +29,7 @@ export default function FilterSelection({ text, length }) {
   return (
     <>
       <p
-        className={`absolute top-4${
+        className={`absolute ${
           text.length >= 5 && length
             ? "animate-[alert_1s_ease-in-out_3s_alternate_forwards]"
             : "hidden"
