@@ -1,6 +1,7 @@
 export default function ChipButton({
   val,
   item,
+  borderGreen,
   key,
   check,
   onClick,
@@ -13,7 +14,7 @@ export default function ChipButton({
       <label
         className={`border-[1px] ${all} rounded ${width} flex justify-center py-2 px-4 cursor-pointer ${fontSize} ${
           check.indexOf(item) > -1
-            ? "border-[--color-main-green] text-[--color-main-green]"
+            ? (`${borderGreen?'border-[--color-main-green] text-[--color-main-green]':'bg-[--color-main-green] text-white'}`)
             : "border-[--color-grayscale-200]"
         }`}
       >

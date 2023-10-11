@@ -27,9 +27,9 @@ export default function FilterSelection({ text, length }) {
 
 
   return (
-    <>
+    <div className="relative ml-4">
       <p
-        className={`absolute ${
+        className={`absolute top-[-20px] text-[#ff6868] ${
           text.length >= 5 && length
             ? "animate-[alert_1s_ease-in-out_3s_alternate_forwards]"
             : "hidden"
@@ -49,6 +49,6 @@ export default function FilterSelection({ text, length }) {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }
