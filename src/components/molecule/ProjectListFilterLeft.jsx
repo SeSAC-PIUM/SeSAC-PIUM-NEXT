@@ -4,20 +4,35 @@ import FilterSelection from "./FilterSelection";
 import { useState, useCallback, useEffect } from "react";
 
 export default function ProjectListFilterLeft() {
-  
   const [select, setSelect] = useState([]);
-  
-  const selectionCampus = (check) =>{
-    console.log(check)
-    setSelect(check)
-    console.log(select)
+  const [length, setLength] = useState()
+
+
+  // const [count, setCount] = useState(text.length);
+  // setCount((prev)=>[...prev, text])
+
+// useEffect(()=>{
+//   setCount(text.length)
+
+// })
+
+  const selectionCampus = (check) => {
+    console.log(check);
+    setSelect(check);
+    console.log(select);
+
+  };
+
+  const isBoolean2 = (isb)=>{
+    setLength(isb)
   }
+
+  const empty = () => {};
 
   // useEffect(() => {
   //   selectionCampus()
   // }, [select]);
-  
-  
+
   const role = [
     {
       item: "전체",
@@ -94,7 +109,6 @@ export default function ProjectListFilterLeft() {
     },
   ];
 
-
   return (
     <div className="flex items-center">
       <div className="mr-2">
@@ -103,6 +117,9 @@ export default function ProjectListFilterLeft() {
           text={role}
           wrapWidth={"w-[304px]"}
           fontSize={"text-[14px]"}
+          width={""}
+          onLifting={empty}
+          onLifting2={empty}
         ></FilterItemForm>
       </div>
       <div>
@@ -113,10 +130,13 @@ export default function ProjectListFilterLeft() {
           fontSize={"text-[14px]"}
           width={"w-[69px]"}
           onLifting={selectionCampus}
+          onLifting2={isBoolean2}
         ></FilterItemForm>
       </div>
-      <FilterSelection text={select}></FilterSelection>
-      <button className="bg-[--color-main-green] text-white py-1 px-3 rounded-[20px] text-[14px]">완료</button>
+      <FilterSelection text={select} length={length}></FilterSelection>
+      <button className="bg-[--color-main-green] text-white py-1 px-3 rounded-[20px] text-[14px]">
+        완료
+      </button>
     </div>
   );
 }

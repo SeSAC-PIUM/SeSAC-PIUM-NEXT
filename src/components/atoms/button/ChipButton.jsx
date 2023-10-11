@@ -12,7 +12,7 @@ export default function ChipButton({
     <>
       <label
         className={`border-[1px] ${all} rounded ${width} flex justify-center py-2 px-4 cursor-pointer ${fontSize} ${
-          check.indexOf(val) > -1
+          check.indexOf(item) > -1
             ? "border-[--color-main-green] text-[--color-main-green]"
             : "border-[--color-grayscale-200]"
         }`}
@@ -25,9 +25,9 @@ export default function ChipButton({
           id={val}
           value={val}
           onChange={(e) => {
-            onClick(e.target.checked, e.target.value);
+            onClick(e.target.checked, e.target.parentElement.textContent, e.target.parentElement.textContent);
           }}
-          checked={check.indexOf(val) > -1 ? true : false}
+          checked={check.indexOf(item) > -1 ? true : false}
         />
         {item}
       </label>
