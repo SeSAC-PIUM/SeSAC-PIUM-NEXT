@@ -41,14 +41,16 @@ const Desc = styled.div`
 `;
 
 import React from "react";
-import ProfileTabContent from "../organism/ProfileTabContent";
+import ProfileTabContentIntroduce from "../organism/ProfileTabContentIntroduce";
+import ProfileTabProfile from "../organism/ProfileTabProfile";
+import ProfileTabProject from "../organism/ProfileTabProject";
 
 export default function ProfileTab() {
   const [currentTab, clickTab] = useState(0);
 
   const menuArr = [
-    { name: "프로필 설정", content: <ProfileTabContent /> },
-    { name: "프로젝트 관리", content: "프로젝트 관리" },
+    { name: "프로필 설정", content: <ProfileTabProfile /> },
+    { name: "프로젝트 관리", content: <ProfileTabProject /> },
     { name: "공간예약", content: "공간예약" },
   ];
 
