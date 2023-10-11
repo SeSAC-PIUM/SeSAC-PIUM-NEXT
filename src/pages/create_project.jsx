@@ -4,19 +4,24 @@
 // // import DefaultButton from "../components/atoms/button/DefaultButton";
 import ChipsForm from "../components/molecule/ChipsForm";
 import CardTitle from "../components/atoms/label/CardTitle";
-import SignUpInput from "../components/atoms/input/SignUpInput";
+import SignUpInput from "../components/atoms/input/DefaultInput";
+import DefaultInput from "../components/atoms/input/DefaultInput";
 // import { skiils } from "../data/skill";
 import { useState, useCallback } from "react";
 import PageTitle from "../components/atoms/label/PageTitle";
 import SectionTitle from "../components/atoms/label/SectionTitle";
 import DefaultButton from "../components/atoms/button/DefaultButton";
-import DefaultCard from "../components/atoms/card/DefaultCard";
+import DefaultCardP32 from "../components/atoms/card/DefaultCardP32";
 import SelectedButton from "../components/atoms/button/SelectedButton";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
+import EffectComponent from "../components/organism/RefTest";
+import BorderBottom from "../components/atoms/label/BorderBottom";
+import VariationBox from "../components/molecule/VariationBox";
+import DatePickerComponent from "../components/organism/DatePicker";
 
-function BorderBottom() {
-  return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
-}
+// function BorderBottom() {
+//   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
+// }
 
 export default function CreateProject() {
   const days = [
@@ -113,7 +118,10 @@ export default function CreateProject() {
             title2=""
             PointTitle2=""
           ></SectionTitle>
-          <BorderBottom></BorderBottom>
+          <BorderBottom
+            marginTop={"mt-4"}
+            marginBottom={"mb-12"}
+          ></BorderBottom>
           <div className="flex flex-col gap-12">
             <div className="flex flex-row gap-6">
               <div className="flex-1 flex flex-col">
@@ -132,9 +140,10 @@ export default function CreateProject() {
                   title2=""
                   PointTitle2=""
                 ></CardTitle>
-                <div className="flex gap-[10px]">
-                  <SignUpInput placeholder="시작 날짜"></SignUpInput>
-                  <SignUpInput placeholder="마감 날짜"></SignUpInput>
+                <div>
+                  <DatePickerComponent></DatePickerComponent>
+                  {/* <DefaultInput placeholder="시작 날짜"></DefaultInput>
+                  <DefaultInput placeholder="마감 날짜"></DefaultInput> */}
                 </div>
               </div>
             </div>
@@ -163,9 +172,9 @@ export default function CreateProject() {
                 title2=""
                 PointTitle2=""
               ></CardTitle>
-              <DefaultCard>
+              <DefaultCardP32>
                 {/* 데이터 받아와야 함 */}프론트엔드 / 멘토
-              </DefaultCard>
+              </DefaultCardP32>
             </div>
             <div>
               <CardTitle
@@ -174,10 +183,10 @@ export default function CreateProject() {
                 title2=""
                 PointTitle2=""
               ></CardTitle>
-              <div className="flex">
+              <div className="flex gap-3">
                 <SignUpInput placeholder="포지션을 선택해주세요."></SignUpInput>
-                <DefaultCard>멘토 1명</DefaultCard>
-                <DefaultCard>멘티 1명</DefaultCard>
+                <VariationBox>멘토</VariationBox>
+                <VariationBox>멘티</VariationBox>
                 <SelectedButton>추가</SelectedButton>
               </div>
             </div>
@@ -190,8 +199,29 @@ export default function CreateProject() {
             title2=""
             PointTitle2=""
           ></SectionTitle>
-          <BorderBottom></BorderBottom>
+          <BorderBottom
+            marginTop={"mt-4"}
+            marginBottom={"mb-12"}
+          ></BorderBottom>
           <ThumbnailMaker></ThumbnailMaker>
+        </section>
+        <section className="mb-40">
+          <SectionTitle
+            title1="프로젝트에 대해 소개해주세요"
+            PointTitle1=""
+            title2=""
+            PointTitle2=""
+          ></SectionTitle>
+          <BorderBottom
+            marginTop={"mt-4"}
+            marginBottom={"mb-12"}
+          ></BorderBottom>
+          <input
+            type="text"
+            placeholder="12글자 이내로 작성"
+            maxlength="12"
+            className="py-4 px-5 w-full max-w-[500px] rounded border-[1px] border-[--color-grayscale-200] focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none placeholder-[#9090A0] text-[14px]"
+          />
         </section>
       </main>
     </div>

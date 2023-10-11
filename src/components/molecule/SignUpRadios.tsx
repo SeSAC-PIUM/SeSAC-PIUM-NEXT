@@ -1,5 +1,5 @@
 import React from "react";
-import SignUpLabel from "../atoms/label/SignUpLabel";
+import SignUpLabel from "../atoms/label/DefaultLabel";
 import Image from "next/image";
 import modal from "../../img/modal.png";
 import SignUpRadio from "../atoms/button/RadioButton";

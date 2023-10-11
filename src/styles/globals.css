@@ -20,7 +20,8 @@ a {
 }
 
 ul,
-ol {
+ol,
+li {
   list-style: none;
 }
 
@@ -34,10 +35,10 @@ body {
 
 label {
   /* margin-right: 32px; */
-  display: flex;
+  /* display: flex;
   align-items: center;
   cursor: pointer;
-  padding-bottom: 8px;
+  padding-bottom: 8px; */
 }
 
 input[type="radio"] {

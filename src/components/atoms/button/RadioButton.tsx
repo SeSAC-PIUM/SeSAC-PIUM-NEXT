@@ -12,7 +12,7 @@ export default function RadioButton({
 }: RadioButtonProps): React.ReactElement {
   return (
     <>
-      <label className="h-full p-0 ">
+      <label className="h-full p-0 mr-8">
         <input
           type="radio"
           name={name}

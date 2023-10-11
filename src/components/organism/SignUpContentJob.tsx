@@ -1,14 +1,12 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
-import SignUpInput from "../atoms/input/SignUpInput";
-import DefaultCard from "../atoms/card/DefaultCard";
 
 // import SignUpBox from "../molecule/SignUpBox";
 import ChipsForm from "../molecule/ChipsForm";
 interface SignUpContentJobProps {
   className: string;
 }
-const skiils = [
+const skills = [
   {
     item: "기획",
     value: "1",
@@ -38,7 +36,7 @@ export default function SignUpContentJob({ className }: SignUpContentJobProps) {
         title="희망직무"
         modal="프로젝트에 희망하는 직무를 선택해주세요"
       />
-      <ChipsForm text={skiils} />
+      <ChipsForm text={skills} />
     </div>
   );
 }

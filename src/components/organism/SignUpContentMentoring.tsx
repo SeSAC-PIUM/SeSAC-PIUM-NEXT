@@ -1,6 +1,6 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
-import SignUpInput from "../atoms/input/SignUpInput";
+import SignUpInput from "../atoms/input/DefaultInput";
 import RadioButton from "../atoms/button/RadioButton";
 
 interface SignUpContentMentoringProps {
