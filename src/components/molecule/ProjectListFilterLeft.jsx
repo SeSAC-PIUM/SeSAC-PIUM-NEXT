@@ -5,12 +5,18 @@ import { useState, useCallback, useEffect } from "react";
 
 export default function ProjectListFilterLeft() {
   
-  const [checkk, setCheck] = useState([]);
+  const [select, setSelect] = useState([]);
+  
   const selectionCampus = (check) =>{
-    setCheck(check)
-    // console.log(checkk)
     console.log(check)
+    setSelect(check)
+    console.log(select)
   }
+
+  // useEffect(() => {
+  //   selectionCampus()
+  // }, [select]);
+  
   
   const role = [
     {
@@ -109,7 +115,7 @@ export default function ProjectListFilterLeft() {
           onLifting={selectionCampus}
         ></FilterItemForm>
       </div>
-      <FilterSelection></FilterSelection>
+      <FilterSelection text={select}></FilterSelection>
       <button className="bg-[--color-main-green] text-white py-1 px-3 rounded-[20px] text-[14px]">완료</button>
     </div>
   );
