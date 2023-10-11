@@ -16,11 +16,25 @@ export default function FilterSelection({ text, length }) {
   //     : setCount(count - 1 < 1 ? count : count - 1);
   // };
   // console.log(count)
-  // const timer = setTimeout(() => "hidden", 1000);
-  // console.log(timer);
+  // if (text.length >= 5 && length) {
+  //   const timer = setTimeout(() => {
+  //     const b = "hidden";
+  //     console.log(b);
+  //     return b
+  //   }, 1000);
+  //   console.log(timer)
+  // }
+
+
   return (
-    <>
-      <p className={`${text.length >= 5 && length ? "" : "hidden"}`}>
+    <div className="relative ml-4">
+      <p
+        className={`absolute top-[-20px] text-[#ff6868] ${
+          text.length >= 5 && length
+            ? "animate-[alert_1s_ease-in-out_3s_alternate_forwards]"
+            : "hidden"
+        }`}
+      >
         최대 5개까지 선택 가능합니다
       </p>
       <ul className="flex items-center">
@@ -35,6 +49,6 @@ export default function FilterSelection({ text, length }) {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 }

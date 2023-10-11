@@ -4,7 +4,6 @@
 // // import DefaultButton from "../components/atoms/button/DefaultButton";
 import ChipsForm from "../components/molecule/ChipsForm";
 import CardTitle from "../components/atoms/label/CardTitle";
-import SignUpInput from "../components/atoms/input/DefaultInput";
 import DefaultInput from "../components/atoms/input/DefaultInput";
 // import { skiils } from "../data/skill";
 import { useState, useCallback } from "react";
@@ -18,6 +17,7 @@ import EffectComponent from "../components/organism/RefTest";
 import BorderBottom from "../components/atoms/label/BorderBottom";
 import VariationBox from "../components/molecule/VariationBox";
 import DatePickerComponent from "../components/organism/DatePicker";
+import DropDown from "../components/molecule/DropDown";
 
 // function BorderBottom() {
 //   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
@@ -131,7 +131,8 @@ export default function CreateProject() {
                   title2=""
                   PointTitle2=""
                 ></CardTitle>
-                <SignUpInput placeholder="캠퍼스를 선택해주세요"></SignUpInput>
+                {/* <DefaultInput placeholder="캠퍼스를 선택해주세요"></DefaultInput> */}
+                <DropDown></DropDown>
               </div>
               <div className="flex-1">
                 <CardTitle
@@ -184,7 +185,7 @@ export default function CreateProject() {
                 PointTitle2=""
               ></CardTitle>
               <div className="flex gap-3">
-                <SignUpInput placeholder="포지션을 선택해주세요."></SignUpInput>
+                <DefaultInput placeholder="포지션을 선택해주세요."></DefaultInput>
                 <VariationBox>멘토</VariationBox>
                 <VariationBox>멘티</VariationBox>
                 <SelectedButton>추가</SelectedButton>

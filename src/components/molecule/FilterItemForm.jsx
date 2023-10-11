@@ -26,13 +26,13 @@ export default function FilterItemForm({text, wrapWidth, fontSize, width, onLift
     //   // console.log('5개 이상')
     // }
     
-    if (item ==="all") {
+    if (item ==="전체") {
       setCheck([]);
     }
-    if (item !== "all") {
+    if (item !== "전체") {
       setCheck(
         check.filter((el) => {
-          return el !== "all";
+          return el !== "전체";
         })
         );
       }
@@ -48,10 +48,7 @@ export default function FilterItemForm({text, wrapWidth, fontSize, width, onLift
         })
         );
       }
-      
-      // 나중에 호출하고 싶음
-      // onLifting(check)
-      
+
       
     };
     
@@ -68,6 +65,7 @@ export default function FilterItemForm({text, wrapWidth, fontSize, width, onLift
         <ChipButton
           val={ele.value}
           item={ele.item}
+          borderGreen={ele.borderGreen}
           key={index}
           check={check}
           onClick={onClickEvent}

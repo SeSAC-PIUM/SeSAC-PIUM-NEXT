@@ -42,22 +42,27 @@ export default function ProjectListFilterLeft() {
     {
       item: "기획",
       value: "PM",
+      borderGreen: true
     },
     {
       item: "UX/UI디자인",
       value: "uxui",
+      borderGreen: true
     },
     {
       item: "퍼블리셔",
       value: "publisher",
+      borderGreen: true
     },
     {
       item: "프론트엔드",
       value: "frontend",
+      borderGreen: true
     },
     {
       item: "백엔드",
       value: "backend",
+      borderGreen: true
     },
   ];
 
@@ -66,46 +71,57 @@ export default function ProjectListFilterLeft() {
       item: "전체",
       value: "all",
       all: "bg-[--color-main-green] text-white",
+      borderGreen: true
     },
     {
       item: "강동",
       value: "Gangdong",
+      borderGreen: true
     },
     {
       item: "강서",
       value: "Gangseo",
+      borderGreen: true
     },
     {
       item: "광진",
       value: "Gwangjin",
+      borderGreen: true
     },
     {
       item: "금천",
       value: "Geumcheon",
+      borderGreen: true
     },
     {
       item: "동작",
       value: "Dongjak",
+      borderGreen: true
     },
     {
       item: "마포",
       value: "Mapo",
+      borderGreen: true
     },
     {
       item: "서대문",
       value: "Seodaemun",
+      borderGreen: true
     },
     {
       item: "용산",
       value: "Yongsan",
+      borderGreen: true
     },
     {
       item: "종로",
       value: "Jongno",
+      borderGreen: true
     },
     {
       item: "중구",
       value: "Junggu",
+      borderGreen: true
     },
   ];
 
