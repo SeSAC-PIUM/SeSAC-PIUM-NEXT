@@ -9,13 +9,13 @@ export default function ChipsForm(props) {
     console.log(checked);
     console.log(item);
 
-    if (item === "undecided") {
+    if (item === "요일 미정") {
       setCheck([]);
     }
-    if (item !== "undecided") {
+    if (item !== "요일 미정") {
       setCheck(
         check.filter((el) => {
-          return el !== "undecided";
+          return el !== "요일 미정";
         })
       );
     }
