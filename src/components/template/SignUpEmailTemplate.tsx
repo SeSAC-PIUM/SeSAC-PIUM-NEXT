@@ -31,6 +31,7 @@ export default function SignUpTemplate({}) {
   const className = "flex flex-wrap bg-slate-100 items-start  pb- w-full";
 
   const router = useRouter();
+  const [isLoading, setLoading] = useState(false);
   const [signAll, setSignAll] = useState<Boolean>(false);
   const [signUp1, setSignUp1] = useState<Boolean>(false);
   const [signUp2, setSignUp2] = useState<Boolean>(false);
@@ -50,6 +51,9 @@ export default function SignUpTemplate({}) {
       alert("이용약관에 동의 해주세요.");
       return;
     }
+
+    setLoading(true);
+
     try {
       // 유저 계정 생성
       const credentials = await createUserWithEmailAndPassword(
@@ -68,6 +72,9 @@ export default function SignUpTemplate({}) {
       console.log(e);
       alert("이미 사용중인 이메일입니다.");
     }
+
+    setLoading(false);
+
     // 유저 정보 업데이트
     // await updateProfile(credentials.user, {
     //   displayName: name,
@@ -210,8 +217,8 @@ export default function SignUpTemplate({}) {
           </div>
         </form>
 
-        <button type="submit" form="signUpForm">
-          <GreenButton className=" my-6" text="가입완료" />
+        <button type="submit" form="signUpForm" disabled={isLoading}>
+          <GreenButton className="my-6" text="가입완료" />
         </button>
       </section>
     </>
