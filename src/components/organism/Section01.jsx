@@ -64,7 +64,7 @@ export default function Home() {
     </div>,
   ];
   return (
-    <main>
+    <main className="mb-[80px]">
       {/* <h1>메인 작업 페이지 입니다.</h1> */}
       {/* <!-- Slides --> */}
       <div className="flex justify-center">
