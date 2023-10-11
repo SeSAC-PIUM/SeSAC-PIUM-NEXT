@@ -9,7 +9,10 @@ export default function ProfileTabContent() {
   return (
     <>
       <SectionCard addClassName="flex flex-col gap-8">
-        <p className="font-semibold">🌱 이런 일을 했었어요</p>
+        <DefaultLabel
+          title="🌱 이런 일을 했었어요 "
+          addClassName="font-semibold"
+        />
 
         <div className="flex flex-col gap-6">
           <div>

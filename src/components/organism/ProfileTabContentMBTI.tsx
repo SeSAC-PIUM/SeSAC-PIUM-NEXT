@@ -1,6 +1,7 @@
 import React from "react";
 import DefaultCard from "../atoms/card/DefaultCard";
 import SectionCard from "../atoms/card/SectionCard";
+import DefaultLabel from "../atoms/label/DefaultLabel";
 
 export default function ProfileTabContent() {
   const addClassName = "inline-block mr-3 px-7";
@@ -8,7 +9,7 @@ export default function ProfileTabContent() {
   return (
     <>
       <SectionCard addClassName="flex flex-col gap-8">
-        <p className="font-semibold">🌱 MBTI </p>
+        <DefaultLabel title="🌱 MBTI " addClassName="font-semibold" />
 
         <div>
           <DefaultCard addClassName={addClassName}>E</DefaultCard>

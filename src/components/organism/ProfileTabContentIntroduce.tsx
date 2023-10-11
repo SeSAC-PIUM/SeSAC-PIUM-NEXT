@@ -9,21 +9,23 @@ export default function ProfileTabContent() {
   return (
     <>
       <SectionCard addClassName="flex flex-col gap-8">
-        <p className="font-semibold">🌱 저를 소개할게요! </p>
+        <DefaultLabel
+          title="🌱 저를 소개할게요! "
+          addClassName="font-semibold"
+        />
 
         <div className="flex flex-col gap-6">
           <div>
             <DefaultCard addClassName={addClassName}> 강동캠퍼스</DefaultCard>
-            <span className="p-2 text-[--color-grayscale-600]"> 에서</span>
+            <span className=" text-[--color-grayscale-600]"> 에서</span>
           </div>
 
           <div>
             <DefaultCard addClassName={addClassName}>
               모든 직무에 활용 가능한 퍼블리싱 과정
             </DefaultCard>
-            <span className="p-2 text-[--color-grayscale-600]">
-              {" "}
-              를 듣고 있어요
+            <span className=" text-[--color-grayscale-600]">
+              을 듣고 있어요
             </span>
           </div>
 
