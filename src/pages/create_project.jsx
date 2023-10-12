@@ -1,27 +1,13 @@
-// // import SubmitButton from "../components/atoms/button/SubmitButton";
-// // import MainMakingProjectButton from "../components/atoms/button/MainMakingProjectButton";
-// // import ProfileButton from "../components/atoms/button/ProfileButton";
-// // import DefaultButton from "../components/atoms/button/DefaultButton";
 import ChipsForm from "../components/molecule/ChipsForm";
 import CardTitle from "../components/atoms/label/CardTitle";
-import DefaultInput from "../components/atoms/input/DefaultInput";
-// import { skiils } from "../data/skill";
-import { useState, useCallback } from "react";
 import PageTitle from "../components/atoms/label/PageTitle";
 import SectionTitle from "../components/atoms/label/SectionTitle";
-import DefaultButton from "../components/atoms/button/DefaultButton";
 import DefaultCardP32 from "../components/atoms/card/DefaultCardP32";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
-import EffectComponent from "../components/organism/RefTest";
 import BorderBottom from "../components/atoms/label/BorderBottom";
 import DatePickerComponent from "../components/organism/DatePicker";
 import UseAutocomplete from "../components/molecule/DropDown";
-import { Autocomplete, TextField } from "@mui/material";
 import CreateProjectRole from "../components/molecule/CreateProjectRole";
-
-// function BorderBottom() {
-//   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
-// }
 
 export default function CreateProject() {
   const empty = () => {};
@@ -146,7 +132,6 @@ export default function CreateProject() {
                   title2=""
                   PointTitle2=""
                 ></CardTitle>
-                {/* <DefaultInput placeholder="캠퍼스를 선택해주세요"></DefaultInput> */}
                 <UseAutocomplete
                   kind={"campus"}
                   onLifting={empty}
@@ -163,8 +148,6 @@ export default function CreateProject() {
                 ></CardTitle>
                 <div>
                   <DatePickerComponent></DatePickerComponent>
-                  {/* <DefaultInput placeholder="시작 날짜"></DefaultInput>
-                  <DefaultInput placeholder="마감 날짜"></DefaultInput> */}
                 </div>
               </div>
             </div>
@@ -235,25 +218,3 @@ export default function CreateProject() {
     </div>
   );
 }
-
-// export default function Home() {
-//   // const [check, setCheck] = useState([]);
-//   // const onClickEvent = useCallback(
-//   //   (checked, item) => {
-//   //     console.log(check);
-//   //     if (checked) {
-//   //       setCheck((prev) => [...prev, item]);
-//   //     } else if (!checked) {
-//   //       setCheck(check.filter((el) => el !== item));
-//   //     }
-//   //   },
-//   //   [check]
-//   // );
-//   return (
-//     <main>
-//       <div className="flex justify-center items-center">
-//       <ChipsForm text={skills}></ChipsForm>
-//       </div>
-//     </main>
-//   );
-// }
