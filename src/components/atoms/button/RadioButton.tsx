@@ -1,9 +1,11 @@
 import React from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 interface RadioButtonProps {
   label: string;
   name: string;
   value: string;
   addClassName?: string;
+  register: UseFormRegisterReturn;
 }
 
 export default function RadioButton({
@@ -11,12 +13,14 @@ export default function RadioButton({
   name,
   value,
   addClassName,
+  register,
 }: RadioButtonProps): React.ReactElement {
   return (
     <>
       {/* addClassName="flex justify-center" */}
       <label className={`${addClassName} flex justify-center h-full p-0 mr-8 `}>
         <input
+          {...register}
           type="radio"
           name={name}
           value={value}
