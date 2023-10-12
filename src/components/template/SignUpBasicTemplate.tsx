@@ -20,7 +20,7 @@ interface basicInfo {
 
 export default function SignUpTemplate({}) {
   // const className = "flex flex-wrap  bg-slate-100 items-start py-6 w-full";
-  const className = "flex flex-col items-start py-6 ";
+  const className = "flex flex-col items-start py-8 ";
 
   const {
     register,
@@ -45,7 +45,7 @@ export default function SignUpTemplate({}) {
             PointTitle1="기본정보"
             title2="입력"
             PointTitle2=""
-            border="border-b-[1px] border-[--color-grayscale-600]"
+            border="border-b-[1px] border-[--color-grayscale-200]"
           />
           {/* <SignUpContentFirst register={register} error /> */}
 
@@ -54,7 +54,13 @@ export default function SignUpTemplate({}) {
             register={register("name", {
               required: true,
               validate: {
-                name: (value) => value.length < 3 && "세글자 이상 입력하세요.",
+                // name: (value) => value.length < 3 && "세글자 이상 입력하세요.",
+                name: (value) => {
+                  const koreanRegex = /^[가-힣]*$/;
+                  return (
+                    koreanRegex.test(value) || "한글로 실명을 입력해주세요."
+                  );
+                },
               },
             })}
             errors={errors}
