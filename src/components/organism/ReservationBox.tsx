@@ -3,12 +3,19 @@ import SelectedButton from "../atoms/button/SelectedButton";
 import DefaultLabel from "../atoms/label/DefaultLabel";
 import DefaultButton from "../atoms/button/DefaultButton";
 import DefaultCard from "../atoms/card/DefaultCard";
+import Link from "next/link";
 
 export default function reservationBox() {
   return (
     <>
       <section className="border rounded flex flex-col gap-y-8 p-8">
-        <SelectedButton>예약하기</SelectedButton>
+        <Link
+          href={
+            "https://docs.google.com/forms/d/e/1FAIpQLScZnIyWnFTsqgqYob7wJrtvaLUHrTtRRi-jpIwVnAemSONX6w/viewform"
+          }
+        >
+          <SelectedButton>예약하기</SelectedButton>
+        </Link>
 
         <article className="flex flex-col gap-3">
           <div className="campus">
