@@ -54,7 +54,13 @@ export default function SignUpTemplate({}) {
             register={register("name", {
               required: true,
               validate: {
-                name: (value) => value.length < 3 && "세글자 이상 입력하세요.",
+                // name: (value) => value.length < 3 && "세글자 이상 입력하세요.",
+                name: (value) => {
+                  const koreanRegex = /^[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]*$/;
+                  return (
+                    koreanRegex.test(value) || "한글로 실명을 입력해주세요."
+                  );
+                },
               },
             })}
             errors={errors}
