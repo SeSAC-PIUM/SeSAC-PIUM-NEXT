@@ -2,7 +2,7 @@ export default function ChipButton({
   val,
   item,
   borderGreen,
-  key,
+  kkey,
   check,
   onClick,
   width = "w-fit",
@@ -10,8 +10,9 @@ export default function ChipButton({
   all,
 }) {
   return (
-    <>
+
       <label
+      key={kkey}
         className={`border-[1px] ${all} rounded ${width} flex justify-center py-2 px-4 cursor-pointer ${fontSize} ${
           check.indexOf(item) > -1
             ? (`${borderGreen?'border-[--color-main-green] text-[--color-main-green]':'bg-[--color-main-green] text-white'}`)
@@ -19,8 +20,7 @@ export default function ChipButton({
         }`}
       >
         <input
-          // className="hidden"
-          key={key}
+          className="hidden"
           type="checkbox"
           name="skill"
           id={val}
@@ -32,6 +32,6 @@ export default function ChipButton({
         />
         {item}
       </label>
-    </>
+
   );
 }

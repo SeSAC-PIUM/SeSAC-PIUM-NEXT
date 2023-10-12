@@ -12,12 +12,7 @@ export default function SignUpContentIntroduce({
     <>
       <div className={className}>
         <SignUpTitleBox title="자기소개" />
-        <div className="flex flex-col gap-2 relative">
-          <TextInput placeholder="소개" />
-          <span className="absolute top-full flex end-0 text-gray-400 font pt-1">
-            0 / 200자
-          </span>
-        </div>
+        <TextInput />
       </div>
     </>
   );

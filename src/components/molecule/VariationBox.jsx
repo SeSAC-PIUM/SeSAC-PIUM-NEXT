@@ -1,15 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DefaultCardP32 from "../atoms/card/DefaultCardP32";
 import { FaMinus } from "../font-icon/MinusIcon";
 import { FaPlus } from "../font-icon/PlusIcon";
 
-export default function VariationBox({ children }) {
+export default function VariationBox({ children, kind, onLifting }) {
   const [count, setCount] = useState(1);
   const onButtonClick = (IsClick) => {
     IsClick
       ? setCount(count + 1 > 9 ? count : count + 1)
       : setCount(count - 1 < 1 ? count : count - 1);
   };
+  
+  useEffect(() => {
+    onLifting(kind, count)
+  },[count]);
 
   return (
     <>

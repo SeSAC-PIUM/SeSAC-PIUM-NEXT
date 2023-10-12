@@ -1,29 +1,104 @@
-export default function DropDown({}) {
-  return (
-    <fieldset>
-      <input
-        autocomplete="off"
-        role="combobox"
-        list=""
-        id="input"
-        name="browsers"
-        placeholder="캠퍼스 선택"
-        type="text"
-        className="focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none  leading-8 text-slate-700 text-[14px] placeholder-[#9090A0] rounded py-2 px-8 ring-1 ring-[#E9E9EE] shadow-sm w-full"
-      />
+import * as React from "react";
+import { useAutocomplete } from "@mui/base/useAutocomplete";
+import { styled } from "@mui/system";
+import { useState, useEffect } from "react";
 
-      <datalist id="browsers" role="listbox">
-        <option value="강동캠퍼스">강동캠퍼스</option>
-        <option value="강서캠퍼스">강서캠퍼스</option>
-        <option value="광진캠퍼스">광진캠퍼스</option>
-        <option value="금천캠퍼스">금천캠퍼스</option>
-        <option value="동작캠퍼스">동작캠퍼스</option>
-        <option value="마포캠퍼스">마포캠퍼스</option>
-        <option value="서대문캠퍼스">서대문캠퍼스</option>
-        <option value="용산캠퍼스">용산캠퍼스</option>
-        <option value="종로캠퍼스">종로캠퍼스</option>
-        <option value="중구캠퍼스">중구캠퍼스</option>
-      </datalist>
-    </fieldset>
+const Label = styled("label")({
+  display: "block",
+});
+
+const Input = styled("input")(({ theme }) => ({
+  width: "100%",
+  color: "#000",
+  border: "1px solid #e9e9ee",
+  borderRadius: "4px",
+  padding: "8px 32px",
+  lineHeight: "32px",
+  fontSize: "13.333px",
+  boxSizing: "border-box",
+  marginBottom: "10px",
+  "&:focus": {
+    outline: "2px solid #2DA96E",
+    cursor: "pointer",
+  },
+}));
+
+const Listbox = styled("ul")(({ theme }) => ({
+  width: "100%",
+  padding: 0,
+  zIndex: 1,
+  position: "absolute",
+  listStyle: "none",
+  backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
+  overflow: "auto",
+  border: "1px solid #e9e9ee",
+  borderRadius: "4px",
+  padding:"10px",
+  "& li": {
+    // height:"40px",
+    lineHeight:"40px",
+    fontSize:"16px",
+    padding:"0 16px",
+    borderRadius:"4px",
+    cursor: "pointer",
+  },
+  "& li.Mui-focused": {
+    backgroundColor: "#2DA96E",
+    color: "white",
+    cursor: "pointer",
+  },
+}));
+
+
+export default function UseAutocomplete({kind, onLifting, item, placeholder}) {
+  const [value, setValue] = useState();
+
+  const {
+    getRootProps,
+    getInputLabelProps,
+    getInputProps,
+    getListboxProps,
+    getOptionProps,
+    groupedOptions,
+  } = useAutocomplete({
+    value:value,
+    onChange:(event, newValue) => {
+      setValue(newValue);
+    },
+    id: "use-autocomplete-demo",
+    options: item,
+    getOptionLabel: (option) => option,
+  });
+
+  useEffect(() => {
+    onLifting(kind, value)
+  }, [value]);
+  
+  return (
+    <div className="relative flex-1">
+      {/* <div>{`value: ${value !== null ? `'${value.item}'` : 'null'}`}</div> */}
+      <div {...getRootProps()}>
+        {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
+        <Input {...getInputProps()} placeholder={placeholder}/>
+      </div>
+      {groupedOptions.length > 0 ? (
+        <Listbox {...getListboxProps()}>
+          {groupedOptions.map((option, index) => (
+            <li {...getOptionProps({ option, index })}>{option}</li>
+          ))}
+        </Listbox>
+      ) : null}
+    </div>
   );
 }
+
+// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
+const top100Films = [
+  { title: "The Shawshank Redemption", year: 1994 },
+  { title: "The Godfather", year: 1972 },
+  { title: "The Godfather: Part II", year: 1974 },
+  { title: "The Dark Knight", year: 2008 },
+  { title: "12 Angry Men", year: 1957 },
+  { title: "Schindler's List", year: 1993 },
+  { title: "Pulp Fiction", year: 1994 },
+];

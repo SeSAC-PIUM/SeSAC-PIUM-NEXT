@@ -1,7 +1,7 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
-import TextInput from "../atoms/input/TextInput";
-import DefaultButton from "../atoms/button/DefaultButton";
+import FileUpload from "../organism/FileUpload";
+import GreenBorderButton from "../atoms/button/GreenBorderButton";
 
 interface SignUpContentIProfileProps {
   className?: string;
@@ -14,14 +14,14 @@ export default function SignUpContentIProfileProps({
     <>
       <div className={className}>
         <SignUpTitleBox title="프로필 사진" />
-        <div className="flex gap-10">
+        <div className="flex flex-wrap ">
           {/* 이미지 등록 컴포넌트 만들 것. 지금은 그냥 div */}
-          <div className="bg-[--color-grayscale-100] w-[150px] h-[150px] rounded-full"></div>
-          <div className="flex flex-col m-auto gap-3 ">
-            <DefaultButton>이미지 첨부</DefaultButton>
+          <FileUpload />
+          <div className="flex flex-col justify-center gap-3 my-4">
+            {/* <GreenBorderButton text="이미지 첨부" addClassName=" w-[120px] " />
             <span className=" text-gray-400 ">
               이미지 권장 사이즈는 300x300 입니다.
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
