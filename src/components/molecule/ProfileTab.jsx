@@ -9,9 +9,8 @@ const TabMenu = styled.ul`
   flex-direction: row;
   align-items: center;
   list-style: none;
-  margin-bottom: 24px;
-  margin: 16px 0px;
-
+  margin: 24px 0px;
+  /* padding-bottom: 16px; */
   border-bottom: 1px solid var(--color-grayscale-200);
 
   .submenu {
@@ -19,7 +18,8 @@ const TabMenu = styled.ul`
     display: flex;
     margin-right: 40px;
     font-size: 16px;
-    transition: 0.5s;
+    padding-bottom: 16px;
+    transition: 0.3s;
     border-radius: 10px 10px 0px 0px;
   }
 
@@ -27,7 +27,7 @@ const TabMenu = styled.ul`
     //선택된 Tabmenu 에만 적용되는 CSS를 구현
     background-color: rgb(255, 255, 255);
     color: var(--color-grayscale-600);
-
+    padding-bottom: 16px;
     border-bottom: 2px solid var(--color-grayscale-600);
   }
 
@@ -41,7 +41,6 @@ const Desc = styled.div`
 `;
 
 import React from "react";
-import ProfileTabContentIntroduce from "../organism/ProfileTabContentIntroduce";
 import ProfileTabProfile from "../organism/ProfileTabProfile";
 import ProfileTabProject from "../organism/ProfileTabProject";
 
@@ -61,7 +60,6 @@ export default function ProfileTab() {
     <>
       <div>
         <TabMenu>
-          {/* <ul className="flex gap-[40px] text-sm font-medium  text-gray-500 border-b border-gray-200"> */}
           {menuArr.map((el, index) => (
             <React.Fragment key={menuArr.name}>
               <li
