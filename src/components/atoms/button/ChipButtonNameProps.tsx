@@ -4,8 +4,7 @@ interface ChipButtonNameProps {
   name: string;
   value: string;
   checked?: boolean;
-  // onClick: any;
-  // check: string;
+  onChange: (value: string) => void;
 }
 
 export default function ChipButtonName({
@@ -13,9 +12,14 @@ export default function ChipButtonName({
   name,
   value,
   checked,
-}: // check,
-// onClick,
-ChipButtonNameProps): React.ReactElement {
+  onChange,
+}: ChipButtonNameProps): React.ReactElement {
+  const handleClick = () => {
+    if (!checked) {
+      onChange(value);
+    }
+  };
+
   return (
     <>
       <label
@@ -27,9 +31,9 @@ ChipButtonNameProps): React.ReactElement {
           name={name}
           value={value}
           checked={checked}
-          // className=" "
+          // className="hidden"
           // onChange={(e) => {
-          //   onClick(e.target.checked, e.target.value);
+          //   onclick(e.target.checked, e.target.value);
           // }}
           // checked={check.indexOf(value) > -1 ? true : false}
         />
