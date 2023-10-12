@@ -3,12 +3,15 @@ import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import SignUpInput from "../atoms/input/DefaultInput";
 import Image from "next/image";
 import dropDown from "../../img/dropDown.svg";
+import { UseFormRegisterReturn } from "react-hook-form";
 interface SignUpContentCurriculumProps {
   className?: string;
+  register: UseFormRegisterReturn;
 }
 
 export default function SignUpContentCurriculum({
   className,
+  register,
 }: SignUpContentCurriculumProps) {
   return (
     <>

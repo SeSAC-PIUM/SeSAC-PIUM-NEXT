@@ -1,13 +1,16 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import RadioButton from "../atoms/button/RadioButton";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 interface SignUpContentGenderProps {
   className?: string;
+  register: UseFormRegisterReturn;
 }
 
 export default function SignUpContentGender({
   className,
+  register,
 }: SignUpContentGenderProps) {
   return (
     <div className={className}>

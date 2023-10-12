@@ -3,8 +3,10 @@ import SignUpTitleBox from "../molecule/SignUpTitleBox";
 
 // import SignUpBox from "../molecule/SignUpBox";
 import ChipsForm from "../molecule/ChipsForm";
+import { UseFormRegisterReturn } from "react-hook-form";
 interface SignUpContentJobProps {
   className: string;
+  register: UseFormRegisterReturn;
 }
 const skills = [
   {
