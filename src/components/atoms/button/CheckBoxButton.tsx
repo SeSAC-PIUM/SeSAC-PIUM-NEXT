@@ -16,12 +16,12 @@ export default function RadioButton({
 }: CheckBoxButtonProps): React.ReactElement {
   return (
     <>
-      <label className="h-full p-0">
+      <label className="flex items-center h-full p-0">
         <input
           type="checkbox"
           name={name}
           value={value}
-          className="rounded w-[1.25em] h-[1.25em] mr-2  accent-[--color-main-green] "
+          className="rounded w-[1.25em] h-[1.25em] mr-2  accent-green-600  "
           checked={check?.valueOf()}
           onChange={() => {
             setCheck && setCheck(!check);
