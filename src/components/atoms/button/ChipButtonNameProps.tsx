@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 interface ChipButtonNameProps {
   label: string;
   name: string;
   value: string;
   checked?: boolean;
-  // onClick: any;
-  // check: string;
+  clicked?: string;
+  onClick?: any;
+  // onChange: (value: string) => void;
 }
 
 export default function ChipButtonName({
@@ -13,25 +14,24 @@ export default function ChipButtonName({
   name,
   value,
   checked,
-}: // check,
-// onClick,
-ChipButtonNameProps): React.ReactElement {
+  clicked,
+  onClick,
+}: ChipButtonNameProps): React.ReactElement {
   return (
     <>
       <label
-        className={`border-[1px] bg-white border-[#e9e9ee] rounded flex justify-center py-2 px-4 cursor-pointer      }
-        `}
+        className={`border-[1px]  border-[#e9e9ee] rounded flex justify-center items-center py-2 px-4 cursor-pointer ${
+          clicked === value &&
+          "bg-[--color-main-green] text-[--color-grayscale-100]"
+        }`}
       >
         <input
           type="radio"
           name={name}
           value={value}
           checked={checked}
-          // className=" "
-          // onChange={(e) => {
-          //   onClick(e.target.checked, e.target.value);
-          // }}
-          // checked={check.indexOf(value) > -1 ? true : false}
+          onClick={onClick}
+          className="hidden"
         />
         {label}
       </label>

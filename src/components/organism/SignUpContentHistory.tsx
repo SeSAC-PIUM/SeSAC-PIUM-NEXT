@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import DefaultInput from "../atoms/input/DefaultInput";
 
