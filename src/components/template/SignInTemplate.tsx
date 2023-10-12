@@ -112,6 +112,7 @@ export default function SignUpTemplate({}) {
                   },
                 })}
                 placeholder="이메일"
+                autoComplete="autoComplete"
               />
 
               {errors.email && <WarningLabel text={errors.email?.message} />}
@@ -123,6 +124,7 @@ export default function SignUpTemplate({}) {
                 })}
                 placeholder="비밀번호"
                 type="password"
+                autoComplete="current-password"
               />
 
               {errors.password && (
