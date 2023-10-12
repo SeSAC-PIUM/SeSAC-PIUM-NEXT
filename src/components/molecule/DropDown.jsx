@@ -2,6 +2,8 @@ import * as React from "react";
 import { useAutocomplete } from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import dropDown from "../../img/dropDown.svg";
 
 const Label = styled("label")({
   display: "block",
@@ -55,7 +57,7 @@ export default function UseAutocomplete({
   item,
   placeholder,
 }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   const {
     getRootProps,
@@ -72,18 +74,28 @@ export default function UseAutocomplete({
     id: "use-autocomplete-demo",
     options: item,
     getOptionLabel: (option) => option,
+    isOptionEqualToValue: (option, value) => option.id === value.id,
   });
 
   useEffect(() => {
-    onLifting(kind, value);
+    if (kind === "class") {
+      onLifting(kind, value);
+    } else {
+      onLifting(value);
+    }
   }, [value]);
+
+  useEffect(() => {
+    setValue("");
+  }, [item]);
 
   return (
     <div className="relative flex-1">
       {/* <div>{`value: ${value !== null ? `'${value.item}'` : 'null'}`}</div> */}
-      <div {...getRootProps()}>
+      <div {...getRootProps()} className="flex items-center flex-1">
         {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
         <Input {...getInputProps()} placeholder={placeholder} />
+        <Image className="absolute right-6" src={dropDown} alt="dropDown" />
       </div>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
