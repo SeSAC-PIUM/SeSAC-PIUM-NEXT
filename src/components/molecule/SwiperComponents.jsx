@@ -49,7 +49,7 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
             {v}
           </SwiperSlide>
         ))}
-        <div class="flex">
+        <div className="flex">
           <SwiperButton position="left" buttonRef={prevRef} />
           <SwiperButton position="right" buttonRef={nextRef} />
         </div>
