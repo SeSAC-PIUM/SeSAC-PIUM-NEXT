@@ -11,19 +11,56 @@ import PageTitle from "../components/atoms/label/PageTitle";
 import SectionTitle from "../components/atoms/label/SectionTitle";
 import DefaultButton from "../components/atoms/button/DefaultButton";
 import DefaultCardP32 from "../components/atoms/card/DefaultCardP32";
-import SelectedButton from "../components/atoms/button/SelectedButton";
 import ThumbnailMaker from "../components/organism/ThumbnailMaker";
 import EffectComponent from "../components/organism/RefTest";
 import BorderBottom from "../components/atoms/label/BorderBottom";
-import VariationBox from "../components/molecule/VariationBox";
 import DatePickerComponent from "../components/organism/DatePicker";
 import DropDown from "../components/molecule/DropDown";
+import { Autocomplete, TextField } from "@mui/material";
+import CreateProjectRole from "../components/molecule/CreateProjectRole";
 
 // function BorderBottom() {
 //   return <p className="w-full h-px bg-[--color-grayscale-300] mt-4 mb-12"></p>;
 // }
 
 export default function CreateProject() {
+  const empty = () => {};
+  const campus = [
+    {
+      item: "장소 미정",
+    },
+    {
+      item: "강동캠퍼스",
+    },
+    {
+      item: "강서캠퍼스",
+    },
+    {
+      item: "광진캠퍼스",
+    },
+    {
+      item: "금천캠퍼스",
+    },
+    {
+      item: "동작캠퍼스",
+    },
+    {
+      item: "마포캠퍼스",
+    },
+    {
+      item: "서대문캠퍼스",
+    },
+    {
+      item: "용산캠퍼스",
+    },
+    {
+      item: "종로캠퍼스",
+    },
+    {
+      item: "중구캠퍼스",
+    },
+  ];
+
   const days = [
     {
       item: "요일 미정",
@@ -62,7 +99,7 @@ export default function CreateProject() {
   const skills = [
     {
       item: "Javascript",
-      value: "javascript",
+      value: "Javascript",
     },
     {
       item: "Typescript",
@@ -132,7 +169,7 @@ export default function CreateProject() {
                   PointTitle2=""
                 ></CardTitle>
                 {/* <DefaultInput placeholder="캠퍼스를 선택해주세요"></DefaultInput> */}
-                <DropDown></DropDown>
+                <DropDown kind={"campus"} onLifting={empty} item={campus}></DropDown>
               </div>
               <div className="flex-1">
                 <CardTitle
@@ -177,20 +214,7 @@ export default function CreateProject() {
                 {/* 데이터 받아와야 함 */}프론트엔드 / 멘토
               </DefaultCardP32>
             </div>
-            <div>
-              <CardTitle
-                title1="모집 포지션"
-                PointTitle1=""
-                title2=""
-                PointTitle2=""
-              ></CardTitle>
-              <div className="flex gap-3">
-                <DefaultInput placeholder="포지션을 선택해주세요."></DefaultInput>
-                <VariationBox>멘토</VariationBox>
-                <VariationBox>멘티</VariationBox>
-                <SelectedButton>추가</SelectedButton>
-              </div>
-            </div>
+            <CreateProjectRole></CreateProjectRole>
           </div>
         </section>
         <section className="mb-40">
@@ -220,7 +244,7 @@ export default function CreateProject() {
           <input
             type="text"
             placeholder="12글자 이내로 작성"
-            maxlength="12"
+            maxLength="12"
             className="py-4 px-5 w-full max-w-[500px] rounded border-[1px] border-[--color-grayscale-200] focus:ring-2 focus:ring-[#2DA96E] focus:outline-none appearance-none placeholder-[#9090A0] text-[14px]"
           />
         </section>
