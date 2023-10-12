@@ -12,7 +12,6 @@ export default function VariationBox({ children, kind, onLifting }) {
   };
   
   useEffect(() => {
-    console.log(count)
     onLifting(kind, count)
   },[count]);
 
