@@ -15,7 +15,7 @@ import ThumbnailMaker from "../components/organism/ThumbnailMaker";
 import EffectComponent from "../components/organism/RefTest";
 import BorderBottom from "../components/atoms/label/BorderBottom";
 import DatePickerComponent from "../components/organism/DatePicker";
-import DropDown from "../components/molecule/DropDown";
+import UseAutocomplete from "../components/molecule/DropDown";
 import { Autocomplete, TextField } from "@mui/material";
 import CreateProjectRole from "../components/molecule/CreateProjectRole";
 
@@ -26,39 +26,17 @@ import CreateProjectRole from "../components/molecule/CreateProjectRole";
 export default function CreateProject() {
   const empty = () => {};
   const campus = [
-    {
-      item: "장소 미정",
-    },
-    {
-      item: "강동캠퍼스",
-    },
-    {
-      item: "강서캠퍼스",
-    },
-    {
-      item: "광진캠퍼스",
-    },
-    {
-      item: "금천캠퍼스",
-    },
-    {
-      item: "동작캠퍼스",
-    },
-    {
-      item: "마포캠퍼스",
-    },
-    {
-      item: "서대문캠퍼스",
-    },
-    {
-      item: "용산캠퍼스",
-    },
-    {
-      item: "종로캠퍼스",
-    },
-    {
-      item: "중구캠퍼스",
-    },
+    "장소 미정",
+    "강동캠퍼스",
+    "강서캠퍼스",
+    "광진캠퍼스",
+    "금천캠퍼스",
+    "동작캠퍼스",
+    "마포캠퍼스",
+    "서대문캠퍼스",
+    "용산캠퍼스",
+    "종로캠퍼스",
+    "중구캠퍼스",
   ];
 
   const days = [
@@ -169,7 +147,12 @@ export default function CreateProject() {
                   PointTitle2=""
                 ></CardTitle>
                 {/* <DefaultInput placeholder="캠퍼스를 선택해주세요"></DefaultInput> */}
-                <DropDown kind={"campus"} onLifting={empty} item={campus}></DropDown>
+                <UseAutocomplete
+                  kind={"campus"}
+                  onLifting={empty}
+                  item={campus}
+                  placeholder='캠퍼스를 선택해주세요'
+                ></UseAutocomplete>
               </div>
               <div className="flex-1">
                 <CardTitle

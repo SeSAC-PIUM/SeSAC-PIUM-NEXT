@@ -50,15 +50,8 @@ const Listbox = styled("ul")(({ theme }) => ({
 }));
 
 
-export default function UseAutocomplete({kind, onLifting, item}) {
-  // console.log(item)
-  const [value, setValue] = useState(item[0]);
-
-  // const [drop, setDrop] = useState()
-
-  const onButtonClick = () => {
-    // setDrop()
-  };
+export default function UseAutocomplete({kind, onLifting, item, placeholder}) {
+  const [value, setValue] = useState();
 
   const {
     getRootProps,
@@ -69,16 +62,16 @@ export default function UseAutocomplete({kind, onLifting, item}) {
     groupedOptions,
   } = useAutocomplete({
     value:value,
-    onChange:(_event, newValue) => {
+    onChange:(event, newValue) => {
       setValue(newValue);
     },
     id: "use-autocomplete-demo",
     options: item,
-    getOptionLabel: (option) => option.item,
+    getOptionLabel: (option) => option,
   });
 
   useEffect(() => {
-    onLifting(kind, value.item)
+    onLifting(kind, value)
   }, [value]);
   
   return (
@@ -86,12 +79,12 @@ export default function UseAutocomplete({kind, onLifting, item}) {
       {/* <div>{`value: ${value !== null ? `'${value.item}'` : 'null'}`}</div> */}
       <div {...getRootProps()}>
         {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
-        <Input {...getInputProps()} />
+        <Input {...getInputProps()} placeholder={placeholder}/>
       </div>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
           {groupedOptions.map((option, index) => (
-            <li onClick={onButtonClick} {...getOptionProps({ option, index })}>{option.item}</li>
+            <li {...getOptionProps({ option, index })}>{option}</li>
           ))}
         </Listbox>
       ) : null}
