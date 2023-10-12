@@ -1,8 +1,5 @@
 import React from "react";
 
-// interface GreenButtonProps {
-//   className: string;
-// }
 
 interface AnyButtonGrayProps {
   text: string;
