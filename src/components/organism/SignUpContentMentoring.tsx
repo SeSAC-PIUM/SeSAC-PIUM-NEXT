@@ -2,9 +2,11 @@ import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import SignUpInput from "../atoms/input/DefaultInput";
 import RadioButton from "../atoms/button/RadioButton";
+import { UseFormRegisterReturn } from "react-hook-form";
 
 interface SignUpContentMentoringProps {
   className?: string;
+  register: UseFormRegisterReturn;
 }
 
 export default function SignUpContentMentoring({

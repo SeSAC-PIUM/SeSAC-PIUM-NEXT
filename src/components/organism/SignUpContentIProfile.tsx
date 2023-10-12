@@ -7,7 +7,7 @@ interface SignUpContentIProfileProps {
   className?: string;
 }
 
-export default function SignUpContentIProfileProps({
+export default function SignUpContentIProfile({
   className,
 }: SignUpContentIProfileProps) {
   return (

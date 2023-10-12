@@ -1,11 +1,15 @@
 interface WarningLabelProps {
   text: string | undefined;
+  addClassName?: string;
 }
 
-export default function WarningLabel({ text }: WarningLabelProps) {
+export default function WarningLabel({
+  text,
+  addClassName,
+}: WarningLabelProps) {
   return (
     <>
-      <div className="pl-8 text-[#FF6565] ">{text}</div>
+      <div className={`${addClassName} pl-8 text-[#FF6565] `}>{text}</div>
     </>
   );
 }

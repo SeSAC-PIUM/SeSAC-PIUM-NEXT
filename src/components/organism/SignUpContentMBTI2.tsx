@@ -3,11 +3,13 @@ import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import ChipButtonName from "../atoms/button/ChipButtonNameProps";
 import DefaultCard from "../atoms/card/DefaultCard";
 
-interface MbtiFormProps {
+interface SignUpContentMbti2Props {
   className?: string;
 }
 
-export default function MbtiForm({ className }: MbtiFormProps) {
+export default function SignUpContentMbti2({
+  className,
+}: SignUpContentMbti2Props) {
   return (
     <div className={className}>
       <SignUpTitleBox title="MBTI" />

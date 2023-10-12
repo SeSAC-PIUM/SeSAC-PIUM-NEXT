@@ -3,13 +3,18 @@ import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import SignUpInput from "../atoms/input/DefaultInput";
 import WarningLabel from "../atoms/label/WarningLabel";
 import Modal from "../atoms/modal/Modal";
+import { FieldErrors, UseFormRegisterReturn } from "react-hook-form";
 
 interface SignUpContentNameProps {
   className: string;
+  register: UseFormRegisterReturn;
+  errors: FieldErrors<any>;
 }
 
 export default function SignUpContentName({
   className,
+  register,
+  errors,
 }: SignUpContentNameProps) {
   return (
     <div className={className}>
@@ -19,8 +24,11 @@ export default function SignUpContentName({
       />
 
       <div className="flex flex-col">
-        <SignUpInput placeholder="한글로 실명을 입력해주세요" />
-        <WarningLabel text="한글로 실명을 입력해주세요" />
+        <SignUpInput
+          register={register}
+          placeholder="한글로 실명을 입력해주세요"
+        />
+        {errors.name && <WarningLabel text={errors.name?.message} />}
       </div>
     </div>
   );
