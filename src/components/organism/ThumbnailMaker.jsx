@@ -18,7 +18,7 @@ export default function ThumbnailMaker() {
   const onBgChange = () => {};
 
   useEffect(() => {
-    console.log("⌨ 인풋 입력 시에만 실행되는 useEffect");
+
   }, [text]);
 
   const randomRGB = function () {
