@@ -12,6 +12,7 @@ import auth from "@/firebase/auth";
 import { useRouter } from "next/router";
 import { addDoc, collection } from "firebase/firestore";
 import db from "@/firebase/db";
+import Link from "next/link";
 
 interface signUpForm {
   email: string;
@@ -115,7 +116,10 @@ export default function SignUpTemplate({}) {
             <span className="text-[--color-grayscale-600] mr-2">
               이미 회원이신가요?
             </span>
-            <button className="text-[--color-main-green] "> 로그인</button>
+            <Link href="/signIn" className="text-[--color-main-green] ">
+              {" "}
+              로그인
+            </Link>
           </div>
         </div>
 
@@ -135,6 +139,7 @@ export default function SignUpTemplate({}) {
                 })}
                 type="email"
                 placeholder="이메일"
+                autoComplete="autoComplete"
               />
               {errors.email && (
                 <WarningLabel text="이메일 형식으로 입력해주세요" />
@@ -158,6 +163,7 @@ export default function SignUpTemplate({}) {
                 })}
                 type="password"
                 placeholder="비밀번호"
+                autoComplete="current-password"
               />
               {errors.password && (
                 <WarningLabel text="비밀번호는 영문+숫자 조합 8자 이상 입력해주세요." />
@@ -174,6 +180,7 @@ export default function SignUpTemplate({}) {
                 })}
                 type="password"
                 placeholder="비밀번호 확인"
+                autoComplete="current-password"
               />
               {errors.passwordCheck && (
                 <WarningLabel text="비밀번호가 일치하지 않아요" />
