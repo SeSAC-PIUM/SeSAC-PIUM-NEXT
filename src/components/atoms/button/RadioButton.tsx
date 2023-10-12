@@ -3,16 +3,19 @@ interface RadioButtonProps {
   label: string;
   name: string;
   value: string;
+  addClassName?: string;
 }
 
 export default function RadioButton({
   label,
   name,
   value,
+  addClassName,
 }: RadioButtonProps): React.ReactElement {
   return (
     <>
-      <label className="h-full p-0 mr-8">
+      {/* addClassName="flex justify-center" */}
+      <label className={`${addClassName} flex justify-center h-full p-0 mr-8 `}>
         <input
           type="radio"
           name={name}

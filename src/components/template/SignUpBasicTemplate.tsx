@@ -1,11 +1,11 @@
 import React from "react";
-import SignUpContentName from "../organism/SignUpContentName";
+// import SignUpContentName from "../organism/SignUpContentName";
 // import SignUpContentModal from "../organism/SignUpContentModal";
 // import RadioButton from "../atoms/button/RadioButton";
-import SignUpContentCurriculum from "../organism/SignUpContentCurriculum";
-import SignUpContentGender from "../organism/SignUpContentGender";
-import SignUpContentJob from "../organism/SignUpContentJob";
-import SignUpContentMentoring from "../organism/SignUpContentMentoring";
+// import SignUpContentCurriculum from "../organism/SignUpContentCurriculum";
+// import SignUpContentGender from "../organism/SignUpContentGender";
+// import SignUpContentJob from "../organism/SignUpContentJob";
+// import SignUpContentMentoring from "../organism/SignUpContentMentoring";
 import GreenButton from "../atoms/button/GreenButton";
 import PageTitle from "../atoms/label/PageTitle";
 import BorderBottom from "../atoms/label/BorderBottom";
@@ -26,10 +26,10 @@ export default function SignUpTemplate({}) {
         />
         <SignUpContentFirst />
 
-        <BorderBottom marginTop={"mt-2"} marginBottom={"mb-2"} />
+        <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-[120px]"} />
 
         <SignUpContentSecond />
-        <BorderBottom marginTop={"mt-2"} marginBottom={"mb-2"} />
+        <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-2"} />
 
         <GreenButton
           className="max-w-[400px] w-full m-auto mt-12"

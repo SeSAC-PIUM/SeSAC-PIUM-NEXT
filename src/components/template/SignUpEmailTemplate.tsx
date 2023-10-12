@@ -218,7 +218,7 @@ export default function SignUpTemplate({}) {
         </form>
 
         <button type="submit" form="signUpForm" disabled={isLoading}>
-          <GreenButton className="my-6" text="가입완료" />
+          <GreenButton className="my-6 w-[360px]" text="다음" />
         </button>
       </section>
     </>
