@@ -16,7 +16,16 @@ import SignUpContentLike from "../organism/SignUpContentLike";
 
 interface basicInfo {
   name: string;
+  campus: string;
+  class: string;
+  gender: string;
+  job: string;
+  mentoring: string;
 }
+
+const basicRegex = {
+  name: /^[가-힣]+$/,
+};
 
 export default function SignUpTemplate({}) {
   // const className = "flex flex-wrap  bg-slate-100 items-start py-6 w-full";
@@ -26,7 +35,11 @@ export default function SignUpTemplate({}) {
     register,
     formState: { errors },
     handleSubmit,
-  } = useForm<basicInfo>();
+    watch,
+    setValue,
+  } = useForm<basicInfo>({
+    mode: "onChange",
+  });
 
   const onValid = () => {
     console.log("성공");
@@ -36,6 +49,7 @@ export default function SignUpTemplate({}) {
     console.log("실패");
   };
 
+  console.log(watch());
   return (
     <>
       <section className=" max-w-[800px] w-full m-auto ">
@@ -54,7 +68,8 @@ export default function SignUpTemplate({}) {
             register={register("name", {
               required: true,
               validate: {
-                name: (value) => value.length < 3 && "세글자 이상 입력하세요.",
+                name: (value) =>
+                  basicRegex.name.test(value) || "한글로 실명을 입력해주세요.",
               },
             })}
             errors={errors}
@@ -62,19 +77,20 @@ export default function SignUpTemplate({}) {
 
           <SignUpContentCurriculum
             className={className}
-            register={register("name", { required: true })}
+            register={register}
+            setValue={setValue}
           />
           <SignUpContentGender
             className={className}
-            register={register("name", { required: true })}
+            register={register("gender", { required: true })}
           />
           <SignUpContentJob
             className={className}
-            register={register("name", { required: true })}
+            register={register("job", { required: true })}
           />
           <SignUpContentMentoring
             className={className}
-            register={register("name", { required: true })}
+            register={register("mentoring", { required: true })}
           />
 
           <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-[120px]"} />
