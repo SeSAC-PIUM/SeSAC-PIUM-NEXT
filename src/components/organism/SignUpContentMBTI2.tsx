@@ -10,7 +10,11 @@ interface SignUpContentMbti2Props {
 export default function SignUpContentMbti2({
   className,
 }: SignUpContentMbti2Props) {
-  const [isClick, setIsClick] = useState("비공개");
+  const [isClick, setIsClick] = useState<string>("비공개");
+
+  const handleRadioClick = (value: string) => {
+    setIsClick(value);
+  };
   return (
     <div className={className}>
       <SignUpTitleBox title="MBTI" />
@@ -80,7 +84,9 @@ export default function SignUpContentMbti2({
           value="비공개"
           checked={true}
           clicked={isClick}
-          onClick={() => setIsClick("비공개")}
+          // onClick={() => setIsClick("비공개")}
+          onClick={() => handleRadioClick("비공개")}
+          // style={isClick === "비공개" ? { backgroundColor: "black" } : {}}
         />
       </DefaultCard>
     </div>
