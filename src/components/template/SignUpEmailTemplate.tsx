@@ -10,7 +10,7 @@ import { useForm } from "react-hook-form";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import auth from "@/firebase/auth";
 import { useRouter } from "next/router";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import db from "@/firebase/db";
 import Link from "next/link";
 
@@ -63,10 +63,15 @@ export default function SignUpTemplate({}) {
         data.password
       );
 
-      const doc = await addDoc(collection(db, "user"), {
-        userEmail: data.email,
-        adReceive: signUp3,
-      });
+      // 자동 id 생성
+      // const doc = await addDoc(collection(db, "user"), {
+      //   userEmail: data.email,
+      //   adReceive: signUp3,
+      // });
+
+      // 수동 id 생성 ( 회원가입시 나요는 uid 활용 )
+      const newDocRef = doc(db, "user", credentials.user.uid);
+      await setDoc(newDocRef, { userEmail: data.email, adReceive: signUp3 });
 
       router.push("/signUp_001_Basic");
     } catch (e) {
