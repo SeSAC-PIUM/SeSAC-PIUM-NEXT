@@ -13,7 +13,6 @@ export default function SignUpContentSecond() {
     <>
       <SignUpContentIProfile className={className} />
       <SignUpContentIntroduce className={className} />
-      {/* <SignUpContentMBTI /> */}
       <SignUpContentMBTI2 className={className} />
       <SignUpContentHistory className={className} />
       <SignUpContentLike className={className} />
