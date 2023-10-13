@@ -14,7 +14,7 @@ export default function Footer() {
             alt="PIUMlog"
           ></Image>
         </span>
-        <span className="footer_text2 mr-[5px]">PIUM</span>
+        <span className="footer_text2 mr-[5px] ">PIUM</span>
         <span className="text-[12px] font-semibold text-[#626273]">
           추가정보
         </span>
