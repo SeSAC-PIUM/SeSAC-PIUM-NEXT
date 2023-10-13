@@ -18,8 +18,8 @@ interface ProfileModalProps {
 export default function ProfileModal({onMouseEnter, onMouseLeave}: ProfileModalProps) {
 	const className = "flex items-center gap-4 mx-6";
 	return (
-		<div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-			<div className="absolute top-[50px] right-[30px] border rounded  py-6 text-[12px] bg-white w-[220px] h-auto ">
+		<div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} className="absolute">
+			<div className="absolute top-[50px] right-[-300px] border rounded  py-6 text-[12px] bg-white w-[220px] h-auto ">
 				<div className="">
 					<Link href={"#"} className={className}>
 						<Image src={profileImg} alt="profileImg" className=" w-[48px] " />
