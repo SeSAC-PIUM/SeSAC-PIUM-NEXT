@@ -11,15 +11,17 @@ import gd2 from "@/img/gd_2.jpg";
 import gd3 from "@/img/gd_3.jpg";
 import gd4 from "@/img/gd_4.jpg";
 import gd5 from "@/img/gd_5.jpg";
+
 export default function AdvBooking() {
+  let images = ["gd_0.jpg", "gd_1.jpg", "gd_2.jpg", "gd_3.jpg", "gd_4.jpg"];
   return (
-    <>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+    <div className="card_container flex">
+      {/* <Swiper
+        slidesPerView={4.5}
+        spaceBetween={24}
         centeredSlides={true}
-        loop={true}
-        speed={5000}
+        loop={true} 
+        speed={10000}
         autoplay={{
           delay: 0,
           disableOnInteraction: false,
@@ -28,33 +30,86 @@ export default function AdvBooking() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="mySwiper"
+        className="mySwiper w-full"
       >
-        <SwiperSlide>
+        
+        <SwiperSlide className="w-[384px]">
           0
           <Image className="w-[384px] h-[240px]" src={gd0} alt="캠퍼스"></Image>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="w-[384px]">
           1
           <Image className="w-[384px] h-[240px]" src={gd1} alt="캠퍼스"></Image>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="w-[384px]">
           2
           <Image className="w-[384px] h-[240px]" src={gd2} alt="캠퍼스"></Image>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="w-[384px]">
           3
           <Image className="w-[384px] h-[240px]" src={gd3} alt="캠퍼스"></Image>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="w-[384px]">
           4
           <Image className="w-[384px] h-[240px]" src={gd4} alt="캠퍼스"></Image>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="w-[384px]">
           5
           <Image className="w-[384px] h-[240px]" src={gd5} alt="캠퍼스"></Image>
         </SwiperSlide>
-      </Swiper>
-    </>
+        <SwiperSlide className="w-[384px]">
+          0
+          <Image className="w-[384px] h-[240px]" src={gd0} alt="캠퍼스"></Image>
+        </SwiperSlide>
+        <SwiperSlide className="w-[384px]">
+          1
+          <Image className="w-[384px] h-[240px]" src={gd1} alt="캠퍼스"></Image>
+        </SwiperSlide>
+        <SwiperSlide className="w-[384px]">
+          2
+          <Image className="w-[384px] h-[240px]" src={gd2} alt="캠퍼스"></Image>
+        </SwiperSlide>
+        <SwiperSlide className="w-[384px]">
+          3
+          <Image className="w-[384px] h-[240px]" src={gd3} alt="캠퍼스"></Image>
+        </SwiperSlide>
+        <SwiperSlide className="w-[384px]">
+          4
+          <Image className="w-[384px] h-[240px]" src={gd4} alt="캠퍼스"></Image>
+        </SwiperSlide>
+        <SwiperSlide className="w-[384px]">
+          5
+          <Image className="w-[384px] h-[240px]" src={gd5} alt="캠퍼스"></Image>
+        </SwiperSlide>
+      </Swiper> */}
+      <ul>
+        {images.map((e, i) => {
+          return (
+            <li key={i}>
+              <a>
+                <div
+                  className="card_img"
+                  style={{ backgroundImage: `url(../../img/${e})` }}
+                ></div>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <ul>
+        {images.map((e, i) => {
+          return (
+            <li key={i}>
+              <a>
+                <div
+                  className="card_img"
+                  style={{ backgroundImage: `url(../../img/${e})` }}
+                ></div>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
