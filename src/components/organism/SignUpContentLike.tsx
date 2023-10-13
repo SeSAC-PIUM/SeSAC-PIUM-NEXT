@@ -1,10 +1,14 @@
 import React from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import ChipsForm from "../molecule/ChipsForm";
+import { UseFormSetValue, UseFormWatch } from "react-hook-form";
 
 interface SignUpContentLikeProps {
   className: string;
+  setValue: UseFormSetValue<any>;
+  watch: UseFormWatch<any>;
 }
+
 const skills = [
   {
     item: "칼퇴근",
@@ -38,11 +42,18 @@ const skills = [
 
 export default function SignUpContentLike({
   className,
+  setValue,
+  watch,
 }: SignUpContentLikeProps) {
   return (
     <div className={className}>
       <SignUpTitleBox title="이런팀이 좋아요!" />
-      <ChipsForm text={skills} width="w-[160px] " />
+      <ChipsForm
+        setValue={setValue}
+        watch={watch}
+        text={skills}
+        width="w-[160px] "
+      />
     </div>
   );
 }
