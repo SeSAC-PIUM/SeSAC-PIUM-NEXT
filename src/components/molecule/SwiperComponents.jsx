@@ -52,7 +52,7 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
     },
     loop: true,
   };
-  console.log(setting.pagination.type);
+
   return (
     <div className="flex flex-col w-full">
       <div className="relative group w-[906px]  h-[260px] m-0 mb-[10px]">
