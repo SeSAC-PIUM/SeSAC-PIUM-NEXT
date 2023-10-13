@@ -92,6 +92,8 @@ export default function SignUpTemplate({}) {
 
     const docRef = doc(db, "user", auth.currentUser?.uid);
     await updateDoc(docRef, data);
+
+    alert("수정이 완료되었습니다.");
   };
 
   const inVaild = () => {
@@ -120,7 +122,6 @@ export default function SignUpTemplate({}) {
   const watchProfile = watch("profile");
   return (
     <>
-      <img src={watchProfile} alt="watchProfile" />
       <section className=" max-w-[800px] w-full m-auto ">
         <form onSubmit={handleSubmit(onValid, inVaild)}>
           <PageTitle
@@ -156,6 +157,7 @@ export default function SignUpTemplate({}) {
           />
           <SignUpContentJob
             className={className}
+            watch={watch}
             register={register("job", { required: true })}
           />
           <SignUpContentMentoring
@@ -169,15 +171,23 @@ export default function SignUpTemplate({}) {
           <SignUpContentIProfile
             className={className}
             onFileChange={onFileChange}
+            watch={watch}
           />
           <SignUpContentIntroduce
             register={register("introduce", { required: true })}
             className={className}
           />
-          <input {...register("mbti", { required: true })} />
-          <SignUpContentMbti2 setValue={setValue} className={className} />
+          <SignUpContentMbti2
+            setValue={setValue}
+            className={className}
+            watch={watch}
+          />
           <SignUpContentHistory register={register} className={className} />
-          <SignUpContentLike className={className} />
+          <SignUpContentLike
+            setValue={setValue}
+            watch={watch}
+            className={className}
+          />
 
           <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-2"} />
 
