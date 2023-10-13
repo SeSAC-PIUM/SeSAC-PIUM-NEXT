@@ -9,15 +9,9 @@ export default function FilterItemForm({
   onLifting,
   onLifting2,
 }) {
-  console.log(onLifting);
   const [check, setCheck] = useState([]);
 
   const onClickEvent = (checked, item, textContent) => {
-    console.log(check.length);
-    console.log(checked);
-    console.log(item);
-    console.log(textContent);
-
     // check.length < 5 && setCheck(check)
 
     //   IsClick
@@ -64,7 +58,7 @@ export default function FilterItemForm({
       className={`flex flex-wrap gap-[12px] p-4 border-[1px] border-[#e9e9ee] rounded bg-white absolute mt-[9px] z-[100] ${wrapWidth} ${document.addEventListener(
         "click",
         (e) => {
-          return "hidden"
+          return "hidden";
         }
       )}`}
     >

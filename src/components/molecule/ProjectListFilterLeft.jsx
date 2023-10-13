@@ -17,10 +17,8 @@ export default function ProjectListFilterLeft() {
     event.stopPropagation(); // 버튼 클릭 이벤트가 문서 전체로 전파되지 않도록 중지합니다.
 
     if (event.target.closest("#role")) {
-      console.log("role");
       setVisible((prev) => [true, prev[1]]); // 버튼 클릭 시 컴포넌트를 토글합니다.
     } else if (event.target.closest("#campus")) {
-      console.log("campus");
       setVisible((prev) => [prev[0], true]); // 버튼 클릭 시 컴포넌트를 토글합니다.
     }
   };

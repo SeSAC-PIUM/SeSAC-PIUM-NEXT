@@ -8,11 +8,7 @@ import Link from "next/link";
 import basicInfo from "@/data/basicInfo";
 import Image from "next/image";
 
-interface ProfileMainProps {
-	data: basicInfo;
-}
-
-export default function ProfileMain({ data }: ProfileMainProps) {
+export default function ProfileMain({ data }) {
 	return (
 		<>
 			<div className="flex justify-between">

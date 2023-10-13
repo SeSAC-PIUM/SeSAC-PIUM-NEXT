@@ -9,7 +9,6 @@ export default function LikeButton() {
       <button
         onClick={() => {
           setColor(!color);
-          console.log(color);
         }}
       >
         {color ? (
