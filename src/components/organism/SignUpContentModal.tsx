@@ -8,7 +8,7 @@ export default function SignUpContent() {
     <div className="flex">
       <SignUpLabel title="수강교육과정" />
       {/* <SignUpTitleBox title="수강교육과정" /> */}
-      <SignUpInput />
+      <SignUpInput autoComplete="autoComplete" />
     </div>
   );
 }
