@@ -18,7 +18,7 @@ export default function Section03() {
           <ProjectTitleLink
             text1="곧 마감 프로젝트 🚨"
             text2="당신만 오면 바로 시작되는 프로젝트!"
-            href="#"
+            href="/project_list"
           ></ProjectTitleLink>
           <div className="flex w-full justify-between">
             <Card></Card>
@@ -32,7 +32,7 @@ export default function Section03() {
           <ProjectTitleLink
             text1="최신 프로젝트 🎈"
             text2="새로운 프로젝트를 탐색해봐요!"
-            href="#"
+            href="/project_list"
           ></ProjectTitleLink>
           <div className="flex w-full justify-between">
             <Card5></Card5>
