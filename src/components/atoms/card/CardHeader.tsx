@@ -35,7 +35,7 @@ export default function CardHeader({
         </a>
         <a href="#">
           <div className="h-[130px] p-[16px]">
-            <p className="text-[14px] font-medium pb-[16px] text-[#464656]">
+            <p className="text-[16px] font-medium pb-[16px] text-[#303030]">
               {text2}
             </p>
             <p className="text-[14px] font-normal text-[#626273]">{text3}</p>
