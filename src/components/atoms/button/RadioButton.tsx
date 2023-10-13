@@ -25,7 +25,6 @@ export default function RadioButton({
           name={name}
           value={value}
           className="appearance-none  border-gray-200 border-[0.1em] rounded-full w-[1.25em] h-[1.25em] checked:border-[0.4em] checked:border-[--color-main-green]"
-          checked
         />
         {label}
       </label>
