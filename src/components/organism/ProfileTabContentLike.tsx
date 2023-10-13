@@ -2,8 +2,13 @@ import React from "react";
 import DefaultCard from "../atoms/card/DefaultCard";
 import SectionCard from "../atoms/card/SectionCard";
 import DefaultLabel from "../atoms/label/DefaultLabel";
+import basicInfo from "@/data/basicInfo";
 
-export default function ProfileTabContent() {
+interface ProfileTabContentProps {
+  data: basicInfo;
+}
+
+export default function ProfileTabContent({ data }: ProfileTabContentProps) {
   const addClassName = "inline-block mr-3";
 
   return (
@@ -15,7 +20,12 @@ export default function ProfileTabContent() {
         />
 
         <div className="flex flex-col gap-3">
-          <div>
+          {data.like.map((value, index) => (
+            <DefaultCard key={index} addClassName={addClassName}>
+              {value}
+            </DefaultCard>
+          ))}
+          {/* <div>
             <DefaultCard addClassName={addClassName}>
               남아서 작업 OK
             </DefaultCard>
@@ -25,7 +35,7 @@ export default function ProfileTabContent() {
           <div>
             <DefaultCard addClassName={addClassName}>만나서 작업</DefaultCard>
             <DefaultCard addClassName={addClassName}>빠르게! 열정!</DefaultCard>
-          </div>
+          </div> */}
         </div>
       </SectionCard>
     </>

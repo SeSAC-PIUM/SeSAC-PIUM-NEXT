@@ -15,8 +15,8 @@ export default function ProfileTabProfile({ data }: ProfileTabProfileProps) {
       <section className="flex flex-col gap-6">
         <ProfileTabContentIntroduce data={data} />
         <ProfileTabContentJob data={data} />
-        <ProfileTabContentMBTI />
-        <ProfileTabContentLike />
+        <ProfileTabContentMBTI data={data} />
+        <ProfileTabContentLike data={data} />
       </section>
     </>
   );

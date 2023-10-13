@@ -12,7 +12,8 @@ interface basicInfo {
   link: string;
   url: string;
   profile: string;
-  [key: string]: string;
+  like: string[];
+  [key: string]: string | string[];
 }
 
 export default basicInfo;
