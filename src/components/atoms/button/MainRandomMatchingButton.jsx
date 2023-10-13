@@ -6,7 +6,7 @@ export default function MainRadomMatchingButton() {
       <BannerNavLink
         text1="지원이 어렵다면"
         text2="랜덤매칭 버튼🌱 "
-        href="#"
+        href="/randomMatching"
       ></BannerNavLink>
     </>
   );

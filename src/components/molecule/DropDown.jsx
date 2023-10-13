@@ -100,7 +100,7 @@ export default function UseAutocomplete({
       <div {...getRootProps()} className="flex items-center flex-1">
         {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
         <Input {...getInputProps()} placeholder={placeholder} />
-        <Image className="absolute right-6" src={dropDown} alt="dropDown" />
+        <Image className="absolute right-6 translate-y-[-4px]" src={dropDown} alt="dropDown" />
       </div>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>

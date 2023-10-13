@@ -14,7 +14,7 @@ import "swiper/swiper-bundle.css";
 import left from "@/img/Frame 186.png";
 import right from "@/img/Frame 187.png";
 import stop from "@/img/pause_FILL1_wght400_GRAD0_opsz48 1.png";
-import start from "@/img/start.png";
+import start from "@/img/play_arrow_FILL1_wght600_GRAD0_opsz48 2.png";
 
 import BannerMenu from "@/components/atoms/button/BannerMenu";
 
@@ -90,12 +90,16 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
         >
           버튼3
         </button> */}
-        <div>
+        <div className=" w-auto h-[38px] px-4 py-3 text-[#464656]   rounded-[999px] border border-solid  border-[#E9E9EE] ">
           <button
             // style={buttonStyle}
             onClick={() => swiperRef.current.slidePrev()}
           >
-            <Image src={left} alt="left"></Image>
+            <Image
+              className="relative top-[-4px]"
+              src={left}
+              alt="left"
+            ></Image>
           </button>
           <button
             className="mx-[12px]"
@@ -108,14 +112,22 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
                 // style={buttonStyle}
                 onClick={() => swiperRef.current.autoplay.stop()}
               >
-                <Image src={stop} alt="stop"></Image>
+                <Image
+                  className="relative top-[-4px]"
+                  src={stop}
+                  alt="stop"
+                ></Image>
               </button>
             ) : (
               <button
                 className="w-[14px] h-[14px] text-[#464656]"
                 onClick={() => swiperRef.current.autoplay.start()}
               >
-                <Image src={start} alt="start"></Image>
+                <Image
+                  className="relative top-[-4px]"
+                  src={start}
+                  alt="start"
+                ></Image>
               </button>
             )}
           </button>
@@ -123,7 +135,11 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
             // style={buttonStyle}
             onClick={() => swiperRef.current.slideNext()}
           >
-            <Image src={right} alt="right"></Image>
+            <Image
+              className="relative top-[-4px]"
+              src={right}
+              alt="right"
+            ></Image>
           </button>
         </div>
         <div onClick={() => swiperRef.current.slideToLoop(2)}>

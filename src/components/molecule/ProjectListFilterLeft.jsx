@@ -35,6 +35,11 @@ export default function ProjectListFilterLeft() {
   const [select, setSelect] = useState([]);
   const [length, setLength] = useState();
 
+  const removeElement = (innerText) => {
+    console.log(select);
+    setSelect(select.filter((select) => select !== innerText));
+  };
+
   // const [count, setCount] = useState(text.length);
   // setCount((prev)=>[...prev, text])
 
@@ -46,6 +51,7 @@ export default function ProjectListFilterLeft() {
   const selectionCampus = (check) => {
     // console.log(check);
     setSelect(check);
+    
     // console.log(select);
   };
 
@@ -199,7 +205,17 @@ export default function ProjectListFilterLeft() {
           )}
         </div>
       </div>
-      <FilterSelection text={select} length={length}></FilterSelection>
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
+        <FilterSelection
+          text={select}
+          length={length}
+          onRemove={removeElement}
+        ></FilterSelection>
+      </div>
       <button className="bg-[--color-main-green] text-white py-1 px-3 rounded-[20px] text-[14px]">
         완료
       </button>

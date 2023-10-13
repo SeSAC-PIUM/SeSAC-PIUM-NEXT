@@ -1,7 +1,15 @@
 import { useState, useEffect } from "react";
 import { XmarkIcon } from "../font-icon/XmarkIcon";
 
-export default function FilterSelection({ text, length }) {
+export default function FilterSelection({ text, length, onRemove }) {
+
+  console.log(text)
+
+  const handleClick = (innerText) => {
+    onRemove(innerText);
+  };
+
+
   //   const [count, setCount] = useState(text.length);
   //   // setCount((prev)=>[...prev, text])
 
@@ -39,7 +47,7 @@ export default function FilterSelection({ text, length }) {
       <ul className="flex items-center">
         {text.map((ele, index) => {
           return (
-            <li key={index} className="mr-4">
+            <li onClick={(e) => handleClick(e.target.parentElement.textContent)} key={index} className="mr-4">
               <button>
                 {ele}
                 <XmarkIcon></XmarkIcon>

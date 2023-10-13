@@ -1,4 +1,5 @@
 import Header from "@/components/organism/Header";
+import Footer from "@/components/organism/Footer";
 // import auth from "@/firebase/auth";
 // import { auth } from "@/firebase";
 import "@/styles/globals.css";
@@ -66,6 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Header />
       {isLoading ? <div>로딩중</div> : <Component {...pageProps} />}
+      <Footer />
     </>
   );
 }
