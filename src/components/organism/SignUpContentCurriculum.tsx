@@ -4,15 +4,18 @@ import SignUpInput from "../atoms/input/DefaultInput";
 import Image from "next/image";
 import dropDown from "../../img/dropDown.svg";
 import {
+  UseFormGetValues,
   UseFormRegister,
   UseFormRegisterReturn,
   UseFormSetValue,
+  UseFormWatch,
 } from "react-hook-form";
 import UseAutocomplete from "../molecule/DropDown";
 interface SignUpContentCurriculumProps {
   className?: string;
   register: UseFormRegister<any>;
   setValue: UseFormSetValue<any>;
+  watch: UseFormWatch<any>;
 }
 
 const campus = [
@@ -118,10 +121,14 @@ export default function SignUpContentCurriculum({
   className,
   register,
   setValue,
+  watch,
 }: SignUpContentCurriculumProps) {
   const [isCampus, setCampus] = useState("");
   const [isClasses, setClasses] = useState<string[]>([]);
   const [isClass, setClass] = useState("");
+
+  let watchedCampus = watch("campus", isCampus);
+  let watchedClass = watch("class", isClass);
 
   useEffect(() => {
     campusClasses.forEach((value) => {
@@ -129,8 +136,19 @@ export default function SignUpContentCurriculum({
         setClasses(value.classes);
       }
     });
-    setValue("campus", isCampus);
+    // setValue("campus", isCampus);
   }, [isCampus]);
+
+  useEffect(() => {
+    if (isCampus !== watchedCampus) {
+      setCampus(watchedCampus);
+    }
+    if (isClass !== watchedClass) {
+      setClass(watchedClass);
+    }
+  }, [watchedCampus, watchedClass]);
+
+  console.log("watchedCampus, watchedClass", watchedCampus, watchedClass);
 
   return (
     <>
@@ -145,6 +163,7 @@ export default function SignUpContentCurriculum({
             onLifting={setCampus}
             item={campus}
             placeholder="캠퍼스 선택"
+            defaultValue={isCampus}
           ></UseAutocomplete>
           {/* <SignUpInput placeholder="클래스 선택">
             <Image className="absolute right-6" src={dropDown} alt="dropDown" />
@@ -154,6 +173,7 @@ export default function SignUpContentCurriculum({
             onLifting={setValue}
             item={isClasses}
             placeholder="클래스 선택"
+            defaultValue={isClass}
           ></UseAutocomplete>
         </div>
       </div>
