@@ -56,8 +56,10 @@ export default function UseAutocomplete({
   onLifting,
   item,
   placeholder,
+  defaultValue = "",
 }) {
-  const [value, setValue] = useState("");
+  console.log("defaultValue", defaultValue);
+  const [value, setValue] = useState(defaultValue);
 
   const {
     getRootProps,
@@ -88,6 +90,10 @@ export default function UseAutocomplete({
   useEffect(() => {
     setValue("");
   }, [item]);
+
+  useEffect(() => {
+    setValue(defaultValue);
+  }, [defaultValue]);
 
   return (
     <div className="relative flex-1">
