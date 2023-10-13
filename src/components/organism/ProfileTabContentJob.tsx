@@ -2,8 +2,13 @@ import React from "react";
 import DefaultCard from "../atoms/card/DefaultCard";
 import DefaultLabel from "../atoms/label/DefaultLabel";
 import SectionCard from "../atoms/card/SectionCard";
+import basicInfo from "@/data/basicInfo";
 
-export default function ProfileTabContent() {
+interface ProfileTabContentProps {
+  data: basicInfo;
+}
+
+export default function ProfileTabContent({ data }: ProfileTabContentProps) {
   const addClassName = "inline-block mr-3 px-6 py-3";
 
   return (
@@ -18,13 +23,13 @@ export default function ProfileTabContent() {
           <div>
             <DefaultCard addClassName={addClassName}>직장</DefaultCard>
             <DefaultCard addClassName={addClassName}>
-              경영전공, 프론트엔드 개발자
+              {data.history}
             </DefaultCard>
           </div>
 
           <div>
             <DefaultCard addClassName={addClassName}>깃허브</DefaultCard>
-            <DefaultCard addClassName={addClassName}>https://</DefaultCard>
+            <DefaultCard addClassName={addClassName}>{data.link}</DefaultCard>
           </div>
         </div>
       </SectionCard>
