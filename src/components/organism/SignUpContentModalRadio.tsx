@@ -7,7 +7,7 @@ export default function SignUpContent() {
   return (
     <div className="flex">
       <SignUpLabel title="멘토/멘티" />
-      <SignUpInput />
+      <SignUpInput autoComplete="autoComplete" />
     </div>
   );
 }
