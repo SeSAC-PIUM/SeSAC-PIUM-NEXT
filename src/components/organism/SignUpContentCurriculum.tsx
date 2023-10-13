@@ -136,7 +136,7 @@ export default function SignUpContentCurriculum({
         setClasses(value.classes);
       }
     });
-    // setValue("campus", isCampus);
+    setValue("campus", isCampus);
   }, [isCampus]);
 
   useEffect(() => {

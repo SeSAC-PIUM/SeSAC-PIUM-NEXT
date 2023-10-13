@@ -1,21 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 
 // import SignUpBox from "../molecule/SignUpBox";
 import ChipsForm from "../molecule/ChipsForm";
-import { UseFormRegisterReturn } from "react-hook-form";
+import { UseFormRegisterReturn, UseFormWatch } from "react-hook-form";
 import ChipButtonName from "../atoms/button/ChipButtonNameProps";
 import DefaultCard from "../atoms/card/DefaultCard";
 interface SignUpContentJobProps {
   className: string;
   register: UseFormRegisterReturn;
+  watch: UseFormWatch<any>;
 }
 
 export default function SignUpContentJob({
   className,
   register,
+  watch,
 }: SignUpContentJobProps) {
   const [isClick, setIsClick] = useState("");
+  const signUpContentJobWatch = watch("job");
+  useEffect(() => {
+    setIsClick(signUpContentJobWatch);
+  }, [signUpContentJobWatch]);
   return (
     <div className={className}>
       <SignUpTitleBox
