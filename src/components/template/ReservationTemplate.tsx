@@ -7,7 +7,7 @@ import PageTitle from "../atoms/label/PageTitle";
 export default function reservationTemplate() {
   return (
     <>
-      <section className=" max-w-[800px] w-full m-auto ">
+      <section className=" max-w-[800px] w-full m-auto mb-[44px]">
         <PageTitle
           title1="공간예약"
           title2=""

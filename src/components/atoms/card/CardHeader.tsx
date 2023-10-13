@@ -16,7 +16,7 @@ export default function CardHeader({
   href,
 }: CardHeaderProps) {
   return (
-    <div className="flex w-full h-full ">
+    <div className="flex w-[282px] h-full ">
       <div>
         <div className="absolute top-[10px] right-[10px] cursor-pointer text-[#fff] z-10">
           <LikeButton></LikeButton>
@@ -27,7 +27,7 @@ export default function CardHeader({
               {text1}
             </p>
             <Image
-              className="h-full object-cover"
+              className=" h-full object-cover"
               src={thumbanil}
               alt="프로젝트 사진"
             ></Image>
