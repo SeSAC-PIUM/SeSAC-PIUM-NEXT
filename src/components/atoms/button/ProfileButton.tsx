@@ -4,7 +4,7 @@ import ProfileImage from "../../../img/profile.svg";
 
 export default function ProfileButton() {
   return (
-    <Link href={"#"}>
+    <Link href={"/profile"}>
       <Image src={ProfileImage} alt="profile" />
     </Link>
   );
