@@ -33,7 +33,7 @@ export default function ChipButtonName({
           type="radio"
           name={name}
           value={value}
-          checked={checked}
+          checked={clicked === value}
           onClick={onClick}
           className="hidden"
         />
