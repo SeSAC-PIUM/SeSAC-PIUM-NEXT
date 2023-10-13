@@ -5,7 +5,6 @@ export default function ChipsForm(props) {
   const [check, setCheck] = useState([]);
 
   const onClickEvent = (checked, item) => {
-
     if (item === "요일 미정") {
       setCheck([]);
     }
@@ -28,11 +27,18 @@ export default function ChipsForm(props) {
     }
   };
 
-  useEffect(() => {
+  const checkWatch = props.watch("like", []);
 
+  useEffect(() => {
+    if (JSON.stringify(check) !== JSON.stringify(checkWatch)) {
+      setCheck(checkWatch);
+    }
+  }, [checkWatch]);
+
+  useEffect(() => {
+    props.setValue("like", check);
   }, [check]);
 
-  
   const items = props.text;
   return (
     <div className="flex flex-wrap gap-[12px] p-4 border-[1px] border-[#e9e9ee] rounded bg-white w-fit">
@@ -46,7 +52,7 @@ export default function ChipsForm(props) {
             val={ele.value}
             item={ele.item}
             kkey={ele.value}
-            key={ele.value}
+            key={index}
             check={check}
             onClick={onClickEvent}
             width={props.width}
