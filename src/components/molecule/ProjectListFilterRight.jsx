@@ -9,7 +9,6 @@ export default function ProjectListFilterRight() {
   const [visible, setVisible] = useState(false);
 
   const handleClickOutside = (event) => {
-    console.log(event);
     // if (!event.target.closest("#visebleHidden")) {
       setVisible(false); // 외부를 클릭하면 컴포넌트를 숨깁니다.
     // }
