@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import GreenButton from "../atoms/button/GreenButton";
 import PageTitle from "../atoms/label/PageTitle";
 import BorderBottom from "../atoms/label/BorderBottom";
@@ -13,6 +13,12 @@ import SignUpContentIntroduce from "../organism/SignUpContentIntroduce";
 import SignUpContentMbti2 from "../organism/SignUpContentMBTI2";
 import SignUpContentHistory from "../organism/SignUpContentHistory";
 import SignUpContentLike from "../organism/SignUpContentLike";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import db from "@/firebase/db";
+import auth from "@/firebase/auth";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import storage from "@/firebase/storage";
+import Image from "next/image";
 
 interface basicInfo {
   name: string;
@@ -21,6 +27,13 @@ interface basicInfo {
   gender: string;
   job: string;
   mentoring: string;
+  introduce: string;
+  mbti: string;
+  history: string;
+  field: string;
+  link: string;
+  url: string;
+  [key: string]: string;
 }
 
 const basicRegex = {
@@ -37,21 +50,77 @@ export default function SignUpTemplate({}) {
     handleSubmit,
     watch,
     setValue,
+    getValues,
   } = useForm<basicInfo>({
     mode: "onChange",
   });
 
-  const onValid = () => {
-    console.log("성공");
+  const [file, setFile] = useState<File | null>(null);
+
+  const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { files } = e.target;
+    if (files && files.length === 1) {
+      setFile(files[0]);
+    }
+  };
+
+  const onValid = async (data: basicInfo) => {
+    if (!auth.currentUser) {
+      alert("문제 발생!");
+      return;
+    }
+
+    const user = auth.currentUser;
+
+    if (file) {
+      const locationRef = ref(storage, `user/profile/${user.uid}`);
+
+      const extractMimeType = (dataUrl: any) => {
+        const match = dataUrl.match(
+          /data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/
+        );
+        if (match && match.length > 1) {
+          return match[1];
+        }
+        return null; // MIME 타입을 찾지 못했을 때
+      };
+
+      const result = await uploadBytes(locationRef, file);
+      const url = await getDownloadURL(result.ref);
+      data.profile = url;
+    }
+
+    const docRef = doc(db, "user", auth.currentUser?.uid);
+    await updateDoc(docRef, data);
   };
 
   const inVaild = () => {
     console.log("실패");
   };
 
+  const init = async () => {
+    if (auth.currentUser) {
+      const docRef = doc(db, "user", auth.currentUser.uid);
+      const docSnapshot = await getDoc(docRef);
+
+      if (docSnapshot.exists()) {
+        const data = docSnapshot.data();
+        for (const key in data) {
+          setValue(key, data[key]);
+        }
+      }
+    }
+  };
+
+  useEffect(() => {
+    init();
+  }, []);
+
   console.log(watch());
+  const watchProfile = watch("profile");
   return (
     <>
+      <img src={watchProfile} alt="watchProfile" />
       <section className=" max-w-[800px] w-full m-auto ">
         <form onSubmit={handleSubmit(onValid, inVaild)}>
           <PageTitle
@@ -79,6 +148,7 @@ export default function SignUpTemplate({}) {
             className={className}
             register={register}
             setValue={setValue}
+            watch={watch}
           />
           <SignUpContentGender
             className={className}
@@ -96,10 +166,17 @@ export default function SignUpTemplate({}) {
           <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-[120px]"} />
 
           {/* <SignUpContentSecond /> */}
-          <SignUpContentIProfile className={className} />
-          <SignUpContentIntroduce className={className} />
-          <SignUpContentMbti2 className={className} />
-          <SignUpContentHistory className={className} />
+          <SignUpContentIProfile
+            className={className}
+            onFileChange={onFileChange}
+          />
+          <SignUpContentIntroduce
+            register={register("introduce", { required: true })}
+            className={className}
+          />
+          <input {...register("mbti", { required: true })} />
+          <SignUpContentMbti2 setValue={setValue} className={className} />
+          <SignUpContentHistory register={register} className={className} />
           <SignUpContentLike className={className} />
 
           <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-2"} />
