@@ -9,7 +9,7 @@ export default function DefaultLabel({
 }: DefaultLabelProps) {
   return (
     <>
-      <span className={`${addClassName} text-[--color-grayscale-600] mr-2`}>
+      <span className={`${addClassName} text-[--color-grayscale-600] mr-2 `}>
         {title}
       </span>
     </>

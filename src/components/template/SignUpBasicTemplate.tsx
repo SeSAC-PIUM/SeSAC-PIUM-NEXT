@@ -42,7 +42,7 @@ const basicRegex = {
 
 export default function SignUpTemplate({}) {
   // const className = "flex flex-wrap  bg-slate-100 items-start py-6 w-full";
-  const className = "flex flex-col items-start py-8 ";
+  const className = "flex flex-col items-start py-8  ";
 
   const {
     register,
@@ -181,10 +181,11 @@ export default function SignUpTemplate({}) {
 
           <BorderBottom marginTop={"mt-[64px]"} marginBottom={"mb-2"} />
 
-          <button>
+          <button className="flex justify-center w-full">
             <GreenButton
-              className="max-w-[400px] w-full m-auto mt-12"
-              text="가입완료"
+              // className={className}
+              className="flex justify-center items-center w-full max-w-[400px]  mt-12 m-auto"
+              text="완료"
             />
           </button>
         </form>

@@ -22,8 +22,8 @@ export default function SwiperButton({
       ref={buttonRef}
       // className="bg-[red]"
     >
-      {position === "left" && <Image src={AdLeft} alt="ad_left" />}
-      {position === "right" && <Image src={AdRight} alt="ad_right" />}
+      {/* {position === "left" && <Image src={AdLeft} alt="ad_left" />}
+      {position === "right" && <Image src={AdRight} alt="ad_right" />} */}
     </div>
   );
 }
