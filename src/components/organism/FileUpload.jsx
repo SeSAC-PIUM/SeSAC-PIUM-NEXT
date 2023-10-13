@@ -1,8 +1,8 @@
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import profile from "../../img/profile_img.svg";
 
-export default function FileUpload({ onFileChange }) {
+export default function FileUpload({ onFileChange, img }) {
   const [imgFile, setImgFile] = useState(null);
   const imgRef = useRef();
 
@@ -15,6 +15,10 @@ export default function FileUpload({ onFileChange }) {
       setImgFile(reader.result);
     };
   };
+
+  useEffect(() => {
+    setImgFile(img);
+  }, [img]);
   return (
     <>
       {/* 업로드 된 이미지 미리보기 */}
