@@ -19,22 +19,7 @@ import auth from "@/firebase/auth";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import storage from "@/firebase/storage";
 import Image from "next/image";
-
-interface basicInfo {
-  name: string;
-  campus: string;
-  class: string;
-  gender: string;
-  job: string;
-  mentoring: string;
-  introduce: string;
-  mbti: string;
-  history: string;
-  field: string;
-  link: string;
-  url: string;
-  [key: string]: string;
-}
+import basicInfo from "@/data/basicInfo";
 
 const basicRegex = {
   name: /^[가-힣]+$/,
