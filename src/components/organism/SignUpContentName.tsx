@@ -28,7 +28,7 @@ export default function SignUpContentName({
           register={register}
           placeholder="한글로 실명을 입력해주세요"
         />
-        {errors.name && <WarningLabel text={errors.name?.message} />}
+        {errors.name && <WarningLabel text={errors.name?.message as string} />}
       </div>
     </div>
   );
