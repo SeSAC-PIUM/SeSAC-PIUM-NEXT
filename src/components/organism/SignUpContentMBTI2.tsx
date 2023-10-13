@@ -2,18 +2,21 @@ import React, { useEffect, useState } from "react";
 import SignUpTitleBox from "../molecule/SignUpTitleBox";
 import ChipButtonName from "../atoms/button/ChipButtonNameProps";
 import DefaultCard from "../atoms/card/DefaultCard";
-import { UseFormSetValue } from "react-hook-form";
+import { UseFormSetValue, UseFormWatch } from "react-hook-form";
 
 interface SignUpContentMbti2Props {
   className?: string;
   setValue: UseFormSetValue<any>;
+  watch: UseFormWatch<any>;
 }
 
 export default function SignUpContentMbti2({
   className,
   setValue,
+  watch,
 }: SignUpContentMbti2Props) {
   const [isClick, setIsClick] = useState<string[]>(["비공개"]);
+  const mbtiWatch = watch("mbti");
 
   useEffect(() => {
     const mbti = isClick.join("");
@@ -22,6 +25,16 @@ export default function SignUpContentMbti2({
     }
   }, [isClick]);
 
+  useEffect(() => {
+    let arry: string[] = [];
+    console.log("mbtiWatch", mbtiWatch);
+    if (mbtiWatch !== "비공개") {
+      arry = mbtiWatch ? mbtiWatch.split("") : [];
+    } else {
+      arry = [mbtiWatch];
+    }
+    setIsClick([...arry]);
+  }, [mbtiWatch]);
   return (
     <div className={className}>
       <SignUpTitleBox title="MBTI" />
