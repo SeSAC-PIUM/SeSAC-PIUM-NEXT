@@ -16,7 +16,7 @@ export default function ProfileTabProfile({ data }: ProfileTabProfileProps) {
         <ProfileTabContentIntroduce data={data} />
         <ProfileTabContentJob data={data} />
         <ProfileTabContentMBTI data={data} />
-        <ProfileTabContentLike data={data} />
+        {/* <ProfileTabContentLike data={data} /> */}
       </section>
     </>
   );
