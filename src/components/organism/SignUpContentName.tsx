@@ -29,7 +29,7 @@ export default function SignUpContentName({
           placeholder="한글로 실명을 입력해주세요"
           autoComplete="autoComplete"
         />
-        {errors.name && <WarningLabel text={errors.name?.message} />}
+        {errors.name && <WarningLabel text={errors.name?.message as string} />}
       </div>
     </div>
   );

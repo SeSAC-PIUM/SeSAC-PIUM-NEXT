@@ -16,11 +16,11 @@ export default function SignUpTemplate({ register }: SignUpTemplateProps) {
   const className = "flex flex-col bg-slate-100 items-start py-6 ";
   return (
     <>
-      <SignUpContentName className={className} />
+      {/* <SignUpContentName className={className} />
       <SignUpContentCurriculum className={className} />
       <SignUpContentGender className={className} />
       <SignUpContentJob className={className} />
-      <SignUpContentMentoring className={className} />
+      <SignUpContentMentoring className={className} /> */}
     </>
   );
 }
