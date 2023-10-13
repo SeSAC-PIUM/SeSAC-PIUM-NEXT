@@ -57,7 +57,7 @@ export default function Footer() {
           </a>
         </span>
       </div>
-      <div class="">
+      <div className="">
         <a href="#">
           <Image
             className="inline mr-[8px]"

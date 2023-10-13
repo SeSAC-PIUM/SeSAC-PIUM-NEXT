@@ -23,7 +23,7 @@ export default function FilterSelection({ text, length, onRemove }) {
   //     ? setCount(count + 1 > 9 ? count : count + 1)
   //     : setCount(count - 1 < 1 ? count : count - 1);
   // };
-  // console.log(count)
+  // (count)
   // if (text.length >= 5 && length) {
   //   const timer = setTimeout(() => {
   //     const b = "hidden";
@@ -32,7 +32,6 @@ export default function FilterSelection({ text, length, onRemove }) {
   //   }, 1000);
   //   console.log(timer)
   // }
-
 
   return (
     <div className="relative ml-4">

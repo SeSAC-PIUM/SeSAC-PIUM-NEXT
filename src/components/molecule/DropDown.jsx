@@ -58,7 +58,6 @@ export default function UseAutocomplete({
   placeholder,
   defaultValue = "",
 }) {
-  console.log("defaultValue", defaultValue);
   const [value, setValue] = useState(defaultValue);
 
   const {
