@@ -11,6 +11,7 @@ interface SignUpContentMentoringProps {
 
 export default function SignUpContentMentoring({
   className,
+  register,
 }: SignUpContentMentoringProps) {
   return (
     <div className={className}>
@@ -21,8 +22,18 @@ export default function SignUpContentMentoring({
                   수준이라면 멘토를 지원해주세요🥰"
       />
       <div className="flex flex-wrap">
-        <RadioButton label="멘토" name="mentoring" value="mentor" />
-        <RadioButton label="멘티" name="mentoring" value="mentee" />
+        <RadioButton
+          register={register}
+          label="멘토"
+          name="mentoring"
+          value="mentor"
+        />
+        <RadioButton
+          register={register}
+          label="멘티"
+          name="mentoring"
+          value="mentee"
+        />
       </div>
     </div>
   );

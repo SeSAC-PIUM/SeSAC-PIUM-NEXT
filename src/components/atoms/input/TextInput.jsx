@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function TextInput() {
+export default function TextInput({ register }) {
   let [inputCount, setInputCount] = useState(0);
   const onInputHandler = (e) => {
     setInputCount(e.target.value.length);
@@ -15,6 +15,7 @@ export default function TextInput() {
       <div className="flex relative">
         <form>
           <textarea
+            {...register}
             style={{ overflow: "hidden" }}
             // cols="40"
             // rows="10"

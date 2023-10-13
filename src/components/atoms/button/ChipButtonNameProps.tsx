@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { UseFormRegisterReturn } from "react-hook-form";
 interface ChipButtonNameProps {
   label: string;
   name: string;
@@ -7,6 +8,7 @@ interface ChipButtonNameProps {
   clicked?: string;
   onClick?: any;
   // onChange: (value: string) => void;
+  register?: UseFormRegisterReturn;
 }
 
 export default function ChipButtonName({
@@ -16,6 +18,7 @@ export default function ChipButtonName({
   checked,
   clicked,
   onClick,
+  register,
 }: ChipButtonNameProps): React.ReactElement {
   return (
     <>
@@ -26,6 +29,7 @@ export default function ChipButtonName({
         }`}
       >
         <input
+          {...register}
           type="radio"
           name={name}
           value={value}

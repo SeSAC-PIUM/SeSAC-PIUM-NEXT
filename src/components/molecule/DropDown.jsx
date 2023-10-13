@@ -2,6 +2,8 @@ import * as React from "react";
 import { useAutocomplete } from "@mui/base/useAutocomplete";
 import { styled } from "@mui/system";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import dropDown from "../../img/dropDown.svg";
 
 const Label = styled("label")({
   display: "block",
@@ -33,13 +35,13 @@ const Listbox = styled("ul")(({ theme }) => ({
   overflow: "auto",
   border: "1px solid #e9e9ee",
   borderRadius: "4px",
-  padding:"10px",
+  padding: "10px",
   "& li": {
     // height:"40px",
-    lineHeight:"40px",
-    fontSize:"16px",
-    padding:"0 16px",
-    borderRadius:"4px",
+    lineHeight: "40px",
+    fontSize: "16px",
+    padding: "0 16px",
+    borderRadius: "4px",
     cursor: "pointer",
   },
   "& li.Mui-focused": {
@@ -49,9 +51,15 @@ const Listbox = styled("ul")(({ theme }) => ({
   },
 }));
 
-
-export default function UseAutocomplete({kind, onLifting, item, placeholder}) {
-  const [value, setValue] = useState();
+export default function UseAutocomplete({
+  kind,
+  onLifting,
+  item,
+  placeholder,
+  defaultValue = "",
+}) {
+  console.log("defaultValue", defaultValue);
+  const [value, setValue] = useState(defaultValue);
 
   const {
     getRootProps,
@@ -61,30 +69,46 @@ export default function UseAutocomplete({kind, onLifting, item, placeholder}) {
     getOptionProps,
     groupedOptions,
   } = useAutocomplete({
-    value:value,
-    onChange:(event, newValue) => {
+    value: value,
+    onChange: (event, newValue) => {
       setValue(newValue);
     },
     id: "use-autocomplete-demo",
     options: item,
     getOptionLabel: (option) => option,
+    isOptionEqualToValue: (option, value) => option.id === value.id,
   });
 
   useEffect(() => {
-    onLifting(kind, value)
+    if (kind === "class") {
+      onLifting(kind, value);
+    } else {
+      onLifting(value);
+    }
   }, [value]);
-  
+
+  useEffect(() => {
+    setValue("");
+  }, [item]);
+
+  useEffect(() => {
+    setValue(defaultValue);
+  }, [defaultValue]);
+
   return (
     <div className="relative flex-1">
       {/* <div>{`value: ${value !== null ? `'${value.item}'` : 'null'}`}</div> */}
-      <div {...getRootProps()}>
+      <div {...getRootProps()} className="flex items-center flex-1">
         {/* <Label {...getInputLabelProps()}>useAutocomplete</Label> */}
-        <Input {...getInputProps()} placeholder={placeholder}/>
+        <Input {...getInputProps()} placeholder={placeholder} />
+        <Image className="absolute right-6" src={dropDown} alt="dropDown" />
       </div>
       {groupedOptions.length > 0 ? (
         <Listbox {...getListboxProps()}>
           {groupedOptions.map((option, index) => (
-            <li {...getOptionProps({ option, index })}>{option}</li>
+            <li key={index} {...getOptionProps({ option, index })}>
+              {option}
+            </li>
           ))}
         </Listbox>
       ) : null}

@@ -10,30 +10,11 @@ interface SignUpContentJobProps {
   className: string;
   register: UseFormRegisterReturn;
 }
-// const skills = [
-//   {
-//     item: "기획",
-//     value: "1",
-//   },
-//   {
-//     item: "UX/UI 디자인",
-//     value: "2",
-//   },
-//   {
-//     item: "퍼블리싱",
-//     value: "3",
-//   },
-//   {
-//     item: "프론트엔드",
-//     value: "4",
-//   },
-//   {
-//     item: "백엔드",
-//     value: "5",
-//   },
-// ];
 
-export default function SignUpContentJob({ className }: SignUpContentJobProps) {
+export default function SignUpContentJob({
+  className,
+  register,
+}: SignUpContentJobProps) {
   const [isClick, setIsClick] = useState("");
   return (
     <div className={className}>
@@ -45,6 +26,7 @@ export default function SignUpContentJob({ className }: SignUpContentJobProps) {
       <DefaultCard addClassName="">
         <div className="flex  gap-x-4 gap-y-4 flex-wrap">
           <ChipButtonName
+            register={register}
             label="기획"
             name="job"
             value="기획"
@@ -52,6 +34,7 @@ export default function SignUpContentJob({ className }: SignUpContentJobProps) {
             onClick={() => setIsClick("기획")}
           />
           <ChipButtonName
+            register={register}
             label="UX/UI 디자인"
             name="job"
             value="UX/UI 디자인"
@@ -59,6 +42,7 @@ export default function SignUpContentJob({ className }: SignUpContentJobProps) {
             onClick={() => setIsClick("UX/UI 디자인")}
           />
           <ChipButtonName
+            register={register}
             label="퍼블리싱"
             name="job"
             value="퍼블리싱"
@@ -66,6 +50,7 @@ export default function SignUpContentJob({ className }: SignUpContentJobProps) {
             onClick={() => setIsClick("퍼블리싱")}
           />
           <ChipButtonName
+            register={register}
             label="프론트엔드"
             name="job"
             value="프론트엔드"
@@ -73,6 +58,7 @@ export default function SignUpContentJob({ className }: SignUpContentJobProps) {
             onClick={() => setIsClick("프론트엔드")}
           />
           <ChipButtonName
+            register={register}
             label="백엔드"
             name="job"
             value="백엔드"

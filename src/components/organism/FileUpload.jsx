@@ -2,8 +2,8 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import profile from "../../img/profile_img.svg";
 
-export default function FileUpload() {
-  const [imgFile, setImgFile] = useState("");
+export default function FileUpload({ onFileChange }) {
+  const [imgFile, setImgFile] = useState(null);
   const imgRef = useRef();
 
   // 이미지 업로드 input의 onChange
@@ -38,7 +38,10 @@ export default function FileUpload() {
           type="file"
           accept="image/*"
           id="profileImg"
-          onChange={saveImgFile}
+          onChange={(e) => {
+            onFileChange(e);
+            saveImgFile();
+          }}
           ref={imgRef}
           style={{ display: "none" }}
         />
