@@ -83,7 +83,7 @@ export default function SignUpTemplate({}) {
 	return (
 		<>
 			<section className="w-[360px] m-auto flex flex-col gap-12 pt-[60px]">
-				<ProfileModal />
+				{/* <ProfileModal /> */}
 
 				<div className="logo">
 					<div className="flex flex-col gap-4 items-center">

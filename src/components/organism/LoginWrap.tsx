@@ -17,14 +17,14 @@ export default function LoginWrap() {
 			<HeaderSearchForm />
 			{user ? (
 				<>
-					<button
+					{/* <button
 						onClick={() => {
 							auth.signOut();
 							location.reload();
 						}}
 					>
 						Log Out
-					</button>
+					</button> */}
 					<AlarmButton />
 					<ProfileButton />
 				</>
