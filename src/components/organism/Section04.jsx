@@ -4,7 +4,7 @@ import AdvBooking from "@/components/organism/AdvBooking";
 
 export default function Section() {
   return (
-    <div className="text-center block my-[96px]">
+    <div className="text-center block mt-[96px] mb-[52px]">
       <a href="#">
         <span className="pt-[12px] tracking-[-0.56px] text-[32px] font-semibold leading-[1.4] text-[#303030]">
           캠퍼스&nbsp;
