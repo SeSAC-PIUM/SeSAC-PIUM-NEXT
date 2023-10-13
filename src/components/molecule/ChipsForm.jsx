@@ -27,7 +27,11 @@ export default function ChipsForm(props) {
     }
   };
 
-  const checkWatch = props.watch("like", []);
+  let checkWatch = [];
+
+  if (props.watch) {
+    checkWatch = props.watch("like", []);
+  }
 
   useEffect(() => {
     if (JSON.stringify(check) !== JSON.stringify(checkWatch)) {
@@ -36,7 +40,9 @@ export default function ChipsForm(props) {
   }, [checkWatch]);
 
   useEffect(() => {
-    props.setValue("like", check);
+    if (props.setValue) {
+      props.setValue("like", check);
+    }
   }, [check]);
 
   const items = props.text;
