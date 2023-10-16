@@ -1,7 +1,7 @@
-# SeSAC-PIUM (피움)
+# SeSAC-PIUM-NEXT (피움)
 <img width="800" alt="pium_001" src="https://github.com/SeSAC-PIUM/.github/assets/77762680/86e8b609-5b25-4940-869a-f930eb8e1c0e">
 
-### [🔗 배포 링크](https://sesac-pium.netlify.app/)
+### [🔗 배포 링크](https://sesac-pium.web.app/)
 > SeSAC 수강생들을 위한 프로젝트 매칭 플랫폼
 
 <br/>
@@ -12,7 +12,7 @@
 
 | 이름 | 포지션 | email |
 | --- | --- | --- |
-| 김소연 | 기획/퍼블리싱 | kimsoso4638@gmail.com |
+| 김주광 | 프론트엔드/백엔드 | dayglow0926@gmail.com |
 | 양희광 | 프론트엔드 | ekzm7040@naver.com |
 | 유미정 | 프론트엔드 | ymj369@nate.com |
 | 이지현 | 프론트엔드/퍼블리싱 | lkf6214@gmail.com |
@@ -21,9 +21,6 @@
 <br/>
 <br/>
 
-## ✨ 수상
-> SeSAC 웹 퍼블리싱 교육과정 팀프로젝트 발표 대상 (1위)
-<img width="500" alt="main" src="https://github.com/SeSAC-PIUM/.github/assets/77762680/ff6ead33-4d16-4052-8012-9bd766676a45">
 
 ## 📢 발표자료
 <img width="400" alt="pium_003" src="https://github.com/SeSAC-PIUM/.github/assets/77762680/5d3b5924-ae0e-4b13-bf87-f4810846dd8f"> 
@@ -131,20 +128,9 @@
 
 
 
-<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black"/> <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=Next.js&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/> <img src="https://img.shields.io/badge/Typescript-3178C6?style=for-the-badge&logo=Typescript&logoColor=white"/>
-
-
-<img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white"/> <img src="https://img.shields.io/badge/Swiper-0080FF?style=for-the-badge&logo=Swiper&logoColor=white"/>
-
-<img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black"/>
-
-<img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/>
-
 
 ## 🗓️ 
-#### • 진행기간 23년 8월 7일 ~ 21일 (약 2주)
+#### • 진행기간 23년 9월 22일 ~ 10월 13일 (약 3주)
 
 |DAY|TASK|
 |----|----|
@@ -155,21 +141,21 @@
 <br/>
 <br/>
 
-## 📁 (수정예정)
+## 📁 
 ```
 ├── 📁 src
 │   ├── 📁 components
-│   │   ├── 📁 AuthInputForm
-│   │   ├── 📁 ChatUserItem
-│   │   ├── 📁 UserSearch
-│   │   └── 📁 common
-│   ├── 📁 constants
-│   ├── 📁 hooks
+│   │   ├── 📁 atoms
+│   │   │   ├── 📁 Basic Component
+│   │   ├── 📁 molecule
+│   │   │   ├── 📁 SRP Component
+│   │   ├── 📁 organisim
+│   │   │   ├── 📁 Structure Component
+│   │   └── 📁 template
+│   │   │   ├── 📁 Template Component
+│   ├── 📁 data
+│   ├── 📁 firebase
 │   ├── 📁 pages
-│   │   ├── 📁 Auth
-│   │   ├── 📁 Splash
-│   │   └── 📁 Welcome
-│   ├── 📁 routes
 │   └── 📁 styles
 └──
 ```
