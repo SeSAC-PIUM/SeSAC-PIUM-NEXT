@@ -1,5 +1,6 @@
 import next from "@/img/next.png";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProjectTitleLinkProps {
   text1: any;
@@ -13,9 +14,9 @@ export default function ProjectTitleLink({
   href,
 }: ProjectTitleLinkProps) {
   return (
-    <div className="flex  flex-col justify-center  w-[1200px]  ">
-      <p className=" p-0">
-        <a
+    <div className="flex  flex-col">
+      <p className=" p-0 w-fit">
+        <Link
           href={href}
           className="flex text-[#30303] text-[24px] font-semibold pt-[16px] pb-[12px] leading-[24px]"
         >
@@ -25,15 +26,17 @@ export default function ProjectTitleLink({
             src={next}
             alt="next"
           />
-        </a>
+        </Link>
       </p>
       <div className="flex justify-between mb-[24px] ">
-        <p className="text-[14px] font-semibold pb-[16px] text-[#626273] h-[16px]">
-          {text2}
-        </p>
-        <a href={href}>
+        <Link href={href}>
+          <p className="text-[14px] font-semibold pb-[16px] text-[#626273] h-[16px]">
+            {text2}
+          </p>
+        </Link>
+        <Link href={href}>
           <p className="text-[14px] font-normal text-[#626273]">더보기</p>
-        </a>
+        </Link>
       </div>
     </div>
   );

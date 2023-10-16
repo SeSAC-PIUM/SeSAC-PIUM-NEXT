@@ -1,4 +1,3 @@
-import Link from "next/link";
 import BannerNavLink from "../link/BannerNavLink";
 
 export default function MainMakingProjectButton() {
