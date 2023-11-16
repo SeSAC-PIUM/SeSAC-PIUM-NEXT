@@ -1,5 +1,6 @@
 import LikeButton from "../button/LikeButton";
 import Image from "next/image";
+import Link from "next/link";
 import thumbanil from "@/img/thumbnail.png";
 
 interface CardHeaderProps {
@@ -16,31 +17,31 @@ export default function CardHeader({
   href,
 }: CardHeaderProps) {
   return (
-    <div className="flex w-full h-full ">
+    <div className="flex w-[282px] h-full ">
       <div>
         <div className="absolute top-[10px] right-[10px] cursor-pointer text-[#fff] z-10">
           <LikeButton></LikeButton>
         </div>
-        <a href="#">
+        <Link href="#">
           <div className="h-[150px] relative flex justify-center items-center">
             <p className="absolute text-[16px] font-semibold text-[#fff] text-center leading-[1.4]">
               {text1}
             </p>
             <Image
-              className="h-full object-cover"
+              className=" h-full object-cover"
               src={thumbanil}
               alt="프로젝트 사진"
             ></Image>
           </div>
-        </a>
-        <a href="#">
+        </Link>
+        <Link href="#">
           <div className="h-[130px] p-[16px]">
             <p className="text-[16px] font-medium pb-[16px] text-[#303030]">
               {text2}
             </p>
             <p className="text-[14px] font-normal text-[#626273]">{text3}</p>
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

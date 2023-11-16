@@ -8,30 +8,32 @@ import { doc, getDoc } from "firebase/firestore";
 import basicInfo from "@/data/basicInfo";
 
 export default function ProfileTemplate() {
-  const [user, setUser] = useState({});
+	const [user, setUser] = useState({});
 
-  const init = async () => {
-    if (auth.currentUser) {
-      const docRef = doc(db, "user", auth.currentUser.uid);
-      const docSnapshot = await getDoc(docRef);
+	const init = async () => {
+		if (auth.currentUser) {
+			const docRef = doc(db, "user", auth.currentUser.uid);
+			const docSnapshot = await getDoc(docRef);
 
-      if (docSnapshot.exists()) {
-        const data = docSnapshot.data();
-        setUser(data);
-      }
-    }
-  };
+			if (docSnapshot.exists()) {
+				const data = docSnapshot.data();
+				setUser(data);
+			}
+		}
+	};
 
-  useEffect(() => {
-    init();
-  }, []);
+	useEffect(() => {
+		init();
+	}, []);
 
-  return (
-    <>
-      <TemplateCard>
-        <ProfileMain data={user} />
-        <ProfileTab data={user} />
-      </TemplateCard>
-    </>
-  );
+	return (
+		<>
+			<section className="pt-[64px]">
+				<TemplateCard>
+					<ProfileMain data={user} />
+					<ProfileTab data={user} />
+				</TemplateCard>
+			</section>
+		</>
+	);
 }

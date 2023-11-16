@@ -13,14 +13,14 @@ import Card8 from "@/components/organism/Card8";
 export default function Section03() {
   return (
     <div className="flex flex-col items-center">
-      <div className="w-[1200px]">
-        <div className="flex flex-col items-center  mb-[70px]">
+      <div className="w-[1200px] ">
+        <div className="flex flex-col  mb-[70px]">
           <ProjectTitleLink
             text1="곧 마감 프로젝트 🚨"
             text2="당신만 오면 바로 시작되는 프로젝트!"
             href="/project_list"
           ></ProjectTitleLink>
-          <div className="flex w-full justify-between">
+          <div className="flex w-full  justify-between">
             <Card></Card>
             <Card2></Card2>
             <Card3></Card3>
@@ -28,7 +28,7 @@ export default function Section03() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center  mb-[70px]">
+        <div className="flex flex-col items-start mb-[70px]">
           <ProjectTitleLink
             text1="최신 프로젝트 🎈"
             text2="새로운 프로젝트를 탐색해봐요!"
@@ -42,7 +42,7 @@ export default function Section03() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center mb-[70px]">
+      <div className="flex flex-col items-start mb-[70px]">
         <ProjectTitleLink
           text1="완성 프로젝트 ✨"
           text2="프움에서 완성된 프로젝트 모움"
