@@ -5,22 +5,22 @@ import ProfileModal from "@/components/organism/ProfileModal";
 import { useState, useEffect } from "react";
 
 export default function ProfileButton() {
-
   const [visible, setVisible] = useState(false);
 
   const visibleModal = () => {
-    setVisible(true)
-  }
+    setVisible((prev) => !prev);
+  };
+
   const hiddenModal = () => {
-    setVisible(false)
-  }
+    setVisible(false);
+  };
 
   return (
     <>
-    <Link href={"/profile"}>
-      <Image src={ProfileImage} alt="profile" onMouseEnter={visibleModal} onMouseLeave={hiddenModal} />
-    </Link>
-    {visible && (<ProfileModal onMouseEnter={visibleModal} onMouseLeave={hiddenModal}/>)}
+      <div className="cursor-pointer">
+        <Image src={ProfileImage} alt="profile" onClick={visibleModal} />
+      </div>
+      {visible && <ProfileModal />}
     </>
   );
 }
