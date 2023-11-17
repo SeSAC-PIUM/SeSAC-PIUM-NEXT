@@ -8,6 +8,7 @@ interface LoginButtonProps {
   image?: StaticImageData;
   // form?: string | undefined;
   border: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export default function LoginButton({
@@ -17,13 +18,15 @@ export default function LoginButton({
   image,
   // form = undefined,
   border,
+  onClick,
 }: // image,
 LoginButtonProps) {
   return (
     <div
-      className={`${bgColor}  ${textColor} rounded border-solid  ${border} py-4  w-full flex justify-center items-center font-semibold`}
+      className={`${bgColor}  ${textColor} rounded border-solid  ${border} py-4  w-full flex justify-center items-center font-semibold cursor-pointer`}
       // type={form === undefined ? undefined : "submit"}
       // form={form}
+      onClick={onClick}
     >
       {image && (
         <Image src={image} alt="loginLogo" className=" w-auto h-[16px] mr-3" />

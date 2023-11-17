@@ -108,7 +108,7 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
             }}
           >
             {play ? (
-              <button
+              <div
                 // style={buttonStyle}
                 onClick={() => swiperRef.current.autoplay.stop()}
               >
@@ -117,9 +117,9 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
                   src={stop}
                   alt="stop"
                 ></Image>
-              </button>
+              </div>
             ) : (
-              <button
+              <div
                 className="w-[14px] h-[14px] text-[#464656]"
                 onClick={() => swiperRef.current.autoplay.start()}
               >
@@ -128,7 +128,7 @@ export default function SwiperComponents({ className, slideClassName, lists }) {
                   src={start}
                   alt="start"
                 ></Image>
-              </button>
+              </div>
             )}
           </button>
           <button
